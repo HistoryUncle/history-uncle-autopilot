@@ -4,7 +4,15 @@
   "usedArt": [
     "aic:109487",
     "aic:24315",
-    "aic:86998"
+    "aic:86998",
+    "commons:29097256",
+    "commons:15494406",
+    "commons:5213605",
+    "commons:155899",
+    "aic:864",
+    "commons:26833410",
+    "commons:148559",
+    "aic:59809"
   ],
   "repliedComments": [],
   "drafts": {
@@ -14,6 +22,13 @@
       "title": "8 Rules of a Hanseatic Merchant",
       "createdAt": "2026-11-19T12:05:14.750Z",
       "telegramMessageId": 13
+    },
+    "20261119-120915": {
+      "status": "pending",
+      "engine": "concepts",
+      "title": "7 Concepts That Sharpen Historical Thinking",
+      "createdAt": "2026-11-19T12:12:05.254Z",
+      "telegramMessageId": 23
     }
   }
 }

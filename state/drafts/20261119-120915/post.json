@@ -1,0 +1,188 @@
+{
+  "title": "7 Concepts That Sharpen Historical Thinking",
+  "dek": "The ideas historians use to see patterns, and who argued them",
+  "visual_style": "painting",
+  "cover_art_query": "Vermeer The Geographer",
+  "art_fallbacks": [
+    "Dutch Golden Age scholar painting",
+    "old master study interior",
+    "Rembrandt scholar in study"
+  ],
+  "slides": [
+    {
+      "heading": "The Longue Durée",
+      "body": "Fernand Braudel argued that history moves at three speeds: events, cycles and slow structures such as climate, geography and trade routes. In *The Mediterranean* (1949), the sea itself shapes the story more than kings do.",
+      "art_query": "Claude Lorrain seaport",
+      "source": "Braudel 1949, 1958",
+      "flag": "",
+      "art": {
+        "file": "art/commons-15494406.jpg",
+        "key": "commons:15494406",
+        "kind": "painting",
+        "title": "A Seaport at Sunrise",
+        "artist": "Claude Lorrain",
+        "date": "1674date QS:P571,+16",
+        "museum": "Wikimedia Commons",
+        "license": "Public domain"
+      }
+    },
+    {
+      "heading": "The Sattelzeit",
+      "body": "Reinhart Koselleck named roughly 1750 to 1850 a 'saddle period', when words like history, revolution and progress took on their modern meanings. The project behind it is *Geschichtliche Grundbegriffe*, edited with Brunner and Conze.",
+      "art_query": "Caspar David Friedrich Woman at Window",
+      "source": "Koselleck, Geschichtliche Grundbegriffe",
+      "flag": "Simplified",
+      "art": {
+        "file": "art/commons-5213605.jpg",
+        "key": "commons:5213605",
+        "kind": "painting",
+        "title": "German: Frau am Fenster Woman at a Windowtitle QS:P1476,de:\"Frau am Fenster \"label QS:Lde,",
+        "artist": "Caspar David Friedrich",
+        "date": "1822date QS:P571,+18",
+        "museum": "Wikimedia Commons",
+        "license": "Public domain"
+      }
+    },
+    {
+      "heading": "Gresham's Law",
+      "body": "When two coins share a face value, people spend the debased one and hoard the good one. The name honours Thomas Gresham, but Henry Dunning Macleod coined it in 1858. Oresme and Copernicus described the effect earlier.",
+      "art_query": "Antonis Mor Thomas Gresham",
+      "source": "Macleod 1858",
+      "flag": "",
+      "art": {
+        "file": "art/commons-155899.jpg",
+        "key": "commons:155899",
+        "kind": "painting",
+        "title": "Anthonis Mor 004",
+        "artist": "Unknown authorUnknown author",
+        "date": "",
+        "museum": "Wikimedia Commons",
+        "license": "Public domain"
+      }
+    },
+    {
+      "heading": "The Price Revolution",
+      "body": "European prices rose several times over between about 1500 and 1650. Earl J. Hamilton blamed American silver in *American Treasure and the Price Revolution in Spain* (1934). Others, including Jack Goldstone, stress population growth. The cause remains contested.",
+      "art_query": "Quentin Matsys Moneylender and his Wife",
+      "source": "Hamilton 1934; Goldstone 1984",
+      "flag": "Contested",
+      "art": {
+        "file": "art/aic-864.jpg",
+        "key": "aic:864",
+        "kind": "painting",
+        "title": "Portrait of a Man with a Pink",
+        "artist": "Quentin Massys",
+        "date": "1500–10",
+        "museum": "Art Institute of Chicago"
+      }
+    },
+    {
+      "heading": "The Pirenne Thesis",
+      "body": "Henri Pirenne argued in *Mohammed and Charlemagne* (1937) that the Roman economic world survived the barbarians and ended only when Islam split the Mediterranean. Archaeologists such as Hodges and Whitehouse, and later Michael McCormick, have heavily revised it.",
+      "art_query": "Albrecht Durer Charlemagne portrait",
+      "source": "Pirenne 1937; McCormick 2001",
+      "flag": "Contested",
+      "art": {
+        "file": "art/commons-26833410.jpg",
+        "key": "commons:26833410",
+        "kind": "painting",
+        "title": "Emperor Charlemagne",
+        "artist": "Albrecht Dürer",
+        "date": "1512date QS:P571,+15",
+        "museum": "Wikimedia Commons",
+        "license": "Public domain"
+      }
+    },
+    {
+      "heading": "Microhistory",
+      "body": "Reduce the scale and the past gets bigger. Carlo Ginzburg rebuilt the worldview of Menocchio, a Friulian miller tried by the Inquisition, in *The Cheese and the Worms* (1976). Giovanni Levi and Natalie Zemon Davis developed the method.",
+      "art_query": "Bruegel Hunters in the Snow",
+      "source": "Ginzburg 1976",
+      "flag": "",
+      "art": {
+        "file": "art/commons-148559.jpg",
+        "key": "commons:148559",
+        "kind": "painting",
+        "title": "Polish: Myśliwi na śniegu monthly cycle, scene: The Hunters in the Snow (January)label QS:",
+        "artist": "Pieter Bruegel the Elder",
+        "date": "1565date QS:P571,+15",
+        "museum": "Wikimedia Commons",
+        "license": "Public domain"
+      }
+    },
+    {
+      "heading": "The Invention of Tradition",
+      "body": "Many customs that feel ancient are recent. Eric Hobsbawm and Terence Ranger collected the cases in *The Invention of Tradition* (1983), including Hugh Trevor-Roper's essay on how the Highland tradition of Scotland was largely constructed.",
+      "art_query": "Henry Raeburn MacNab portrait",
+      "source": "Hobsbawm and Ranger 1983",
+      "flag": "",
+      "art": {
+        "file": "art/aic-59809.jpg",
+        "key": "aic:59809",
+        "kind": "painting",
+        "title": "Robert Brown of Newhall",
+        "artist": "Sir Henry Raeburn",
+        "date": "1792",
+        "museum": "Art Institute of Chicago"
+      }
+    }
+  ],
+  "cta_line": "On the Substack, each of these concepts gets a long essay: where it came from, what it explains, and where it breaks.",
+  "caption": "Seven ideas do more work in a historian's head than any list of dates.\nBraudel taught us to watch slow structures (Braudel 1949). Koselleck showed that words change meaning (Koselleck 1972). Hamilton and Pirenne made bold arguments that later evidence complicated (Hamilton 1934; McCormick 2001). Ginzburg showed that one miller can open up a whole world (Ginzburg 1976).\nComment READ and I will send you the Substack link.",
+  "risk_notes": [
+    "Editor asked for 'Rules of a Hanseatic merchant', but '8 Rules of a Hanseatic Merchant' is a recent title, so under house rule 6 this post covers the engine's concepts brief instead.",
+    "Sattelzeit dates: Koselleck used roughly 1750 to 1850 as an approximate heuristic. Say 'roughly' and point to his introduction to Geschichtliche Grundbegriffe (vol. 1, 1972).",
+    "Gresham's law: Gresham did not formulate it as a law. Macleod named it in 1858. Oresme (De moneta) and Copernicus (Monetae cudendae ratio) described the effect earlier. The slide already says this.",
+    "Price revolution: the size of the rise varies by region and index. Keep it at 'several times over' and treat silver against population as an open debate.",
+    "Pirenne thesis: some scholars defend parts of it. Say 'heavily revised' rather than 'refuted'. Hodges and Whitehouse 1983, McCormick 2001.",
+    "Invention of tradition: Trevor-Roper's essay is debated by some Scottish historians. Use 'largely constructed' and attribute it to him."
+  ],
+  "urls": [
+    "https://historyuncle.substack.com"
+  ],
+  "engine": "concepts",
+  "kicker": "Concepts",
+  "coverArt": {
+    "file": "art/commons-29097256.jpg",
+    "key": "commons:29097256",
+    "kind": "painting",
+    "title": "The Geographer title QS:P1476,en:\"The Geographer \"label QS:Len,\"The Geographer \"label QS:L",
+    "artist": "Johannes Vermeer",
+    "date": "1668",
+    "museum": "Wikimedia Commons",
+    "license": "Public domain"
+  },
+  "credits": "Images: Johannes Vermeer, The Geographer title QS:P1476,en:\"The Geographer \"label QS:Len,\"The Geographer \"label QS:L (1668); Claude Lorrain, A Seaport at Sunrise (1674date QS:P571,+16); Caspar David Friedrich, German: Frau am Fenster Woman at a Windowtitle QS:P1476,de:\"Frau am Fenster \"label QS:Lde, (1822date QS:P571,+18); Unknown authorUnknown author, Anthonis Mor 004; Quentin Massys, Portrait of a Man with a Pink (1500–10); Albrecht Dürer, Emperor Charlemagne (1512date QS:P571,+15); Pieter Bruegel the Elder, Polish: Myśliwi na śniegu monthly cycle, scene: The Hunters in the Snow (January)label QS: (1565date QS:P571,+15); Sir Henry Raeburn, Robert Brown of Newhall (1792). Via Wikimedia Commons, Art Institute of Chicago.",
+  "renderDir": "r1",
+  "review": {
+    "issues": [
+      {
+        "where": "slide 5",
+        "problem": "\"Archaeologists such as Hodges and Whitehouse, and later Michael McCormick\" calls McCormick an archaeologist. Hodges and Whitehouse are archaeologists, but McCormick is a historian of the early medieval economy. He uses archaeological data, but a specialist would point out the label is wrong.",
+        "severity": "medium",
+        "fix": "Change it to: \"Scholars such as the archaeologists Hodges and Whitehouse, and later the historian Michael McCormick, have heavily revised it.\" This keeps the body within 22 to 40 words."
+      },
+      {
+        "where": "slide 7",
+        "problem": "The risk notes say Scottish historians debate Trevor-Roper's Highland argument, but the slide's flag is empty. Other contested slides carry a flag, so this one should too.",
+        "severity": "low",
+        "fix": "Set the flag to \"Debated\". You can keep the body text as it is, because \"largely constructed\" is already attributed to Trevor-Roper."
+      },
+      {
+        "where": "caption",
+        "problem": "\"Seven ideas do more work in a historian's head than any list of dates\" is a broad, unsourced claim. It is mild rhetoric but slightly overstated.",
+        "severity": "low",
+        "fix": "Change it to: \"Seven ideas that help historians see patterns a list of dates cannot.\""
+      }
+    ],
+    "verdict": "needs_fixes"
+  },
+  "links": [
+    {
+      "url": "https://historyuncle.substack.com",
+      "ok": false,
+      "status": 403
+    }
+  ],
+  "rev": 1
+}
