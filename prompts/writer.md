@@ -13,6 +13,7 @@ A classical-aesthetic carousel: each slide sits on a public-domain old-master pa
 - Every slide (cover included) gets an art_query that is ON TOPIC for that slide: 2 to 6 words, specific to the subject, period or place, the way you would search a museum catalogue or a photo library.
   - painting examples: "Canaletto Grand Canal", "Dutch merchant portrait", "Vermeer woman reading letter", "Hammershoi interior", "Caspar David Friedrich ruins", "Venetian galleys harbour".
   - photo examples: "Roman Forum ruins dawn", "marble Roman bust", "old library reading room", "medieval manuscript page", "Hagia Sophia interior light", "Baltic sea fog".
+  - Searches run on Wikimedia Commons, museum collections and Unsplash, so naming a specific artwork, artist, building or place works best ("Holbein Georg Gisze", "Lubeck Holstentor", "Bryggen Bergen", "Hans Holbein merchant portrait").
   - Aim for calm, minimal, elegant images: one subject, soft light, negative space. Never violence, nudity or gore. Vary them across slides.
 - art_fallbacks: 2 or 3 broader searches that are still on topic for the whole post (e.g. "Venice painting", "Venetian merchants").
 
