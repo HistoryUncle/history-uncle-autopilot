@@ -5,27 +5,32 @@ import { env, http } from './util.js';
  * always returns structured JSON that matches the schema.
  */
 export async function callTool({ model, system, user, tool, maxTokens = 8000 }) {
-  const res = await http('https://api.anthropic.com/v1/messages', {
-    method: 'POST',
-    headers: {
-      'x-api-key': env('ANTHROPIC_API_KEY'),
-      'anthropic-version': '2023-06-01',
-    },
-    json: {
-      model,
-      max_tokens: maxTokens,
-      system,
-      tools: [tool],
-      tool_choice: { type: 'tool', name: tool.name },
-      messages: [{ role: 'user', content: user }],
-    },
-    timeout: 240000,
-  });
-  const data = await res.json();
-  if (!res.ok) throw new Error(`Anthropic API ${res.status}: ${JSON.stringify(data.error ?? data)}`);
-  const block = data.content?.find((b) => b.type === 'tool_use' && b.name === tool.name);
-  if (!block) throw new Error(`Model did not call ${tool.name}: ${JSON.stringify(data.content).slice(0, 500)}`);
-  return block.input;
+  // Some models reject forced tool_choice, so use "auto" and insist in the prompt; nudge once if needed.
+  const messages = [{ role: 'user', content: user }];
+  for (let attempt = 0; attempt < 2; attempt++) {
+    const res = await http('https://api.anthropic.com/v1/messages', {
+      method: 'POST',
+      headers: {
+        'x-api-key': env('ANTHROPIC_API_KEY'),
+        'anthropic-version': '2023-06-01',
+      },
+      json: {
+        model,
+        max_tokens: maxTokens,
+        system: `${system}\n\nRespond only by calling the \`${tool.name}\` tool exactly once.`,
+        tools: [tool],
+        tool_choice: { type: 'auto' },
+        messages,
+      },
+      timeout: 300000,
+    });
+    const data = await res.json();
+    if (!res.ok) throw new Error(`Anthropic API ${res.status}: ${JSON.stringify(data.error ?? data)}`);
+    const block = data.content?.find((b) => b.type === 'tool_use' && b.name === tool.name);
+    if (block) return block.input;
+    messages.push({ role: 'assistant', content: data.content }, { role: 'user', content: `Call the \`${tool.name}\` tool now with your complete answer.` });
+  }
+  throw new Error(`Model did not call ${tool.name}`);
 }
 
 export const CAROUSEL_TOOL = {

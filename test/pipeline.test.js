@@ -29,11 +29,11 @@ globalThis.fetch = async (url, opts = {}) => {
   calls.push({ url, method: opts.method ?? 'GET', body });
 
   if (url.includes('api.anthropic.com')) {
-    if (body.tool_choice.name === 'carousel') {
+    if (body.tools[0].name === 'carousel') {
       const { engine, kicker, ...post } = sample;
       return json({ content: [{ type: 'tool_use', name: 'carousel', input: { ...post, title: post.title + ' — Revised', urls: ['https://example.org/'] } }] });
     }
-    if (body.tool_choice.name === 'pick') { pickCalls++; return json({ content: [{ type: 'tool_use', name: 'pick', input: { index: 0, reason: 'on topic' } }] }); }
+    if (body.tools[0].name === 'pick') { pickCalls++; return json({ content: [{ type: 'tool_use', name: 'pick', input: { index: 0, reason: 'on topic' } }] }); }
     criticRound++;
     const issues = criticRound === 1 ? [{ where: 'slide 2', problem: 'wrong year', severity: 'high', fix: 'use 1976' }] : [];
     return json({ content: [{ type: 'tool_use', name: 'review', input: { verdict: issues.length ? 'needs_fixes' : 'publishable', issues } }] });
@@ -82,7 +82,7 @@ test('draft -> approve now -> publish -> DM funnel', { timeout: 120000 }, async 
   S.save(state);
 
   // critic objected once, so the writer was called twice
-  assert.equal(calls.filter((c) => c.body?.tool_choice?.name === 'carousel').length, 2);
+  assert.equal(calls.filter((c) => c.body?.tools?.[0]?.name === 'carousel').length, 2);
   const post = S.loadDraft(id);
   assert.ok(!/[—–]/.test(post.title), 'house style applied to model output');
   assert.equal(fs.readdirSync(path.join(tmp, 'drafts', id, 'r1')).filter((f) => f.endsWith('.jpg')).length, 9);
