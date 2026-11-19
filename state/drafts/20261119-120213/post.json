@@ -1,0 +1,136 @@
+{
+  "title": "8 Rules of a Hanseatic Merchant",
+  "dek": "How German traders ran the Baltic without a state",
+  "visual_style": "painting",
+  "cover_art_query": "Holbein Georg Gisze portrait",
+  "art_fallbacks": [
+    "Hanseatic merchant painting",
+    "Lubeck old town painting",
+    "medieval Baltic trade ships"
+  ],
+  "slides": [
+    {
+      "heading": "Trade Through Networks, Not Firms",
+      "body": "Hanseatic merchants rarely built large permanent companies. They worked through short partnerships with kin and trusted peers in other towns. Ulf Christian Ewert and Stephan Selzer describe the Hansa as a network organisation rather than a firm.",
+      "art_query": "Holbein Steelyard merchant portrait",
+      "flag": "Simplified",
+      "source": "Ewert and Selzer"
+    },
+    {
+      "heading": "Do Favours, Expect Them Back",
+      "body": "A merchant in Lübeck sold goods for a partner in Bruges, who did the same for him, often without a fee. This reciprocal trade kept costs low and bound reputations together. Philippe Dollinger describes it in *The German Hansa*.",
+      "art_query": "Lubeck harbour painting",
+      "flag": "",
+      "source": "Dollinger 1964"
+    },
+    {
+      "heading": "Write Letters, Watch Your Credit",
+      "body": "Hildebrand Veckinchusen ran trade from Livonia to Bruges by letter. Wilhelm Stieda edited the correspondence in 1921. Overextended credit and a failed Venice venture ended with him imprisoned for debt in Bruges in the 1420s.",
+      "art_query": "merchant writing letter painting",
+      "flag": "",
+      "source": "Stieda 1921",
+      "art": {
+        "file": "art/aic-24315.jpg",
+        "key": "aic:24315",
+        "kind": "painting",
+        "title": "Portrait of a Gentleman",
+        "artist": "Jacopo Negretti, called Palma Giovane",
+        "date": "c. 1590",
+        "museum": "Art Institute of Chicago"
+      }
+    },
+    {
+      "heading": "Obey the Kontor Statute",
+      "body": "At the Peterhof in Novgorod, German merchants lived under a written statute, the *Skra*, revised over generations. It regulated lodging, conduct, the church of St Peter that stored their goods, and the election of aldermen.",
+      "art_query": "medieval Russian church winter",
+      "flag": "",
+      "source": "Dollinger 1964"
+    },
+    {
+      "heading": "Stay Unmarried at Bergen",
+      "body": "At the Bergen Kontor on Bryggen, resident merchants and apprentices were expected to remain unmarried and live inside the wharf compounds. The rule kept the community disciplined, transient and separate from Norwegian society, as Dollinger notes.",
+      "art_query": "Bergen Bryggen wharf painting",
+      "flag": "",
+      "source": "Dollinger 1964",
+      "art": {
+        "file": "art/aic-86998.jpg",
+        "key": "aic:86998",
+        "kind": "painting",
+        "title": "Sandvika, Norway",
+        "artist": "Claude Monet",
+        "date": "1895",
+        "museum": "Art Institute of Chicago"
+      }
+    },
+    {
+      "heading": "Know Whose Law Applies",
+      "body": "Many Baltic towns adopted the law of Lübeck, and disputes could be referred to Lübeck's council as a higher court. A merchant moving between Reval, Rostock and Wismar met familiar legal rules.",
+      "art_query": "Lubeck town hall painting",
+      "flag": "",
+      "source": "Dollinger 1964"
+    },
+    {
+      "heading": "Leave When Privileges Fail",
+      "body": "In 1358 the Hanseatic towns embargoed Flanders and moved their Bruges Kontor to Dordrecht. By 1360 Flanders had confirmed their privileges and the merchants returned. Collective withdrawal was the Hansa's strongest weapon.",
+      "art_query": "Bruges canal painting",
+      "flag": "",
+      "source": "Dollinger 1964"
+    },
+    {
+      "heading": "Keep Your Books Simple",
+      "body": "Hanseatic merchants mostly kept single-entry notebooks of debts and shipments, not Italian double entry. Older scholarship read this as backwardness. Many recent historians argue it suited small partnerships built on trust. The point remains contested.",
+      "art_query": "Dutch merchant counting house",
+      "flag": "Contested",
+      "source": "Dollinger 1964"
+    }
+  ],
+  "cta_line": "The Substack's long essays follow how trust, law and credit let merchants trade without a state behind them.",
+  "caption": "The Hansa had no permanent army, no single capital and few big firms. It ran on rules instead.\n\nIts merchants traded through reciprocal partnerships and lived under strict Kontor statutes from Novgorod to Bergen (Dollinger 1964). The letters of Hildebrand Veckinchusen show how this system worked, and how it could fail (Stieda 1921).\n\nComment READ and I will send you the Substack link.",
+  "risk_notes": [
+    "Network vs organisation: some scholars stress the Hansa's formal institutions (diets, Kontore). Defend with 'according to Ewert and Selzer' and note that the slide is flagged Simplified.",
+    "Reciprocal trade 'without a fee': keep the word 'often'. Commission and Widerlegung partnerships also existed.",
+    "Veckinchusen's imprisonment: if challenged on exact years, say 'imprisoned for debt in Bruges in the early 1420s' and cite Stieda's edition and Irsigler's work.",
+    "Bergen celibacy: this was a norm of the Kontor, and breaches happened. Phrase as 'were expected to remain unmarried'.",
+    "Lübeck law: not every Hanseatic town used it (Danzig largely used Culm law). The slide names only Lübeck-law towns.",
+    "Bookkeeping: whether single entry meant backwardness is an open debate. Keep the Contested flag and avoid saying Hanseatic merchants never used double entry."
+  ],
+  "urls": [],
+  "engine": "rules",
+  "kicker": "Principles",
+  "coverArt": {
+    "file": "art/aic-109487.jpg",
+    "key": "aic:109487",
+    "kind": "painting",
+    "title": "Portrait of a Young Woman",
+    "artist": "Joachim Beuckelaer",
+    "date": "1562",
+    "museum": "Art Institute of Chicago"
+  },
+  "credits": "Images: Joachim Beuckelaer, Portrait of a Young Woman (1562); Jacopo Negretti, called Palma Giovane, Portrait of a Gentleman (c. 1590); Claude Monet, Sandvika, Norway (1895). Public domain, Art Institute of Chicago open access.",
+  "renderDir": "r1",
+  "review": {
+    "issues": [
+      {
+        "where": "slide 7",
+        "problem": "\"Collective withdrawal was the Hansa's strongest weapon\" is an unsourced superlative stated as settled. Historians also point to other tools, such as exclusion of towns (Verhansung) and naval or diplomatic pressure, as in the war with Denmark in 1367 to 1370.",
+        "severity": "medium",
+        "fix": "Change to: \"Collective withdrawal was one of the Hansa's most effective weapons.\""
+      },
+      {
+        "where": "slide 8",
+        "problem": "The body cites \"Many recent historians\", but the only source given is \"Dollinger 1964\". A 1964 book cannot stand for recent scholarship, and a commenter will notice that the citation does not support the claim.",
+        "severity": "medium",
+        "fix": "Add a recent study you have checked to the source line, for example \"Source: Dollinger 1964; recent debate\" plus a named recent work. If you can't, change the sentence to \"Others argue it suited small partnerships built on trust.\""
+      },
+      {
+        "where": "slide 2 (and the source lines on slides 4 to 8, plus the caption)",
+        "problem": "Slide 2 names the English title *The German Hansa*, but the source line says \"Dollinger 1964\". 1964 is the date of the French original, *La Hanse*. The English translation came out in 1970. The title and the date don't match.",
+        "severity": "low",
+        "fix": "Either cite \"Dollinger, The German Hansa (1970; French ed. 1964)\" or keep \"Dollinger 1964\" and refer to the book as *La Hanse*. Use the same form in every source line and in the caption."
+      }
+    ],
+    "verdict": "needs_fixes"
+  },
+  "links": [],
+  "rev": 1
+}

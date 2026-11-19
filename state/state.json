@@ -1,7 +1,19 @@
 {
   "telegramOffset": 0,
   "history": [],
-  "usedArt": [],
+  "usedArt": [
+    "aic:109487",
+    "aic:24315",
+    "aic:86998"
+  ],
   "repliedComments": [],
-  "drafts": {}
+  "drafts": {
+    "20261119-120213": {
+      "status": "pending",
+      "engine": "rules",
+      "title": "8 Rules of a Hanseatic Merchant",
+      "createdAt": "2026-11-19T12:05:14.750Z",
+      "telegramMessageId": 13
+    }
+  }
 }
