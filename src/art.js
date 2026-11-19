@@ -36,6 +36,7 @@ async function searchAIC(q) {
       url: `https://www.artic.edu/iiif/2/${a.image_id}/full/1686,/0/default.jpg`,
       title: a.title, artist: a.artist_title || 'Unknown artist', date: a.date_display || '',
       source: 'Art Institute of Chicago',
+      w: a.thumbnail?.width, h: a.thumbnail?.height,
     }));
 }
 
@@ -104,7 +105,7 @@ async function searchCommons(q, kind) {
       thumb, url: ii.thumburl || ii.url,
       title, artist: cleanArtist(m.Artist?.value) || 'Unknown artist',
       date: cleanDate(m.DateTimeOriginal?.value), license,
-      source: 'Wikimedia Commons',
+      source: 'Wikimedia Commons', w: ii.width, h: ii.height,
     };
   }).filter(Boolean);
 }
@@ -121,7 +122,7 @@ async function searchUnsplash(q) {
     url: `${ph.urls.raw}&w=1600&fm=jpg&q=85`,
     downloadLocation: ph.links?.download_location,
     title: ph.alt_description || ph.description || '', artist: `Photo by ${ph.user?.name ?? 'Unknown'}`, date: '',
-    source: 'Unsplash',
+    source: 'Unsplash', w: ph.width, h: ph.height,
   }));
 }
 
@@ -143,8 +144,14 @@ const PICK_TOOL = {
   name: 'pick',
   description: 'Choose the best background, or -1 if none is good enough.',
   input_schema: {
-    type: 'object', required: ['index', 'reason'],
-    properties: { index: { type: 'integer' }, reason: { type: 'string' } },
+    type: 'object', required: ['index', 'reason', 'fit', 'focus_x', 'focus_y'],
+    properties: {
+      index: { type: 'integer' },
+      reason: { type: 'string' },
+      fit: { type: 'string', enum: ['fill', 'frame'], description: 'fill = crop to fill the 4:5 slide; frame = show the whole work uncropped above the text.' },
+      focus_x: { type: 'number', description: '0 (left) to 1 (right): horizontal centre of the part that must stay visible when filling.' },
+      focus_y: { type: 'number', description: '0 (top) to 1 (bottom): vertical centre of the part that must stay visible when filling.' },
+    },
   },
 };
 
@@ -154,6 +161,7 @@ Choose ONE background for the slide. Criteria, in order:
 1. On topic: it should belong to the slide's subject, period or place. Close is good enough: a 16th-century northern European merchant portrait fits a Hanseatic slide, a Baltic harbour fits Baltic trade, a library fits a reading list. A beautiful image that is plainly unrelated loses to a good image that is on topic.
 2. Aesthetic: minimal and calm composition, strong mood, good light, negative space, high image quality. Avoid clutter, busy crowds, kitsch, text, watermarks, frames, low resolution, modern objects in a historical post.
 3. Works with white text in the lower third: the lower part should be quiet rather than full of detail.
+4. Format: the slide is a vertical 4:5 frame. Each candidate lists its size and shape. Prefer portrait or square works. A wide landscape loses most of its width when cropped to 4:5, so pick one only if it is clearly the best fit for the topic, and then choose fit "frame" so the whole painting shows uncropped. Use fit "fill" for portrait and square works and for wide images whose subject sits in a narrow central area. Set focus_x and focus_y on the face, figure, ship or building that must stay in view; text covers the bottom 40% of a "fill" slide, so a face in the lower half is a poor choice.
 Never pick anything violent, graphic or sexual.
 Return -1 only if every candidate is plainly unrelated or poor quality.`;
 
@@ -163,22 +171,29 @@ async function fetchB64(url) {
   return Buffer.from(await res.arrayBuffer()).toString('base64');
 }
 
+const clamp01 = (v, d) => (typeof v === 'number' && v >= 0 && v <= 1 ? v : d);
+
+/** Without an art director: frame wide images, fill the rest. */
+export const defaultFit = (c) => (c.w && c.h && c.w / c.h > 1.3 ? 'frame' : 'fill');
+
 async function direct(cands, ctx, lenient = false) {
-  if (!process.env.ANTHROPIC_API_KEY || cands.length === 0) return cands[0] ?? null;
+  if (!process.env.ANTHROPIC_API_KEY || cands.length === 0) return cands[0] ? { ...cands[0], fit: defaultFit(cands[0]) } : null;
   const note = lenient ? '\n\nThis is the last attempt: pick the best available candidate that is not off-putting, even if it is only loosely on topic. Return -1 only if all are unusable.' : '';
   const content = [{ type: 'text', text: `Post: ${ctx.title}\nSlide: ${ctx.text}\nVisual search used: ${ctx.query}${note}\n\nCandidates:` }];
   const shown = [];
   for (const c of cands) {
     const b64 = await fetchB64(c.thumb).catch(() => null);
     if (!b64) continue;
-    content.push({ type: 'text', text: `[${shown.length}] ${c.artist}${c.title ? `, ${c.title}` : ''}${c.date ? `, ${c.date}` : ''}` });
+    const shape = c.w && c.h ? `, ${c.w}x${c.h} (${c.w / c.h > 1.25 ? 'wide' : c.h / c.w > 1.1 ? 'portrait' : 'square-ish'})` : '';
+    content.push({ type: 'text', text: `[${shown.length}] ${c.artist}${c.title ? `, ${c.title}` : ''}${c.date ? `, ${c.date}` : ''}${shape}` });
     content.push({ type: 'image', source: { type: 'base64', media_type: 'image/jpeg', data: b64 } });
     shown.push(c);
   }
   if (!shown.length) return null;
-  const { index, reason } = await callTool({ model: brand().model.curator, system: DIRECTOR, user: content, tool: PICK_TOOL, maxTokens: 400 });
-  log(`art director: ${index} (${reason})`);
-  return shown[index] ?? null;
+  const { index, reason, fit, focus_x: fx, focus_y: fy } = await callTool({ model: brand().model.curator, system: DIRECTOR, user: content, tool: PICK_TOOL, maxTokens: 500 });
+  log(`art director: ${index} ${fit ?? ''} (${reason})`);
+  const c = shown[index];
+  return c ? { ...c, fit, focus: [clamp01(fx, 0.5), clamp01(fy, 0.35)] } : null;
 }
 
 /* ---------- public ---------- */
@@ -231,7 +246,7 @@ export async function illustrate(post, dir, state) {
     try { if (!fs.existsSync(file)) await download(pick, file); } catch (e) { log('download failed', e.message); continue; }
     used.add(pick.key);
     state.usedArt.push(pick.key);
-    const art = { file: path.relative(dir, file), key: pick.key, kind: pick.kind, title: pick.title, artist: pick.artist, date: pick.date, museum: pick.source, license: pick.license };
+    const art = { file: path.relative(dir, file), key: pick.key, kind: pick.kind, title: pick.title, artist: pick.artist, date: pick.date, museum: pick.source, license: pick.license, fit: pick.fit ?? defaultFit(pick), focus: pick.focus ?? [0.5, 0.35] };
     if (t.slot === 'cover') post.coverArt = art; else post.slides[t.slot].art = art;
     log(`art ${t.slot}: ${pick.artist}, ${pick.title}`);
   }

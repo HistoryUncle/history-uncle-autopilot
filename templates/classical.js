@@ -32,11 +32,15 @@ body{background:#000;width:1080px}
 
 /* image */
 .art{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 30%;filter:saturate(.78) contrast(1.04)}
-.photo .art{filter:saturate(.7) contrast(1.02) brightness(.97)}
+.art.blurbg{filter:blur(36px) saturate(.6) brightness(.6);transform:scale(1.2)}
+.framed{position:absolute;left:50%;top:132px;transform:translateX(-50%);width:auto;height:auto;max-width:936px;max-height:760px;
+  box-shadow:0 30px 80px rgba(0,0,0,.45),0 0 0 1px rgba(255,255,255,.08)}
+.photo .art:not(.blurbg){filter:saturate(.7) contrast(1.02) brightness(.97)}
 .noart{position:absolute;inset:0;background:radial-gradient(ellipse 70% 55% at 60% 30%,#3a3a3a 0%,transparent 70%),linear-gradient(160deg,#262626 0%,#141414 70%)}
 .grain{position:absolute;inset:0;opacity:.06;mix-blend-mode:overlay;
   background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='220' height='220'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>")}
 .fade{position:absolute;inset:0}
+.has-frame .fade{z-index:1}.has-frame .framed{z-index:2}.has-frame .block,.has-frame .foot,.has-frame .mast,.has-frame .credit{z-index:3}
 .vignette{position:absolute;inset:0;box-shadow:inset 0 0 200px rgba(0,0,0,.4)}
 .block,.mast,.foot{text-shadow:0 1px 28px rgba(0,0,0,.28)}
 
@@ -80,11 +84,18 @@ body{background:#000;width:1080px}
 .cta .ask b{font-weight:600;color:#141414;background:var(--w);padding:8px 16px 7px;letter-spacing:.14em;text-shadow:none}
 `;
 
-/** Images are inlined as data URLs so the page script can sample their colours. */
-const artImg = (dir, art) => {
+/**
+ * Images are inlined as data URLs so the page script can sample their colours.
+ * fit "fill": cropped to the slide around the art director's focus point.
+ * fit "frame": the whole work shown uncropped near the top, over a blurred copy of itself.
+ */
+const artImg = (dir, art, { bgOnly = false } = {}) => {
   if (!art?.file) return '<div class="noart"></div>';
-  const b64 = fs.readFileSync(path.join(dir, art.file)).toString('base64');
-  return `<img class="art" src="data:image/jpeg;base64,${b64}">`;
+  const src = `data:image/jpeg;base64,${fs.readFileSync(path.join(dir, art.file)).toString('base64')}`;
+  if (bgOnly) return `<img class="art" src="${src}">`;
+  if (art.fit === 'frame') return `<img class="art blurbg" src="${src}"><img class="framed" src="${src}">`;
+  const [x, y] = art.focus ?? [0.5, 0.35];
+  return `<img class="art" src="${src}" style="object-position:${Math.round(x * 100)}% ${Math.round(y * 100)}%">`;
 };
 
 const credit = (art) => art ? `<div class="credit">${e(art.artist)}${art.title ? `, ${e(art.title)}` : ''}${art.date ? `, ${e(art.date)}` : ''}</div>` : '';
@@ -95,7 +106,7 @@ export function buildHtml(post, dir, brand) {
   const kind = post.visual_style === 'photo' ? 'photo' : 'painting';
 
   const cover = `
-  <section class="slide cover ${kind}">
+  <section class="slide cover ${kind}${post.coverArt?.fit === 'frame' ? ' has-frame' : ''}">
     ${artImg(dir, post.coverArt)}<div class="grain"></div><div class="fade"></div><div class="vignette"></div>
     <div class="mast"><span class="rule"></span><span>${e(brand.name)}</span></div>
     ${credit(post.coverArt)}
@@ -108,7 +119,7 @@ export function buildHtml(post, dir, brand) {
   </section>`;
 
   const slides = post.slides.map((s, i) => `
-  <section class="slide ${kind}">
+  <section class="slide ${kind}${s.art?.fit === 'frame' ? ' has-frame' : ''}">
     ${artImg(dir, s.art)}<div class="grain"></div><div class="fade"></div><div class="vignette"></div>
     ${credit(s.art)}
     <div class="block">
@@ -123,7 +134,7 @@ export function buildHtml(post, dir, brand) {
 
   const cta = brand.slides.include_cta_slide ? `
   <section class="slide cta ${kind}">
-    ${artImg(dir, post.coverArt)}<div class="frame"></div>
+    ${artImg(dir, post.coverArt, { bgOnly: true })}<div class="frame"></div>
     <div style="position:relative">
       <div class="kicker">The Long Version</div>
       <h2>Read the full essays on Substack.</h2>
@@ -173,6 +184,12 @@ export function buildHtml(post, dir, brand) {
       let size = parseFloat(getComputedStyle(el).fontSize);
       const tooTall = () => block.getBoundingClientRect().top - slide.getBoundingClientRect().top < 150;
       while (tooTall() && size > min) { size -= 2; el.style.fontSize = size + 'px'; }
+    }
+    // framed works sit between the masthead and the text block
+    for (const slide of document.querySelectorAll('.has-frame')) {
+      const img = slide.querySelector('.framed'); const block = slide.querySelector('.block');
+      const room = block.getBoundingClientRect().top - slide.getBoundingClientRect().top - 132 - 56;
+      img.style.maxHeight = Math.max(360, room) + 'px';
     }
     document.body.dataset.ready = '1';
   });
