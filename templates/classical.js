@@ -57,7 +57,7 @@ body{background:#000;width:1080px}
   font:400 13px/1 Inter;letter-spacing:.1em;color:rgba(255,255,255,.4);max-height:1000px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 
 /* minimal cover: brand mark on top, centred title at the bottom */
-.cover .brandmark{position:absolute;top:72px;left:50%;transform:translateX(-50%);width:250px;height:auto;opacity:.92;filter:drop-shadow(0 1px 18px rgba(0,0,0,.35));z-index:3}
+.cover .brandmark{position:absolute;top:72px;left:50%;transform:translateX(-50%);width:250px;height:auto;opacity:.95;filter:drop-shadow(0 2px 14px rgba(0,0,0,.6)) drop-shadow(0 0 40px rgba(0,0,0,.45));z-index:3}
 .cover .block{left:90px;right:90px;bottom:118px;text-align:center}
 .cover .title{font:500 92px/1.04 Lora;letter-spacing:.035em;text-wrap:balance}
 .cover.has-frame .framed{top:190px}
@@ -179,8 +179,10 @@ export function buildHtml(post, dir, brand) {
     const s = Math.max(0, Math.min(1, (bright - 0.22) / 0.5));
     const t = tone.join(','); const cover = slide.classList.contains('cover');
     const start = (cover ? 44 : 34) - 10 * s, mid = (cover ? 64 : 54) - 6 * s;
-    const topA = Math.min(0.6, 0.25 + 0.5 * Math.max(0, topBright - 0.35));
-    fade.style.background = 'linear-gradient(180deg,rgba(' + t + ',' + topA + ') 0%,rgba(' + t + ',0) 16%,rgba(' + t + ',0) ' + start + '%,rgba(' + t + ',' + (0.6 + 0.3 * s) + ') ' + mid + '%,rgba(' + t + ',.95) ' + (mid + 16) + '%,rgb(' + t + ') 92%)';
+    // the cover carries the logo at the top, so it always gets a firmer top shade
+    const topA = cover ? Math.min(0.78, 0.55 + 0.4 * Math.max(0, topBright - 0.3)) : Math.min(0.6, 0.25 + 0.5 * Math.max(0, topBright - 0.35));
+    const topEnd = cover ? 24 : 16;
+    fade.style.background = 'linear-gradient(180deg,rgba(' + t + ',' + topA + ') 0%,rgba(' + t + ',' + (cover ? topA * 0.45 : 0) + ') ' + (topEnd * 0.55) + '%,rgba(' + t + ',0) ' + topEnd + '%,rgba(' + t + ',0) ' + start + '%,rgba(' + t + ',' + (0.6 + 0.3 * s) + ') ' + mid + '%,rgba(' + t + ',.95) ' + (mid + 16) + '%,rgb(' + t + ') 92%)';
     slide.style.background = 'rgb(' + t + ')';
   }
   Promise.all([document.fonts.ready, ...[...document.images].map(i => i.decode().catch(() => {}))]).then(() => {
