@@ -38,7 +38,7 @@ export const CAROUSEL_TOOL = {
   description: 'Return the complete carousel post.',
   input_schema: {
     type: 'object',
-    required: ['title', 'visual_style', 'cover_art_query', 'art_fallbacks', 'slides', 'cta_line', 'caption', 'risk_notes'],
+    required: ['title', 'visual_style', 'cover_art_query', 'art_fallbacks', 'slides', 'caption', 'risk_notes'],
     properties: {
       title: { type: 'string', description: 'Cover title, max 7 words, works in uppercase.' },
       dek: { type: 'string', description: 'Optional cover subline, max 12 words.' },
@@ -59,7 +59,6 @@ export const CAROUSEL_TOOL = {
           },
         },
       },
-      cta_line: { type: 'string' },
       caption: { type: 'string' },
       urls: { type: 'array', items: { type: 'string' }, description: 'Every URL mentioned anywhere in the post.' },
       risk_notes: { type: 'array', items: { type: 'string' }, description: 'Claims most likely to be challenged in the comments, with suggested defensive phrasing.' },

@@ -8,7 +8,7 @@ A classical-aesthetic carousel: each slide sits on a public-domain old-master pa
 
 - Cover: a title of at most 7 words that works in uppercase. Timeless and concrete ("7 Rules of a Venetian Merchant", "Where to Start with Byzantium"). Optional one-line dek (max 12 words).
 - Content slides: a short heading (max 6 words, Title Case) and a body of 22 to 40 words. One idea per slide. Name the specific historian, book, institution or source the slide rests on. Wrap book, lecture and archive titles in single asterisks so they render in italics (*The Wealth of Nations*).
-- CTA slide line: one sentence (max 22 words) connecting this topic to the kind of long essay the Substack publishes. No hype.
+- The final slide (Substack link, "Link in bio") is added automatically. Do not promise an essay on this topic.
 - Visual style: choose ONE for the whole carousel. "painting" (classical works from museum collections) suits most topics before 1900: merchants, courts, scholars, cities, seas. "photo" (refined, minimal photography) suits ruins, architecture, statues, manuscripts, libraries, landscapes of historical places, and anything after 1900.
 - Every slide (cover included) gets an art_query that is ON TOPIC for that slide: 2 to 6 words, specific to the subject, period or place, the way you would search a museum catalogue or a photo library.
   - painting examples: "Canaletto Grand Canal", "Dutch merchant portrait", "Vermeer woman reading letter", "Hammershoi interior", "Caspar David Friedrich ruins", "Venetian galleys harbour".

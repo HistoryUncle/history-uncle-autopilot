@@ -4,7 +4,6 @@
   "instagram_handle": "historyuncle",
   "substack_url": "https://historyuncle.substack.com",
   "substack_display": "historyuncle.substack.com",
-
   "dm_funnel": {
     "enabled": true,
     "keyword": "READ",
@@ -12,30 +11,27 @@
     "public_reply": "Sent. Check your DMs.",
     "public_reply_enabled": true
   },
-
   "schedule": {
     "timezone": "Europe/Vilnius",
     "publish_hour_local": 18,
     "publish_minute_local": 15,
     "note": "Drafts are created by .github/workflows/draft.yml (cron). Approved drafts go out at the next publish slot above, or immediately with the 'Dabar' button."
   },
-
   "model": {
     "writer": "claude-opus-5-5",
     "critic": "claude-opus-5-5",
     "curator": "claude-sonnet-5-5",
     "max_revisions": 1
   },
-
   "instagram": {
     "api_host": "https://graph.instagram.com",
     "api_version": "v24.0",
     "label_ai_generated": false
   },
-
   "slides": {
     "min_content_slides": 6,
     "max_content_slides": 8,
     "include_cta_slide": true
-  }
+  },
+  "cta_logo": "assets/substack-logo.png"
 }

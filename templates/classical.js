@@ -72,16 +72,14 @@ body{background:#000;width:1080px}
 .body em{font-style:italic;font-family:Lora,serif;font-size:1.04em}
 .source{margin-top:26px;font:italic 400 24px/1.3 Lora;color:var(--w50)}
 
-/* CTA */
-.cta{display:flex;flex-direction:column;justify-content:center;padding:0 100px}
+/* CTA: minimal end card */
+.cta{display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center}
 .cta .frame{position:absolute;inset:44px;border:1px solid var(--w30)}
-.cta .art{filter:saturate(.35) brightness(.3) blur(4px);transform:scale(1.06)}
-.cta .kicker{margin-bottom:36px}
-.cta h2{font:600 76px/1.08 Lora;margin-bottom:38px;text-wrap:balance}
-.cta p{font:400 34px/1.45 Inter;color:var(--w90);max-width:860px;margin-bottom:56px;text-wrap:pretty}
-.cta .url{font:italic 400 44px/1 Lora;color:var(--w);margin-bottom:64px;text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:12px;text-decoration-color:var(--w50)}
-.cta .ask{display:inline-flex;align-self:flex-start;align-items:center;gap:20px;border-top:1px solid var(--w30);padding-top:34px;font:500 28px/1.3 Inter}
-.cta .ask b{font-weight:600;color:#141414;background:var(--w);padding:8px 16px 7px;letter-spacing:.14em;text-shadow:none}
+.cta .art{filter:saturate(.3) brightness(.28) blur(6px);transform:scale(1.08)}
+.cta .logo{width:112px;height:112px;object-fit:contain;margin-bottom:64px;opacity:.95}
+.cta .url{font:italic 400 64px/1.1 Lora;color:var(--w);letter-spacing:-.005em}
+.cta .hair{width:96px;height:1px;background:var(--w50);margin:52px auto 44px}
+.cta .bio{font:500 22px/1 Inter;letter-spacing:.42em;text-transform:uppercase;color:var(--w70);padding-left:.42em}
 `;
 
 /**
@@ -132,17 +130,21 @@ export function buildHtml(post, dir, brand) {
     ${foot()}
   </section>`).join('');
 
+  // Optional logo: drop the official file into assets/ (see brand.json "cta_logo").
+  const logoFile = brand.cta_logo ? p(brand.cta_logo) : null;
+  const logo = logoFile && fs.existsSync(logoFile)
+    ? `<img class="logo" src="data:image/${path.extname(logoFile) === '.svg' ? 'svg+xml' : 'png'};base64,${fs.readFileSync(logoFile).toString('base64')}">`
+    : '';
   const cta = brand.slides.include_cta_slide ? `
   <section class="slide cta ${kind}">
     ${artImg(dir, post.coverArt, { bgOnly: true })}<div class="frame"></div>
-    <div style="position:relative">
-      <div class="kicker">The Long Version</div>
-      <h2>Read the full essays on Substack.</h2>
-      <p>${md(post.cta_line)}</p>
+    <div style="position:relative;display:flex;flex-direction:column;align-items:center">
+      ${logo}
       <div class="url">${e(brand.substack_display)}</div>
-      ${brand.dm_funnel.enabled ? `<div class="ask">Comment <b>${e(brand.dm_funnel.keyword)}</b> and I will send you the link.</div>` : ''}
+      <div class="hair"></div>
+      <div class="bio">Link in bio</div>
     </div>
-    ${foot()}
+    <div class="foot"><span>${e(brand.footer)}</span><span></span></div>
   </section>` : '';
 
   const script = `
