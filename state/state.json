@@ -26,25 +26,28 @@
   "repliedComments": [],
   "drafts": {
     "20261119-120213": {
-      "status": "pending",
+      "status": "rejected",
       "engine": "rules",
       "title": "8 Rules of a Hanseatic Merchant",
       "createdAt": "2026-11-19T12:05:14.750Z",
-      "telegramMessageId": 13
+      "telegramMessageId": 13,
+      "note": "old test draft (pre-redesign)"
     },
     "20261119-120915": {
-      "status": "pending",
+      "status": "rejected",
       "engine": "concepts",
       "title": "7 Concepts That Sharpen Historical Thinking",
       "createdAt": "2026-11-19T12:12:05.254Z",
-      "telegramMessageId": 23
+      "telegramMessageId": 23,
+      "note": "old test draft (pre-redesign)"
     },
     "20261119-133753": {
-      "status": "pending",
+      "status": "rejected",
       "engine": "free-resources",
       "title": "Read the Ancient World for Free",
       "createdAt": "2026-11-19T13:40:53.633Z",
-      "telegramMessageId": 34
+      "telegramMessageId": 34,
+      "note": "old test draft (pre-redesign)"
     }
   }
 }
