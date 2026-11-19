@@ -1,6 +1,6 @@
 import fs from 'node:fs';
 import path from 'node:path';
-import { env, http, escapeHtml as e } from './lib/util.js';
+import { publishMode, env, http, escapeHtml as e } from './lib/util.js';
 
 /**
  * Telegram bot = your approval desk. No server needed: GitHub Actions polls getUpdates
@@ -30,14 +30,28 @@ export async function sendAlbum(files) {
   return data.result;
 }
 
+const manual = () => publishMode() !== 'auto';
+
 export const buttons = (id) => ({
   reply_markup: {
-    inline_keyboard: [
-      [{ text: '✅ Patvirtinti (kitas laikas)', callback_data: `ok:${id}` }, { text: '⚡ Publikuoti dabar', callback_data: `now:${id}` }],
-      [{ text: '🔄 Kita tema', callback_data: `new:${id}` }, { text: '❌ Atmesti', callback_data: `no:${id}` }],
-    ],
+    inline_keyboard: manual()
+      ? [
+        [{ text: '✅ Patvirtinti', callback_data: `ok:${id}` }],
+        [{ text: '🔄 Kita tema', callback_data: `new:${id}` }, { text: '❌ Atmesti', callback_data: `no:${id}` }],
+      ]
+      : [
+        [{ text: '✅ Patvirtinti (kitas laikas)', callback_data: `ok:${id}` }, { text: '⚡ Publikuoti dabar', callback_data: `now:${id}` }],
+        [{ text: '🔄 Kita tema', callback_data: `new:${id}` }, { text: '❌ Atmesti', callback_data: `no:${id}` }],
+      ],
   },
 });
+
+/** Semi-automatic mode: everything needed to post by hand, in two messages. */
+export async function sendReadyPackage(files, caption, title) {
+  await sendAlbum(files);
+  await sendText(`📲 <b>${e(title)}</b> paruoštas įkėlimui.\n\n1. Išsaugok visas ${files.length} nuotraukas (ilgai paspausk albumą → Save).\n2. Instagram'e sukurk naują įrašą, pažymėk jas iš eilės.\n3. Nukopijuok aprašymą žemiau (paspausk ant jo) ir įklijuok.`);
+  await sendText(`<pre>${e(caption)}</pre>`);
+}
 
 /** The review card: caption, critic flags, link check, and how to request edits. */
 export function reviewCard(id, post, review, links = []) {

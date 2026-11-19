@@ -15,6 +15,8 @@ export const writeJSON = (file, data) => {
 };
 
 export const brand = () => readJSON(p('config', 'brand.json'));
+/** 'manual' (default) or 'auto'. PUBLISH_MODE env overrides config (used in tests). */
+export const publishMode = () => process.env.PUBLISH_MODE || brand().publish_mode || 'manual';
 export const engines = () => readJSON(p('config', 'engines.json')).engines;
 
 export const log = (...a) => console.log(new Date().toISOString().slice(11, 19), ...a);

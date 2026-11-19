@@ -39,8 +39,12 @@ test('next publish slot is 18:15 Vilnius and skips taken days', () => {
   assert.equal(summer.toISOString(), '2027-07-01T15:15:00.000Z');
 });
 
-test('caption gets image credits appended', () => {
+test('caption gets image credits appended; READ line swapped in manual mode', () => {
+  process.env.PUBLISH_MODE = 'auto';
   assert.equal(finalCaption({ caption: 'Hook.', credits: 'Images: X.' }), 'Hook.\n\nImages: X.');
+  process.env.PUBLISH_MODE = 'manual';
+  assert.equal(finalCaption({ caption: 'Hook.\nComment READ and I will send you the Substack link.' }), 'Hook.\nSubstack link in bio.');
+  delete process.env.PUBLISH_MODE;
 });
 
 test('review card escapes HTML and lists issues', () => {

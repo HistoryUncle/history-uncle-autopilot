@@ -1,6 +1,6 @@
 import fs from 'node:fs';
 import path from 'node:path';
-import { brand, http, log } from './lib/util.js';
+import { brand, publishMode, http, log } from './lib/util.js';
 import * as S from './lib/state.js';
 import { writePost, checkUrls } from './generate.js';
 import { illustrate } from './art.js';
@@ -11,8 +11,11 @@ import * as ig from './instagram.js';
 /* ---------- drafting ---------- */
 
 export function finalCaption(post) {
-  const cap = post.credits ? `${post.caption}\n\n${post.credits}` : post.caption;
-  return cap.length > 2150 ? post.caption.slice(0, 2150) : cap;
+  // The comment-to-DM promise only makes sense when the Instagram API is connected.
+  let caption = post.caption;
+  if (publishMode() !== 'auto' || !brand().dm_funnel.enabled) caption = caption.replace(/^.*Comment READ.*$/m, 'Substack link in bio.');
+  const cap = post.credits ? `${caption}\n\n${post.credits}` : caption;
+  return cap.length > 2150 ? caption.slice(0, 2150) : cap;
 }
 
 /** Render into a fresh folder per revision so CDN caches never serve an old version. */
@@ -96,6 +99,7 @@ function publicUrls(id, post) {
 }
 
 export async function publishDue(state, now = new Date()) {
+  if (publishMode() !== 'auto') return;
   const due = Object.entries(state.drafts)
     .filter(([, d]) => d.status === 'approved' && new Date(d.publishAt) <= now)
     .sort(([, a], [, b]) => a.publishAt.localeCompare(b.publishAt));
@@ -140,7 +144,15 @@ async function onButton(state, q) {
   if (!meta || meta.status === 'published') return tg.answer(q.id, 'Šis juodraštis jau nebeaktualus.');
   await tg.clearButtons(q.message.message_id);
 
-  if (action === 'ok') {
+  if ((action === 'ok' || action === 'now') && publishMode() !== 'auto') {
+    const post = S.loadDraft(id);
+    const dir = path.join(S.draftDir(id), post.renderDir);
+    const files = fs.readdirSync(dir).filter((f) => f.endsWith('.jpg')).sort().map((f) => path.join(dir, f));
+    Object.assign(meta, { status: 'ready', approvedAt: new Date().toISOString() });
+    state.history.push({ id, title: post.title, engine: post.engine, publishedAt: meta.approvedAt, manual: true });
+    await tg.answer(q.id, 'Ruošiu įkėlimui');
+    await tg.sendReadyPackage(files, finalCaption(post), post.title);
+  } else if (action === 'ok') {
     const at = nextSlot(state);
     Object.assign(meta, { status: 'approved', publishAt: at.toISOString() });
     await tg.answer(q.id, 'Patvirtinta');
@@ -177,7 +189,7 @@ async function onMessage(state, m) {
   }
   if (/^\/(eile|queue|status)\b/i.test(text)) {
     const rows = Object.entries(state.drafts).filter(([, d]) => ['pending', 'approved'].includes(d.status))
-      .map(([id, d]) => `${d.status === 'approved' ? '🗓 ' + fmtLocal(new Date(d.publishAt)) : '⏳ laukia'}: <b>${d.title}</b> <code>${id}</code>`);
+      .map(([id, d]) => `${d.status === 'approved' ? '🗓 ' + fmtLocal(new Date(d.publishAt)) : '⏳ laukia patvirtinimo'}: <b>${d.title}</b> <code>${id}</code>`);
     return tg.sendText(rows.length ? rows.join('\n') : 'Eilė tuščia. Naujas juodraštis: /nauja arba /nauja [tema]');
   }
   return tg.sendText('Komandos:\n/nauja: naujas juodraštis\n/nauja [tema]: juodraštis tavo tema\n/eile: kas laukia ir kas suplanuota\nReply į juodraščio žinutę: pataisymai');

@@ -1,5 +1,9 @@
 # History Uncle Autopilot
 
+> **Dabartinis režimas: pusiau automatinis** (`config/brand.json` → `"publish_mode": "manual"`).
+> Paspaudus ✅ botas atsiunčia paruoštas skaidres ir aprašymą, o įrašą įkeli pats (~1 min.).
+> Kai bus Instagram API tokenas (`IG_ACCESS_TOKEN`), pakeisk į `"auto"`, ir įrašai bus skelbiami patys, veiks ir READ → DM.
+
 Instagram carousel'ai, kurie gaminasi patys ir veda į Substack. Tu tik paspaudi mygtuką Telegram'e.
 
 ```

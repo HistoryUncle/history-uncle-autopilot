@@ -12,7 +12,7 @@ import path from 'node:path';
 const tmp = fs.mkdtempSync(path.join(os.tmpdir(), 'hu-'));
 Object.assign(process.env, {
   HU_STATE_DIR: tmp, ANTHROPIC_API_KEY: 'k', TELEGRAM_BOT_TOKEN: 't', TELEGRAM_CHAT_ID: '42',
-  IG_ACCESS_TOKEN: 'ig', GITHUB_REPOSITORY: 'matas/history-uncle-autopilot', GITHUB_REF_NAME: 'main',
+  IG_ACCESS_TOKEN: 'ig', PUBLISH_MODE: 'auto', GITHUB_REPOSITORY: 'matas/history-uncle-autopilot', GITHUB_REF_NAME: 'main',
 });
 const painting = fs.readFileSync(new URL('./fixtures/painting.jpg', import.meta.url));
 const sample = JSON.parse(fs.readFileSync(new URL('../samples/sample-post.json', import.meta.url)));
@@ -122,4 +122,23 @@ test('a stranger cannot approve drafts', async () => {
   tgUpdates = [{ update_id: 9, callback_query: { id: 'q', data: `ok:${id}`, message: { message_id: 11, chat: { id: 666 } } } }];
   await handleTelegram(state);
   assert.equal(state.drafts[id].status, 'pending');
+});
+
+test('manual mode: approve sends a ready-to-post package, no Instagram calls', async () => {
+  process.env.PUBLISH_MODE = 'manual';
+  const state = S.load();
+  const id = await createDraft(state, { engineId: 'reading-path' });
+  const before = calls.length;
+  tgUpdates = [{ update_id: 20, callback_query: { id: 'q', data: `ok:${id}`, message: { message_id: 11, chat: { id: 42 } } } }];
+  await handleTelegram(state);
+  assert.equal(state.drafts[id].status, 'ready');
+  const after = calls.slice(before);
+  assert.ok(after.some((c) => c.url.endsWith('sendMediaGroup')), 'slides re-sent');
+  const pre = after.find((c) => c.body?.text?.startsWith('<pre>'));
+  assert.ok(pre, 'caption sent in a copyable block');
+  assert.match(pre.body.text, /Substack link in bio\./);
+  assert.doesNotMatch(pre.body.text, /Comment READ/);
+  await publishDue(state, new Date(Date.now() + 1e9));
+  assert.ok(!calls.slice(before).some((c) => c.url.includes('graph.instagram.com')), 'nothing published via API');
+  process.env.PUBLISH_MODE = 'auto';
 });
