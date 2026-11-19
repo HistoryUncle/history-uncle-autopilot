@@ -56,6 +56,12 @@ body{background:#000;width:1080px}
 .credit{position:absolute;right:30px;top:50%;transform:translateY(-50%) rotate(180deg);writing-mode:vertical-rl;
   font:400 13px/1 Inter;letter-spacing:.1em;color:rgba(255,255,255,.4);max-height:1000px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 
+/* minimal cover: brand mark on top, centred title at the bottom */
+.cover .brandmark{position:absolute;top:72px;left:50%;transform:translateX(-50%);width:250px;height:auto;opacity:.92;filter:drop-shadow(0 1px 18px rgba(0,0,0,.35));z-index:3}
+.cover .block{left:90px;right:90px;bottom:118px;text-align:center}
+.cover .title{font:500 92px/1.04 Lora;letter-spacing:.035em;text-wrap:balance}
+.cover.has-frame .framed{top:190px}
+
 /* text block */
 .block{position:absolute;left:84px;right:96px;bottom:150px}
 .kicker{font:500 21px/1 Inter;letter-spacing:.34em;text-transform:uppercase;color:var(--w70);margin-bottom:30px}
@@ -98,6 +104,14 @@ const artImg = (dir, art, { bgOnly = false } = {}) => {
 
 const credit = (art) => art ? `<div class="credit">${e(art.artist)}${art.title ? `, ${e(art.title)}` : ''}${art.date ? `, ${e(art.date)}` : ''}</div>` : '';
 
+/** Brand images from assets/ (logos), inlined; missing files are simply skipped. */
+const asset = (rel, cls) => {
+  const file = rel ? p(rel) : null;
+  if (!file || !fs.existsSync(file)) return '';
+  const type = path.extname(file) === '.svg' ? 'svg+xml' : 'png';
+  return `<img class="${cls}" src="data:image/${type};base64,${fs.readFileSync(file).toString('base64')}">`;
+};
+
 export function buildHtml(post, dir, brand) {
   const foot = (swipe) => `<div class="foot"><span>${e(brand.footer)}</span>${swipe ? '<span class="swipe">Swipe<i></i></span>' : `<span>${e(brand.substack_display)}</span>`}</div>`;
   const md = (s) => e(s).replace(/\*([^*]+)\*/g, '<em>$1</em>'); // *Book Title* -> italic
@@ -106,14 +120,10 @@ export function buildHtml(post, dir, brand) {
   const cover = `
   <section class="slide cover ${kind}${post.coverArt?.fit === 'frame' ? ' has-frame' : ''}">
     ${artImg(dir, post.coverArt)}<div class="grain"></div><div class="fade"></div><div class="vignette"></div>
-    <div class="mast"><span class="rule"></span><span>${e(brand.name)}</span></div>
-    ${credit(post.coverArt)}
+    ${asset(brand.cover_logo, 'brandmark')}
     <div class="block">
-      <div class="kicker">${e(post.kicker || '')}</div>
-      <h1 class="title fit" data-min="64">${e(post.title)}</h1>
-      ${post.dek ? `<div class="hair"></div><div class="dek">${e(post.dek)}</div>` : ''}
+      <h1 class="title fit" data-min="60">${e(post.title)}</h1>
     </div>
-    ${foot(true)}
   </section>`;
 
   const slides = post.slides.map((s, i) => `
@@ -130,16 +140,11 @@ export function buildHtml(post, dir, brand) {
     ${foot()}
   </section>`).join('');
 
-  // Optional logo: drop the official file into assets/ (see brand.json "cta_logo").
-  const logoFile = brand.cta_logo ? p(brand.cta_logo) : null;
-  const logo = logoFile && fs.existsSync(logoFile)
-    ? `<img class="logo" src="data:image/${path.extname(logoFile) === '.svg' ? 'svg+xml' : 'png'};base64,${fs.readFileSync(logoFile).toString('base64')}">`
-    : '';
   const cta = brand.slides.include_cta_slide ? `
   <section class="slide cta ${kind}">
     ${artImg(dir, post.coverArt, { bgOnly: true })}<div class="frame"></div>
     <div style="position:relative;display:flex;flex-direction:column;align-items:center">
-      ${logo}
+      ${asset(brand.cta_logo, 'logo')}
       <div class="url">${e(brand.substack_display)}</div>
       <div class="hair"></div>
       <div class="bio">Link in bio</div>

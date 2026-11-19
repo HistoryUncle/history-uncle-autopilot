@@ -33,5 +33,6 @@
     "max_content_slides": 8,
     "include_cta_slide": true
   },
-  "cta_logo": "assets/substack-logo.png"
+  "cta_logo": "assets/substack-logo.png",
+  "cover_logo": "assets/history-uncle-logo.png"
 }
