@@ -1,0 +1,216 @@
+{
+  "title": "7 Rules of the Roman Jurists",
+  "dek": "Working maxims of the lawyers whose method shaped European law",
+  "visual_style": "photo",
+  "cover_art_query": "Justinian mosaic San Vitale Ravenna",
+  "art_fallbacks": [
+    "Roman Forum ruins",
+    "marble Roman toga statue",
+    "medieval legal manuscript"
+  ],
+  "slides": [
+    {
+      "heading": "Law Is an Art, Not Code",
+      "body": "The *Digest* opens with Ulpian quoting Celsus: ius est ars boni et aequi, law is the art of the good and the fair. A jurist was judged on skilled judgement, not on memorising statutes.",
+      "art_query": "Florentine Pandects manuscript",
+      "source": "Digest 1.1.1 pr.",
+      "flag": "",
+      "art": {
+        "file": "art/unsplash-mAcZ7DXz5QM.jpg",
+        "key": "unsplash:mAcZ7DXz5QM",
+        "kind": "photo",
+        "title": "Feather quill rests on an old handwritten ledger",
+        "artist": "Photo by camera obscura",
+        "date": "",
+        "museum": "Unsplash",
+        "fit": "fill",
+        "focus": [
+          0.5,
+          0.4
+        ]
+      }
+    },
+    {
+      "heading": "Three Precepts of Law",
+      "body": "The *Digest* attributes to Ulpian three precepts of law: live honourably, harm no one, give each his due. Justinian's *Institutes* repeated the formula in 533, and it passed into medieval and early modern legal teaching.",
+      "art_query": "marble Roman bust jurist",
+      "source": "Digest 1.1.10.1",
+      "flag": "",
+      "art": {
+        "file": "art/unsplash-caCX0TGRv0M.jpg",
+        "key": "unsplash:caCX0TGRv0M",
+        "kind": "photo",
+        "title": "Marble bust of a bearded man with dramatic lighting",
+        "artist": "Photo by Antony Hyson Seltran",
+        "date": "",
+        "museum": "Unsplash",
+        "fit": "fill",
+        "focus": [
+          0.48,
+          0.42
+        ]
+      }
+    },
+    {
+      "heading": "Distrust Every Definition",
+      "body": "Javolenus warned that every definition in civil law is dangerous, because it can rarely withstand a hard case. Fritz Schulz, in *History of Roman Legal Science*, stresses that Roman jurists reasoned from concrete cases first.",
+      "art_query": "Roman Forum Basilica Julia",
+      "source": "Digest 50.17.202; Schulz 1946",
+      "flag": "",
+      "art": {
+        "file": "art/commons-26302242.jpg",
+        "key": "commons:26302242",
+        "kind": "photo",
+        "title": "Roman Forum (3334680086)",
+        "artist": "Rennett Stowe from USA",
+        "date": "2007-07",
+        "museum": "Wikimedia Commons",
+        "license": "CC BY 2.0",
+        "fit": "fill",
+        "focus": [
+          0.68,
+          0.4
+        ]
+      }
+    },
+    {
+      "heading": "Ignorance of Law Is No Excuse",
+      "body": "Paul states the rule plainly: ignorance of law harms you, ignorance of fact does not. Roman law did allow exceptions, notably for minors, soldiers and in some cases women. The modern maxim descends from here.",
+      "art_query": "Corpus Juris Civilis manuscript page",
+      "source": "Digest 22.6.9 pr.",
+      "flag": "Simplified",
+      "art": {
+        "file": "art/unsplash-Cj-jwGRWd4o.jpg",
+        "key": "unsplash:Cj-jwGRWd4o",
+        "kind": "photo",
+        "title": "white book",
+        "artist": "Photo by Daniel Robert",
+        "date": "",
+        "museum": "Unsplash",
+        "fit": "fill",
+        "focus": [
+          0.45,
+          0.35
+        ]
+      }
+    },
+    {
+      "heading": "Give Answers When Consulted",
+      "body": "Jurists built authority through responsa, opinions given to citizens and magistrates. Pomponius says Augustus granted some a right to answer with his authority. Its exact scope is debated; Bruce Frier traces the profession's rise in *The Rise of the Roman Jurists*.",
+      "art_query": "Augustus Prima Porta statue",
+      "source": "Digest 1.2.2.49; Frier 1985",
+      "flag": "Contested",
+      "art": {
+        "file": "art/unsplash-WTsLOmjnpHM.jpg",
+        "key": "unsplash:WTsLOmjnpHM",
+        "kind": "photo",
+        "title": "Statue of roman emperor augustus points upward",
+        "artist": "Photo by Boston Public Library",
+        "date": "",
+        "museum": "Unsplash",
+        "fit": "fill",
+        "focus": [
+          0.45,
+          0.25
+        ]
+      }
+    },
+    {
+      "heading": "Sort Law Into Three",
+      "body": "Gaius divided all law into persons, things and actions. His *Institutes* survived in a Verona palimpsest identified in 1816. Peter Stein shows how this scheme shaped later civil codes across Europe.",
+      "art_query": "Verona Chapter Library",
+      "source": "Gaius, Inst. 1.8; Stein 1999",
+      "flag": "",
+      "art": {
+        "file": "art/commons-3985584.jpg",
+        "key": "commons:3985584",
+        "kind": "photo",
+        "title": "Indovinello veronese",
+        "artist": "Unknown artist",
+        "date": "",
+        "museum": "Wikimedia Commons",
+        "license": "Public domain",
+        "fit": "fill",
+        "focus": [
+          0.5,
+          0.4
+        ]
+      }
+    },
+    {
+      "heading": "When Jurists Disagree, Count",
+      "body": "The Law of Citations of 426 named five authorities: Papinian, Paul, Ulpian, Gaius, Modestinus. Judges followed the majority; on a tie, Papinian prevailed. Scholars often read it as a symptom of post-classical decline.",
+      "art_query": "Roman law codex parchment",
+      "source": "Codex Theodosianus 1.4.3",
+      "flag": "",
+      "art": {
+        "file": "art/unsplash-CK_n5A2Mmpo.jpg",
+        "key": "unsplash:CK_n5A2Mmpo",
+        "kind": "photo",
+        "title": "a wooden shelf filled with lots of books",
+        "artist": "Photo by Max Tcvetkov",
+        "date": "",
+        "museum": "Unsplash",
+        "fit": "fill",
+        "focus": [
+          0.5,
+          0.35
+        ]
+      }
+    }
+  ],
+  "caption": "Roman jurists distrusted definitions.\nHistorians such as Stein trace their influence on later European legal thought. The *Digest* keeps their working rules: law as the art of the good and the fair (Celsus, quoted by Ulpian), every definition is dangerous (Javolenus), ignorance of law no excuse (Paul). Their method grew from cases, not codes (Schulz 1946; Frier 1985). Gaius's three-part scheme outlived the empire (Stein 1999).\nComment READ and I will send you the Substack link.",
+  "risk_notes": [
+    "Ius respondendi: its nature and whether Augustus created a formal privilege is debated (Pomponius is the main source). Keep 'Pomponius says' and the Contested flag.",
+    "Ignorantia iuris: Roman law had exceptions (minors, soldiers, women in certain cases, rustici in some texts). Keep the Simplified flag and mention the exceptions.",
+    "Law of Citations as 'decline': this is an interpretation, linked to Schulz's view of post-classical law. Phrase as 'often read as', not as fact. It is an imperial constitution, not a jurist's maxim, which is why the title refers to the jurists collectively.",
+    "Gaius palimpsest: identified by Niebuhr at Verona in 1816. Avoid saying 'discovered' as if the manuscript itself was unknown.",
+    "Three precepts: Ulpian only says 'iuris praecepta sunt haec', and some scholars question whether the wording is his own or the compilers'. The slide says 'the Digest attributes to Ulpian'; keep that phrasing if challenged.",
+    "Ius est ars boni et aequi: the definition is Celsus's, quoted by Ulpian ('ut eleganter Celsus definit'). Never attribute it to Ulpian alone."
+  ],
+  "urls": [],
+  "engine": "rules",
+  "kicker": "Principles",
+  "coverArt": {
+    "file": "art/commons-98503132.jpg",
+    "key": "commons:98503132",
+    "kind": "photo",
+    "title": "Part of Justinian I Mosaic in Basilica Saint Vitale",
+    "artist": "Unknown artist",
+    "date": "550-00",
+    "museum": "Wikimedia Commons",
+    "license": "Public domain",
+    "fit": "fill",
+    "focus": [
+      0.5,
+      0.15
+    ]
+  },
+  "credits": "Images: Unknown artist, Part of Justinian I Mosaic in Basilica Saint Vitale (550-00); Rennett Stowe from USA, Roman Forum (3334680086) (2007-07) [CC BY 2.0]; Unknown artist, Indovinello veronese. Via Wikimedia Commons. Photos: camera obscura, Antony Hyson Seltran, Daniel Robert, Boston Public Library, Max Tcvetkov on Unsplash.",
+  "renderDir": "r1",
+  "review": {
+    "issues": [
+      {
+        "where": "caption",
+        "problem": "\"Roman jurists distrusted definitions.\" turns one jurist's maxim (Javolenus, D.50.17.202) into a claim about all Roman jurists. The post itself contradicts it: slide 1 and the caption open with Celsus's definition of law, quoted approvingly by Ulpian. Gaius also opens his Institutes with definitions. A commenter will point this out.",
+        "severity": "medium",
+        "fix": "Change to: \"One Roman jurist warned that every definition is dangerous.\" Or: \"Javolenus warned that every definition in civil law is dangerous.\""
+      },
+      {
+        "where": "slide 6",
+        "problem": "\"shaped later civil codes across Europe\" is too broad. The Gaian persons, things and actions scheme shaped institutional-style codes such as the French Code civil and the Austrian ABGB. The German BGB follows the Pandectist scheme with a general part instead, so the claim does not hold for every European code.",
+        "severity": "low",
+        "fix": "Change to: \"Peter Stein shows how this scheme shaped later civil codes, including the French Code civil.\" This keeps the body at about 32 words."
+      },
+      {
+        "where": "slide 7",
+        "problem": "The Law of Citations is an imperial constitution issued by Theodosius II and Valentinian III, not a rule made by the jurists. The heading \"When Jurists Disagree, Count\" sits under the title \"Rules of the Roman Jurists\", so readers may take it as the jurists' own rule.",
+        "severity": "low",
+        "fix": "Start the body with: \"An imperial law, the Law of Citations of 426, named five authorities: ...\" Shorten the last sentence if needed to stay at 40 words or fewer."
+      }
+    ],
+    "verdict": "needs_fixes"
+  },
+  "links": [],
+  "rev": 1
+}
