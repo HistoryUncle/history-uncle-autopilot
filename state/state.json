@@ -12,7 +12,16 @@
     "aic:864",
     "commons:26833410",
     "commons:148559",
-    "aic:59809"
+    "aic:59809",
+    "unsplash:pR4iDkRkGJw",
+    "unsplash:MYmO-kp78W4",
+    "unsplash:3z1VAoAOQJs",
+    "unsplash:uXE4kGZt8bA",
+    "commons:91138909",
+    "unsplash:fmtYssAZCgE",
+    "unsplash:cGtos8rWRvU",
+    "unsplash:uAIPNodK-vg",
+    "commons:155343"
   ],
   "repliedComments": [],
   "drafts": {
@@ -29,6 +38,13 @@
       "title": "7 Concepts That Sharpen Historical Thinking",
       "createdAt": "2026-11-19T12:12:05.254Z",
       "telegramMessageId": 23
+    },
+    "20261119-133753": {
+      "status": "pending",
+      "engine": "free-resources",
+      "title": "Read the Ancient World for Free",
+      "createdAt": "2026-11-19T13:40:53.633Z",
+      "telegramMessageId": 34
     }
   }
 }

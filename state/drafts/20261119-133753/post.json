@@ -1,0 +1,286 @@
+{
+  "title": "Read the Ancient World for Free",
+  "dek": "Eight free scholarly tools for Greece and Rome",
+  "visual_style": "photo",
+  "cover_art_query": "Roman Forum ruins dawn",
+  "art_fallbacks": [
+    "ancient Roman ruins",
+    "classical manuscript page",
+    "Greek temple columns"
+  ],
+  "slides": [
+    {
+      "heading": "Perseus Digital Library",
+      "body": "Perseus is run by Tufts University and was founded under Gregory Crane. It holds Greek and Latin texts alongside English translations. Click any word to see its dictionary entry and grammatical parse.",
+      "art_query": "Greek papyrus fragment",
+      "source": "Tufts University",
+      "flag": "",
+      "art": {
+        "file": "art/unsplash-MYmO-kp78W4.jpg",
+        "key": "unsplash:MYmO-kp78W4",
+        "kind": "photo",
+        "title": "a tall stone structure sitting on top of a hill",
+        "artist": "Photo by Olivia Anne Snyder",
+        "date": "",
+        "museum": "Unsplash",
+        "fit": "fill",
+        "focus": [
+          0.46,
+          0.4
+        ]
+      }
+    },
+    {
+      "heading": "LacusCurtius",
+      "body": "Bill Thayer's site is hosted by the University of Chicago. It transcribes public-domain editions of Roman authors, including older Loeb translations. It also hosts Platner and Ashby's *A Topographical Dictionary of Ancient Rome*.",
+      "art_query": "Palatine Hill Rome ruins",
+      "source": "University of Chicago",
+      "flag": "",
+      "art": {
+        "file": "art/unsplash-3z1VAoAOQJs.jpg",
+        "key": "unsplash:3z1VAoAOQJs",
+        "kind": "photo",
+        "title": "brown concrete building under white sky during daytime",
+        "artist": "Photo by iam_os",
+        "date": "",
+        "museum": "Unsplash",
+        "fit": "fill",
+        "focus": [
+          0.5,
+          0.35
+        ]
+      }
+    },
+    {
+      "heading": "PHI Latin Texts",
+      "body": "The Packard Humanities Institute offers a searchable corpus of most classical Latin literature written before about AD 200. You can search one word across the whole canon in seconds. The texts are Latin only.",
+      "art_query": "Latin inscription marble stone",
+      "source": "Packard Humanities Institute",
+      "flag": "Simplified",
+      "art": {
+        "file": "art/unsplash-uXE4kGZt8bA.jpg",
+        "key": "unsplash:uXE4kGZt8bA",
+        "kind": "photo",
+        "title": "a close-up of a rock",
+        "artist": "Photo by Marcus Ganahl",
+        "date": "",
+        "museum": "Unsplash",
+        "fit": "fill",
+        "focus": [
+          0.5,
+          0.35
+        ]
+      }
+    },
+    {
+      "heading": "Internet Ancient History Sourcebook",
+      "body": "Paul Halsall compiled the *Internet Ancient History Sourcebook* at Fordham University. It gathers translated primary sources from Mesopotamia to late Rome, arranged for teaching. Many translations are old public-domain versions, so check their dates.",
+      "art_query": "cuneiform clay tablet",
+      "source": "Fordham University",
+      "flag": "",
+      "art": {
+        "file": "art/commons-91138909.jpg",
+        "key": "commons:91138909",
+        "kind": "photo",
+        "title": "Clay Tablet with Cuneiform Writing- Nebuchadnezzar, King of Justice",
+        "artist": "Gary Todd",
+        "date": "2017-08",
+        "museum": "Wikimedia Commons",
+        "license": "CC0",
+        "fit": "frame",
+        "focus": [
+          0.5,
+          0.35
+        ]
+      }
+    },
+    {
+      "heading": "Kagan on Ancient Greece",
+      "body": "Donald Kagan's *Introduction to Ancient Greek History* is recorded in full on Open Yale Courses, with video, audio and transcripts. It follows the Greek world through the Peloponnesian War. It is free under a Creative Commons licence.",
+      "art_query": "Parthenon Athens soft light",
+      "source": "Open Yale Courses",
+      "flag": "",
+      "art": {
+        "file": "art/unsplash-fmtYssAZCgE.jpg",
+        "key": "unsplash:fmtYssAZCgE",
+        "kind": "photo",
+        "title": "brown concrete pillar during daytime",
+        "artist": "Photo by T. Selin Erkan",
+        "date": "",
+        "museum": "Unsplash",
+        "fit": "fill",
+        "focus": [
+          0.5,
+          0.35
+        ]
+      }
+    },
+    {
+      "heading": "Pleiades Gazetteer",
+      "body": "Pleiades is a community-built gazetteer of ancient places. It was developed by NYU's Institute for the Study of the Ancient World and the Ancient World Mapping Center. Each entry gives coordinates, attested names and references.",
+      "art_query": "antique map Mediterranean",
+      "source": "ISAW, NYU",
+      "flag": "",
+      "art": {
+        "file": "art/unsplash-cGtos8rWRvU.jpg",
+        "key": "unsplash:cGtos8rWRvU",
+        "kind": "photo",
+        "title": "An antique map of france with decorative borders",
+        "artist": "Photo by Smithsonian",
+        "date": "",
+        "museum": "Unsplash",
+        "fit": "fill",
+        "focus": [
+          0.5,
+          0.35
+        ]
+      }
+    },
+    {
+      "heading": "ORBIS: Roman Travel Modelled",
+      "body": "Walter Scheidel and Elijah Meeks built ORBIS at Stanford to model travel across the Roman Empire. Choose a season, route and means of transport, and it estimates journey time and cost. Its makers stress that it is a model.",
+      "art_query": "Roman road Via Appia",
+      "source": "Scheidel and Meeks, Stanford",
+      "flag": "Simplified",
+      "art": {
+        "file": "art/unsplash-uAIPNodK-vg.jpg",
+        "key": "unsplash:uAIPNodK-vg",
+        "kind": "photo",
+        "title": "A cobblestone road in a park lined with trees",
+        "artist": "Photo by Jan Ledermann",
+        "date": "",
+        "museum": "Unsplash",
+        "fit": "fill",
+        "focus": [
+          0.45,
+          0.4
+        ]
+      }
+    },
+    {
+      "heading": "DigiVatLib Manuscripts",
+      "body": "The Vatican Library's digital platform publishes high-resolution scans of its manuscripts free of charge. They include the *Vergilius Vaticanus* (Vat. lat. 3225), an illustrated late antique copy of Virgil.",
+      "art_query": "Vergilius Vaticanus manuscript",
+      "source": "Biblioteca Apostolica Vaticana",
+      "flag": "",
+      "art": {
+        "file": "art/commons-155343.jpg",
+        "key": "commons:155343",
+        "kind": "photo",
+        "title": "Die Georgica des Vergil, III. Buch, Szene: Schäfer bei ihren Herden",
+        "artist": "Meister des Vergilius Romanus",
+        "date": "",
+        "museum": "Wikimedia Commons",
+        "license": "Public domain",
+        "fit": "fill",
+        "focus": [
+          0.5,
+          0.3
+        ]
+      }
+    }
+  ],
+  "caption": "Most of what a classics student pays for is already online, free, and maintained by universities.\nPerseus at Tufts pairs Greek and Latin with translations (Crane 1985 onward). ORBIS models Roman travel costs (Scheidel and Meeks 2012). Pleiades maps ancient places, and the Vatican Library scans its manuscripts in high resolution.\nperseus.tufts.edu\npenelope.uchicago.edu\nlatin.packhum.org\nsourcebooks.fordham.edu\noyc.yale.edu\npleiades.stoa.org\norbis.stanford.edu\ndigi.vatlib.it\nComment READ and I will send you the Substack link.",
+  "urls": [
+    "perseus.tufts.edu",
+    "penelope.uchicago.edu",
+    "latin.packhum.org",
+    "sourcebooks.fordham.edu",
+    "oyc.yale.edu",
+    "pleiades.stoa.org",
+    "orbis.stanford.edu",
+    "digi.vatlib.it"
+  ],
+  "risk_notes": [
+    "PHI coverage: say 'most classical Latin literature before about AD 200', not 'all'. PHI describes the corpus as essentially complete for that period, but there are exceptions.",
+    "LacusCurtius Loebs: only older Loeb editions in the US public domain are used. Do not suggest that current Loebs are free.",
+    "ORBIS: present it as a model built from assumptions, not a record of actual journeys. The 2012 launch date is approximate if challenged.",
+    "Perseus founding: Crane's project began in the mid-1980s. If questioned, say 'founded under Gregory Crane' and give no precise year.",
+    "Pleiades institutions: it began at the Ancient World Mapping Center (UNC) and is now hosted by ISAW (NYU). Credit both.",
+    "Kagan course scope: describe it as running through the Peloponnesian War, without precise start or end dates."
+  ],
+  "engine": "free-resources",
+  "kicker": "Free to Read",
+  "coverArt": {
+    "file": "art/unsplash-pR4iDkRkGJw.jpg",
+    "key": "unsplash:pR4iDkRkGJw",
+    "kind": "photo",
+    "title": "photography of gray concrete monument",
+    "artist": "Photo by Odiseo Castrejon",
+    "date": "",
+    "museum": "Unsplash",
+    "fit": "fill",
+    "focus": [
+      0.45,
+      0.35
+    ]
+  },
+  "credits": "Images: Gary Todd, Clay Tablet with Cuneiform Writing- Nebuchadnezzar, King of Justice (2017-08); Meister des Vergilius Romanus, Die Georgica des Vergil, III. Buch, Szene: Schäfer bei ihren Herden. Via Wikimedia Commons. Photos: Odiseo Castrejon, Olivia Anne Snyder, iam_os, Marcus Ganahl, T. Selin Erkan, Smithsonian, Jan Ledermann on Unsplash.",
+  "renderDir": "r1",
+  "review": {
+    "issues": [
+      {
+        "where": "caption",
+        "problem": "\"Most of what a classics student pays for is already online, free\" is an unsupported sweeping claim. Current Loeb editions, modern critical texts, the TLG, L'Année philologique and most recent scholarship are behind paywalls. Slide 2 and the risk notes themselves say current Loebs are not free.",
+        "severity": "medium",
+        "fix": "Change it to: \"A surprising amount of what a classics student needs is already online, free, and maintained by universities and libraries.\""
+      },
+      {
+        "where": "caption",
+        "problem": "\"(Crane 1985 onward)\" gives a precise founding year, which goes against the post's own risk note ('give no precise year'). Sources disagree on the date: planning began in 1985, and the project is often dated to 1987. Perseus also started at Harvard before it moved to Tufts.",
+        "severity": "medium",
+        "fix": "Change it to: \"Perseus at Tufts pairs Greek and Latin with translations (founded under Gregory Crane in the mid-1980s).\""
+      },
+      {
+        "where": "slide 8",
+        "problem": "\"publishes high-resolution scans of its manuscripts\" suggests the whole collection is online. Digitisation is still under way, and only part of the holdings is available.",
+        "severity": "low",
+        "fix": "Change it to: \"publishes high-resolution scans of many of its manuscripts free of charge.\""
+      }
+    ],
+    "verdict": "needs_fixes"
+  },
+  "links": [
+    {
+      "url": "perseus.tufts.edu",
+      "ok": false,
+      "status": "Failed to parse URL from perseus.tufts.edu"
+    },
+    {
+      "url": "penelope.uchicago.edu",
+      "ok": false,
+      "status": "Failed to parse URL from penelope.uchicago.edu"
+    },
+    {
+      "url": "latin.packhum.org",
+      "ok": false,
+      "status": "Failed to parse URL from latin.packhum.org"
+    },
+    {
+      "url": "sourcebooks.fordham.edu",
+      "ok": false,
+      "status": "Failed to parse URL from sourcebooks.fordham.edu"
+    },
+    {
+      "url": "oyc.yale.edu",
+      "ok": false,
+      "status": "Failed to parse URL from oyc.yale.edu"
+    },
+    {
+      "url": "pleiades.stoa.org",
+      "ok": false,
+      "status": "Failed to parse URL from pleiades.stoa.org"
+    },
+    {
+      "url": "orbis.stanford.edu",
+      "ok": false,
+      "status": "Failed to parse URL from orbis.stanford.edu"
+    },
+    {
+      "url": "digi.vatlib.it",
+      "ok": false,
+      "status": "Failed to parse URL from digi.vatlib.it"
+    }
+  ],
+  "rev": 1
+}
