@@ -75,7 +75,7 @@ body{background:#000;width:1080px}
 /* CTA: minimal end card */
 .cta{display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center}
 .cta .frame{position:absolute;inset:44px;border:1px solid var(--w30)}
-.cta .art{filter:saturate(.3) brightness(.28) blur(6px);transform:scale(1.08)}
+.slide.cta .art{filter:saturate(.3) brightness(.28) blur(6px) !important;transform:scale(1.08)}
 .cta .logo{width:112px;height:112px;object-fit:contain;margin-bottom:64px;opacity:.95}
 .cta .url{font:italic 400 64px/1.1 Lora;color:var(--w);letter-spacing:-.005em}
 .cta .hair{width:96px;height:1px;background:var(--w50);margin:52px auto 44px}
