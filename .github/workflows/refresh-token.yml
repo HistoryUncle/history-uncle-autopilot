@@ -1,0 +1,22 @@
+name: Refresh Instagram token
+# Instagram long-lived tokens expire after 60 days. Refresh on the 1st and 15th of every month.
+on:
+  schedule:
+    - cron: "23 3 1,15 * *"
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: ./.github/actions/setup
+      - id: r
+        run: node src/cli.js refresh-token
+        env:
+          IG_ACCESS_TOKEN: ${{ secrets.IG_ACCESS_TOKEN }}
+      - name: Save new token to repository secrets
+        run: gh secret set IG_ACCESS_TOKEN --body "${{ steps.r.outputs.token }}" --repo "${{ github.repository }}"
+        env:
+          GH_TOKEN: ${{ secrets.GH_PAT }}

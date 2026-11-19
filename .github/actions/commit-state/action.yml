@@ -1,0 +1,16 @@
+name: commit-state
+description: Commit state/ back to the repo (drafts, rendered slides, queue)
+inputs:
+  message: { required: true }
+runs:
+  using: composite
+  steps:
+    - shell: bash
+      run: |
+        git config user.name  "history-uncle-bot"
+        git config user.email "bot@users.noreply.github.com"
+        git add state
+        if git diff --cached --quiet; then echo "no state changes"; exit 0; fi
+        git commit -m "${{ inputs.message }}" -q
+        for i in 1 2 3; do git pull --rebase -q && git push -q && exit 0; sleep 5; done
+        exit 1

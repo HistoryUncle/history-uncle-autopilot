@@ -1,0 +1,41 @@
+name: Draft carousel
+# 4 drafts a week (Mon, Wed, Fri, Sun ~08:37 Vilnius winter time). Each goes to Telegram for approval.
+on:
+  schedule:
+    - cron: "37 6 * * 1,3,5,0"
+  workflow_dispatch:
+    inputs:
+      engine:
+        description: "Engine id (reading-path, rules, difference, concepts, free-resources, lessons). Empty = automatic"
+        required: false
+      topic:
+        description: "Optional topic or angle"
+        required: false
+permissions:
+  contents: write
+concurrency:
+  group: autopilot
+  cancel-in-progress: false
+jobs:
+  draft:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: ./.github/actions/setup
+      - name: Create draft
+        run: |
+          ARGS=()
+          [ -n "${{ inputs.engine }}" ] && ARGS+=(--engine "${{ inputs.engine }}")
+          [ -n "${{ inputs.topic }}" ] && ARGS+=(--topic "${{ inputs.topic }}")
+          [ "${{ github.event_name }}" = "workflow_dispatch" ] && ARGS+=(--force x)
+          node src/cli.js draft "${ARGS[@]}"
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          UNSPLASH_ACCESS_KEY: ${{ secrets.UNSPLASH_ACCESS_KEY }}
+          CHROME_PATH: /usr/bin/google-chrome
+      - if: always()
+        uses: ./.github/actions/commit-state
+        with: { message: "draft: new carousel" }

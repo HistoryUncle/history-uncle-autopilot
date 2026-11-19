@@ -1,0 +1,63 @@
+{
+  "engine": "reading-path",
+  "kicker": "A Reading Path",
+  "title": "Where to Start with Economic History",
+  "dek": "Seven books, ordered from first step to deep end.",
+  "cover_art_query": "scholar reading by candlelight",
+  "slides": [
+    {
+      "heading": "Start Short",
+      "body": "Robert C. Allen's *Global Economic History: A Very Short Introduction* covers why some countries got rich and others did not, in under 200 pages. The best single map of the field.",
+      "source": "Allen 2011",
+      "art_query": "man reading a book"
+    },
+    {
+      "heading": "Europe Before the Machines",
+      "body": "Carlo Cipolla reconstructs the European economy between 1000 and 1700: population, prices, guilds, plague. It shows how a pre-industrial economy actually worked, before growth became normal.",
+      "source": "Cipolla 1976",
+      "art_query": "market scene"
+    },
+    {
+      "heading": "One City, Read Closely",
+      "body": "Frederic Lane's *Venice: A Maritime Republic* follows a merchant state through its galleys, banks and state-run convoys. Economic history at the scale of a single, extraordinarily well-documented city.",
+      "source": "Lane 1973",
+      "art_query": "venice canal with boats"
+    },
+    {
+      "heading": "The Long Duration",
+      "body": "Braudel's *Civilization and Capitalism* moves from daily bread to world trade in three volumes. Its central claim: markets and capitalism are different things, and capitalism lives at the top.",
+      "source": "Braudel 1979",
+      "art_query": "merchant counting coins"
+    },
+    {
+      "heading": "Why Rules Matter",
+      "body": "Douglass North argues that institutions, the formal and informal rules of a society, explain long-run economic performance better than resources or technology alone. A Nobel framework in a short book.",
+      "source": "North 1990",
+      "art_query": "portrait of a magistrate"
+    },
+    {
+      "heading": "Why Europe, Why Then",
+      "flag": "Contested",
+      "body": "Kenneth Pomeranz argues that the Yangzi delta and England looked similar until about 1800, and that coal and colonies made the difference. Later wage and output data have challenged the timing.",
+      "source": "Pomeranz 2000",
+      "art_query": "harbour with sailing ships"
+    },
+    {
+      "heading": "Ideas as Causes",
+      "body": "Joel Mokyr's *A Culture of Growth* locates the origins of modern growth in an intellectual market: the Republic of Letters, where useful knowledge competed and accumulated across borders.",
+      "source": "Mokyr 2016",
+      "art_query": "philosopher at a desk"
+    }
+  ],
+  "cta_line": "Every week the Substack takes one of these debates further, with the sources laid out so you can check them.",
+  "caption": "Economic history is the part of the past that left the most data behind.\n\nStart with Allen for the map, Cipolla for the pre-industrial baseline, then Braudel (1979) and North (1990) for the two big frameworks. Pomeranz (2000) is the debate everyone still argues with.\n\nComment READ and I will send you the Substack link.",
+  "risk_notes": [
+    "Pomeranz: thesis is contested (Broadberry, Allen wage data); slide flags it.",
+    "Braudel 1979 is the French original; English translation 1981-84."
+  ],
+  "visual_style": "painting",
+  "art_fallbacks": [
+    "merchant portrait",
+    "scholar in study"
+  ]
+}
