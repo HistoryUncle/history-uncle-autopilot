@@ -50,3 +50,14 @@ test('review card escapes HTML and lists issues', () => {
   assert.ok(card.includes('🔴 slide 2'));
   assert.ok(card.includes('❌ https://x.org'));
 });
+
+test('wikimedia metadata is cleaned for credits', async () => {
+  const { cleanTitle, cleanArtist, cleanDate } = await import('../src/art.js');
+  assert.equal(cleanTitle('title QS:P1476,en:"The Geographer "label QS:Len,"The Geographer "label QS:L'), '');
+  assert.equal(cleanTitle('The Geographer title QS:P1476,en:"The Geographer "'), 'The Geographer');
+  assert.equal(cleanTitle('German: Frau am Fenster English: Woman at a Window title QS:P1476,de:"Frau am Fenster"'), 'Woman at a Window');
+  assert.equal(cleanTitle('Polish: Myśliwi na śniegu'), 'Myśliwi na śniegu');
+  assert.equal(cleanArtist('Unknown authorUnknown author'), 'Unknown author');
+  assert.equal(cleanDate('1674date QS:P571,+1674-00-00T00:00:00Z/9'), '1674');
+  assert.equal(cleanDate('1500–10'), '1500-10');
+});

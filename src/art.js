@@ -61,7 +61,25 @@ async function searchMet(q) {
   return out;
 }
 
-const stripHtml = (h = '') => String(h).replace(/<[^>]*>/g, '').replace(/\s+/g, ' ').trim();
+const stripHtml = (h = '') => String(h).replace(/<[^>]*>/g, ' ').replace(/\s+/g, ' ').trim();
+
+/** Wikimedia metadata often carries Wikidata template residue ("title QS:P1476,...") and several languages. */
+export function cleanTitle(raw = '') {
+  let t = stripHtml(raw).split(/\s*(?:title|label|date)?\s*QS:/)[0];
+  const en = t.match(/English:\s*(.+?)(?=\s+[A-Z][a-z]+:\s|$)/);
+  t = en ? en[1] : t.replace(/^[A-Z][a-zé]+:\s*/, '');
+  return t.replace(/^["'\s]+|["'\s,]+$/g, '').slice(0, 90);
+}
+export function cleanArtist(raw = '') {
+  let a = stripHtml(raw).split(/\s*QS:/)[0].trim();
+  const half = a.length / 2;
+  if (Number.isInteger(half) && a.slice(0, half) === a.slice(half)) a = a.slice(0, half);
+  return a.replace(/\s*\(.*$/, '').slice(0, 60);
+}
+export function cleanDate(raw = '') {
+  const m = stripHtml(raw).match(/(c\.\s*)?\b\d{3,4}(\s*[–-]\s*\d{2,4})?/);
+  return m ? m[0].replace(/–/g, '-') : '';
+}
 // Public domain / CC0 always; plain CC BY with attribution. Share-alike and non-commercial are skipped.
 const OK_LICENSE = (l = '') => /public domain|^pd|cc0/i.test(l) || (/^cc by(\s|-)\d/i.test(l) && !/sa|nc|nd/i.test(l));
 
@@ -78,14 +96,14 @@ async function searchCommons(q, kind) {
     const ii = pg.imageinfo?.[0]; if (!ii) return null;
     const m = ii.extmetadata ?? {};
     const license = m.LicenseShortName?.value ?? '';
-    const title = stripHtml(m.ObjectName?.value) || pg.title.replace(/^File:/, '').replace(/\.[a-z]+$/i, '');
+    const title = cleanTitle(m.ObjectName?.value) || pg.title.replace(/^File:/, '').replace(/\.[a-z]+$/i, '').replace(/\s*-\s*Google Art Project.*$/i, '');
     if (!OK_LICENSE(license) || ii.width < 1000 || AVOID.test(title)) return null;
     const thumb = ii.thumburl?.replace(/\/1600px-/, '/400px-') ?? ii.thumburl;
     return {
       key: `commons:${pg.pageid}`, kind,
       thumb, url: ii.thumburl || ii.url,
-      title: title.slice(0, 90), artist: stripHtml(m.Artist?.value).slice(0, 60) || 'Unknown artist',
-      date: stripHtml(m.DateTimeOriginal?.value).slice(0, 20), license,
+      title, artist: cleanArtist(m.Artist?.value) || 'Unknown artist',
+      date: cleanDate(m.DateTimeOriginal?.value), license,
       source: 'Wikimedia Commons',
     };
   }).filter(Boolean);
