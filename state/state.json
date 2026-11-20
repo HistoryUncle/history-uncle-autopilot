@@ -1,6 +1,14 @@
 {
-  "telegramOffset": 0,
-  "history": [],
+  "telegramOffset": 187053180,
+  "history": [
+    {
+      "id": "20261120-075030",
+      "title": "What Amsterdam Knew About Money",
+      "engine": "lessons",
+      "publishedAt": "2026-11-20T08:06:15.043Z",
+      "manual": true
+    }
+  ],
   "usedArt": [
     "aic:109487",
     "aic:24315",
@@ -73,11 +81,12 @@
       "telegramMessageId": 44
     },
     "20261120-075030": {
-      "status": "pending",
+      "status": "ready",
       "engine": "lessons",
       "title": "What Amsterdam Knew About Money",
       "createdAt": "2026-11-20T07:53:05.638Z",
-      "telegramMessageId": 54
+      "telegramMessageId": 54,
+      "approvedAt": "2026-11-20T08:06:15.043Z"
     }
   }
 }
