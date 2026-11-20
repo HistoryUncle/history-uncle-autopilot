@@ -16,7 +16,15 @@
     "timezone": "Europe/Vilnius",
     "publish_hour_local": 18,
     "publish_minute_local": 15,
-    "note": "Drafts are created by .github/workflows/draft.yml (cron). Approved drafts go out at the next publish slot above, or immediately with the 'Dabar' button."
+    "note": "The always-on Tick job creates a draft on draft_days (0=Sunday) at draft_hour_local:draft_minute_local. Approved drafts are handled per publish_mode.",
+    "draft_days": [
+      1,
+      3,
+      5,
+      0
+    ],
+    "draft_hour_local": 8,
+    "draft_minute_local": 37
   },
   "model": {
     "writer": "claude-opus-5-5",

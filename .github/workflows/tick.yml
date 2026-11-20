@@ -4,10 +4,11 @@ name: Tick
 # as soon as the previous one ends. Also publishes due posts and runs the DM funnel (auto mode).
 on:
   schedule:
-    - cron: "*/15 * * * *"
+    - cron: "7 * * * *"
   workflow_dispatch:
 permissions:
   contents: write
+  actions: write
 concurrency:
   group: autopilot
   cancel-in-progress: false
@@ -27,7 +28,12 @@ jobs:
           IG_ACCESS_TOKEN: ${{ secrets.IG_ACCESS_TOKEN }}
           IG_USER_ID: ${{ secrets.IG_USER_ID }}
           CHROME_PATH: /usr/bin/google-chrome
-          TICK_MINUTES: "50"
+          TICK_MINUTES: "55"
       - if: always()
         uses: ./.github/actions/commit-state
         with: { message: "tick: state" }
+      # Keep the bot always on: start the next run as this one ends (the hourly cron is a backup).
+      - if: ${{ !cancelled() }}
+        run: gh workflow run tick.yml --ref "${{ github.ref_name }}"
+        env:
+          GH_TOKEN: ${{ github.token }}

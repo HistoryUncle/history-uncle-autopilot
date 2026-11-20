@@ -3,13 +3,28 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { log, readJSON, deepHouseStyle } from './lib/util.js';
 import * as S from './lib/state.js';
-import { createDraft, handleTelegram, publishDue } from './pipeline.js';
+import { execSync } from 'node:child_process';
+import { createDraft, handleTelegram, publishDue, scheduledDraftDue, markScheduledDraft } from './pipeline.js';
 import { runDmFunnel, refreshToken } from './instagram.js';
 import { render } from './render.js';
 import { illustrate } from './art.js';
 import * as tg from './telegram.js';
 
 const [cmd, ...rest] = process.argv.slice(2);
+
+/** Save state and, inside GitHub Actions, commit and push it right away. */
+function persist(state, message) {
+  S.save(state);
+  if (!process.env.GITHUB_ACTIONS) return;
+  try {
+    const sh = (c) => execSync(c, { stdio: 'pipe' }).toString();
+    sh('git config user.name "history-uncle-bot" && git config user.email "bot@users.noreply.github.com"');
+    sh('git add state');
+    if (!sh('git diff --cached --name-only').trim()) return;
+    sh(`git commit -q -m "${message}"`);
+    for (let i = 0; i < 3; i++) { try { sh('git pull --rebase -q && git push -q'); return; } catch { /* retry */ } }
+  } catch (e) { log('persist failed', e.message.slice(0, 200)); }
+}
 const flag = (name) => { const i = rest.indexOf(`--${name}`); return i >= 0 ? rest[i + 1] : undefined; };
 
 async function step(name, fn, state) {
@@ -38,18 +53,26 @@ const commands = {
   async tick() {
     const state = S.load();
     await step('Telegram', async () => log(await tg.ensurePolling()), state);
-    // Long-poll Telegram for up to TICK_MINUTES so buttons react within seconds.
-    // Stop early after handling something, so state is committed promptly; the next queued tick carries on.
+    // Always-on loop: long-poll Telegram (answers within seconds), make the scheduled draft when due,
+    // and save after anything changes. The workflow starts the next run when this one ends.
     const until = Date.now() + Number(process.env.TICK_MINUTES ?? 0) * 60000;
     do {
       let handled = 0;
       await step('Telegram', async () => { handled = await handleTelegram(state, until > Date.now() ? 50 : 0); }, state);
-      if (handled) break;
+      if (handled) persist(state, 'bot: telegram');
+      if (scheduledDraftDue(state)) {
+        markScheduledDraft(state);
+        const pending = Object.values(state.drafts).filter((d) => d.status === 'pending').length;
+        if (pending < Number(process.env.MAX_PENDING ?? 3)) await step('Juodraštis', () => createDraft(state), state);
+        else await tg.sendText(`⏳ Laukia ${pending} nepatvirtinti juodraščiai, šiandien naujo nekuriu.`).catch(() => {});
+        persist(state, 'bot: scheduled draft');
+      }
     } while (Date.now() < until);
     if (process.env.IG_ACCESS_TOKEN) {
       await step('Publikavimas', () => publishDue(state), state);
       await step('DM funnel', async () => { const n = await runDmFunnel(state); if (n) log(`sent ${n} DMs`); }, state);
     }
+    persist(state, 'bot: state');
   },
 
   /** Local preview: node src/cli.js preview samples/sample-post.json [--art] */

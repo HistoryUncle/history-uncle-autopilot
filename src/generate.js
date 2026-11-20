@@ -1,5 +1,5 @@
 import fs from 'node:fs';
-import { brand, engines, p, log, deepHouseStyle, wordCount, weightedPick, http } from './lib/util.js';
+import { brand, engines, p, log, stage, deepHouseStyle, wordCount, weightedPick, http } from './lib/util.js';
 import { callTool, CAROUSEL_TOOL, REVIEW_TOOL } from './lib/claude.js';
 import { recentTitles } from './lib/state.js';
 
@@ -74,6 +74,7 @@ export async function writePost({ state, engineId, feedback, previous, topicHint
   const engine = previous?.engine ? chooseEngine(state, previous.engine) : chooseEngine(state, engineId);
   const recent = recentTitles(state);
   log(`writing: engine=${engine.id}${feedback ? ' (revision)' : ''}`);
+  await stage(feedback ? '✍️ Taisau tekstą pagal tavo pastabas…' : '✍️ Rašau tekstą…');
 
   let post = deepHouseStyle(await callTool({
     model: b.model.writer,
@@ -82,9 +83,11 @@ export async function writePost({ state, engineId, feedback, previous, topicHint
     tool: CAROUSEL_TOOL,
   }));
 
+  await stage('🔍 Tikrinu faktus (kritikas)…');
   let review = await critique(post);
   for (let i = 0; i < b.model.max_revisions && review.issues.some((x) => x.severity === 'high'); i++) {
     log(`critic found ${review.issues.length} issues, revising`);
+    await stage('🛠 Kritikas rado netikslumų, taisau…');
     const fb = review.issues.map((x) => `- [${x.severity}] ${x.where}: ${x.problem} -> ${x.fix}`).join('\n');
     post = deepHouseStyle(await callTool({
       model: b.model.writer,

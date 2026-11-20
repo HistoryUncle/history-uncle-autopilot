@@ -105,3 +105,8 @@ export function weightedPick(items, rand = Math.random) {
   for (const it of items) { r -= it.weight ?? 1; if (r <= 0) return it; }
   return items[items.length - 1];
 }
+
+/* Progress reporting: pipeline steps call stage("..."); a Telegram status message listens. */
+let reporter = null;
+export const setReporter = (fn) => { reporter = fn; };
+export const stage = (text) => { try { return reporter?.(text); } catch { return undefined; } };

@@ -1,6 +1,6 @@
 import fs from 'node:fs';
 import path from 'node:path';
-import { brand, publishMode, http, log } from './lib/util.js';
+import { brand, publishMode, http, log, stage, setReporter } from './lib/util.js';
 import * as S from './lib/state.js';
 import { writePost, checkUrls } from './generate.js';
 import { illustrate } from './art.js';
@@ -24,8 +24,10 @@ async function produce(id, post, state, rev) {
   fs.mkdirSync(dir, { recursive: true });
   await illustrate(post, dir, state); // fills only what is missing
   post.renderDir = `r${rev}`;
+  await stage('🖼 Kuriu skaidres…');
   const files = await render(post, dir, post.renderDir);
   const urls = [...(post.urls ?? []), ...(post.caption.match(/https?:\/\/[^\s)]+/g) ?? [])];
+  if (urls.length) await stage('🔗 Tikrinu nuorodas…');
   const links = urls.length ? await checkUrls(urls) : [];
   return { files, links };
 }
@@ -63,6 +65,19 @@ async function reviseDraft(state, id, feedback) {
   Object.assign(meta, { title: post.title, telegramMessageId: card.message_id, status: 'pending' });
 }
 
+/** Run a long job while a Telegram status message shows each step. */
+async function withStatus(first, job) {
+  const status = await tg.statusMessage(first);
+  setReporter((t) => status.update(t));
+  try {
+    await job();
+    await status.update('✅ Paruošta, žiūrėk žemiau.');
+  } catch (e) {
+    await status.update(`⚠️ Nepavyko: <code>${String(e.message).slice(0, 300)}</code>`);
+    throw e;
+  } finally { setReporter(null); }
+}
+
 /* ---------- scheduling ---------- */
 
 function tzOffsetMinutes(date, timeZone) {
@@ -86,6 +101,25 @@ export function nextSlot(state, now = new Date()) {
 }
 
 const fmtLocal = (d) => d.toLocaleString('lt-LT', { timeZone: brand().schedule.timezone, weekday: 'long', hour: '2-digit', minute: '2-digit', month: 'long', day: 'numeric' });
+
+/** Local date (YYYY-MM-DD), weekday and minutes since midnight in the brand's time zone. */
+function localNow(now = new Date()) {
+  const tz = brand().schedule.timezone;
+  const parts = Object.fromEntries(new Intl.DateTimeFormat('en-GB', { timeZone: tz, year: 'numeric', month: '2-digit', day: '2-digit', hour: '2-digit', minute: '2-digit', weekday: 'short', hour12: false })
+    .formatToParts(now).map((x) => [x.type, x.value]));
+  const dow = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'].indexOf(parts.weekday);
+  return { date: `${parts.year}-${parts.month}-${parts.day}`, dow, minutes: Number(parts.hour) % 24 * 60 + Number(parts.minute) };
+}
+
+/** True when today's scheduled draft is due and has not been made yet. */
+export function scheduledDraftDue(state, now = new Date()) {
+  const sc = brand().schedule;
+  const t = localNow(now);
+  return (sc.draft_days ?? []).includes(t.dow)
+    && t.minutes >= (sc.draft_hour_local ?? 8) * 60 + (sc.draft_minute_local ?? 0)
+    && state.lastScheduledDraft !== t.date;
+}
+export const markScheduledDraft = (state, now = new Date()) => { state.lastScheduledDraft = localNow(now).date; };
 
 /* ---------- publishing ---------- */
 
@@ -152,7 +186,7 @@ async function onButton(state, q) {
     const files = fs.readdirSync(dir).filter((f) => f.endsWith('.jpg')).sort().map((f) => path.join(dir, f));
     Object.assign(meta, { status: 'ready', approvedAt: new Date().toISOString() });
     state.history.push({ id, title: post.title, engine: post.engine, publishedAt: meta.approvedAt, manual: true });
-    await tg.answer(q.id, 'Ruošiu įkėlimui');
+    await tg.answer(q.id, 'Ruošiu įkėlimui…');
     await tg.sendReadyPackage(files, finalCaption(post), post.title);
   } else if (action === 'ok') {
     const at = nextSlot(state);
@@ -169,8 +203,7 @@ async function onButton(state, q) {
   } else if (action === 'new') {
     meta.status = 'rejected';
     await tg.answer(q.id, 'Ruošiu kitą temą');
-    await tg.sendText('🔄 Ruošiu kitą temą, atsiųsiu po kelių minučių.');
-    await createDraft(state);
+    await withStatus('🔄 Gavau. Ruošiu kitą temą (~3–4 min.)…', () => createDraft(state));
   }
 }
 
@@ -181,13 +214,11 @@ async function onMessage(state, m) {
   const target = replyTo && Object.entries(state.drafts).find(([, d]) => d.telegramMessageId === replyTo && d.status !== 'published');
 
   if (target) {
-    await tg.sendText('✏️ Taisau pagal tavo pastabas...');
-    return reviseDraft(state, target[0], text);
+    return withStatus('✏️ Gavau pastabas. Taisau (~2–3 min.)…', () => reviseDraft(state, target[0], text));
   }
   if (/^\/(nauja|new)\b/i.test(text)) {
     const hint = text.replace(/^\/\S+\s*/, '');
-    await tg.sendText(`🛠 Ruošiu naują juodraštį${hint ? `: <i>${hint}</i>` : ''}...`);
-    return createDraft(state, { topicHint: hint || undefined });
+    return withStatus(`🛠 Gavau${hint ? `: <i>${tg.esc(hint)}</i>` : ''}. Ruošiu naują juodraštį (~3–4 min.)…`, () => createDraft(state, { topicHint: hint || undefined }));
   }
   if (/^\/(eile|queue|status)\b/i.test(text)) {
     const rows = Object.entries(state.drafts).filter(([, d]) => ['pending', 'approved'].includes(d.status))

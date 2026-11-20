@@ -65,3 +65,13 @@ test('wikimedia metadata is cleaned for credits', async () => {
   assert.equal(cleanDate('1674date QS:P571,+1674-00-00T00:00:00Z/9'), '1674');
   assert.equal(cleanDate('1500–10'), '1500-10');
 });
+
+test('scheduled draft is due on draft days after 08:37 Vilnius, once per day', async () => {
+  const { scheduledDraftDue, markScheduledDraft } = await import('../src/pipeline.js');
+  const st = {};
+  assert.equal(scheduledDraftDue(st, new Date('2026-11-23T06:30:00Z')), false); // Mon 08:30
+  assert.equal(scheduledDraftDue(st, new Date('2026-11-23T06:40:00Z')), true);  // Mon 08:40
+  markScheduledDraft(st, new Date('2026-11-23T06:40:00Z'));
+  assert.equal(scheduledDraftDue(st, new Date('2026-11-23T10:00:00Z')), false); // already made
+  assert.equal(scheduledDraftDue({}, new Date('2026-11-24T10:00:00Z')), false); // Tuesday
+});

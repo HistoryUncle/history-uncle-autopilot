@@ -7,15 +7,23 @@
       "kicker": "A Reading Path",
       "weight": 3,
       "brief": "'Where to start with X' for a historical field or period (economic history, the Hanseatic League, Byzantium, the history of money, the Annales school). Each slide is one real, named book or lecture series with author and year and one line on why it matters, ordered from entry point to advanced. Only works you are certain exist, with correct author and year.",
-      "examples": ["Where to Start with Economic History", "Where to Start with Byzantium", "How to Read the Annales Historians"]
+      "examples": [
+        "Where to Start with Economic History",
+        "Where to Start with Byzantium",
+        "How to Read the Annales Historians"
+      ]
     },
     {
       "id": "rules",
       "label": "Rules / principles",
       "kicker": "Principles",
       "weight": 3,
-      "brief": "'N rules of X' drawn from how a historical group actually operated: Venetian merchants, Roman jurists, Hanseatic traders, Renaissance humanists, Fugger bookkeeping, Jesuit education. Each rule must be grounded in a documented practice, institution or text, named on the slide.",
-      "examples": ["7 Rules of a Venetian Merchant", "The Rules of a Renaissance Education", "How the Fuggers Kept Their Books"]
+      "brief": "'N rules of X' drawn from how a historical group actually operated: Venetian merchants, Roman jurists, Hanseatic traders, Renaissance humanists, Fugger bookkeeping, Jesuit education. Each rule must be grounded in a documented practice, told through a concrete scene or example.",
+      "examples": [
+        "7 Rules of a Venetian Merchant",
+        "The Rules of a Renaissance Education",
+        "How the Fuggers Kept Their Books"
+      ]
     },
     {
       "id": "difference",
@@ -23,15 +31,22 @@
       "kicker": "A Distinction",
       "weight": 2,
       "brief": "'The difference between X and Y': two concepts people blur, explained through historians' usage (chronicle vs history, wealth vs capital, empire vs hegemony, market economy vs capitalism in Braudel). Alternate slides between the two sides, end with why the distinction matters.",
-      "examples": ["The Difference Between Wealth and Capital", "Chronicle vs History", "Empire vs Hegemony"]
+      "examples": [
+        "The Difference Between Wealth and Capital",
+        "Chronicle vs History",
+        "Empire vs Hegemony"
+      ]
     },
     {
       "id": "concepts",
-      "label": "Niche concepts",
-      "kicker": "Concepts",
+      "label": "Ideas that explain the world",
+      "kicker": "Ideas",
       "weight": 3,
-      "brief": "'N historical concepts worth knowing': one concept per slide (longue duree, Sattelzeit, Gresham's law, the price revolution, the Pirenne thesis, microhistory), each with the historian who coined or argued it and a one-line argument.",
-      "examples": ["6 Concepts Every History Reader Should Know", "5 Ideas That Changed How Historians Think About Money"]
+      "brief": "'N ideas from history that explain the world': one idea per slide (why prices rose after Columbus, why bad money drives out good, why the Mediterranean shaped Europe), each told through a vivid example a non-historian will remember. Mention who came up with it only when that is part of the story.",
+      "examples": [
+        "5 Ideas From History That Explain Your Bank Account",
+        "6 Old Ideas That Still Run the World"
+      ]
     },
     {
       "id": "free-resources",
@@ -39,7 +54,10 @@
       "kicker": "Free to Read",
       "weight": 3,
       "brief": "Free, legitimate resources: university lecture series (Open Yale Courses, MIT OCW, Gresham College), digital archives and libraries (Perseus, Europeana, DigiVatLib, Chronicling America, Internet Archive collections). Each slide names the resource, its institution, and what is inside. Only resources you are certain exist and are free. Put the root URLs in the caption.",
-      "examples": ["7 Free Archives Every Historian Uses", "Free History Lectures from Gresham College"]
+      "examples": [
+        "7 Free Archives Every Historian Uses",
+        "Free History Lectures from Gresham College"
+      ]
     },
     {
       "id": "lessons",
@@ -47,7 +65,10 @@
       "kicker": "Lessons",
       "weight": 2,
       "brief": "'What X knew about Y' from economic and financial history: what the Medici knew about risk, what the VOC knew about capital, what Rome learned in the credit crisis of 33 AD. Each slide is one documented mechanism or episode, with the historian who describes it.",
-      "examples": ["What the Medici Knew About Risk", "What the VOC Understood About Capital"]
+      "examples": [
+        "What the Medici Knew About Risk",
+        "What the VOC Understood About Capital"
+      ]
     }
   ]
 }

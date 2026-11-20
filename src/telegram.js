@@ -104,4 +104,19 @@ export async function ensurePolling() {
 
 export const answer = (callbackId, text) => call('answerCallbackQuery', { callback_query_id: callbackId, text }).catch(() => {});
 export const clearButtons = (messageId) => call('editMessageReplyMarkup', { chat_id: chatId(), message_id: messageId, reply_markup: { inline_keyboard: [] } }).catch(() => {});
+export const esc = (t) => e(t);
 export const isOwner = (chat) => String(chat?.id) === String(chatId());
+
+/** A single status message that is edited as work progresses, so you can see the bot is busy. */
+export async function statusMessage(text) {
+  const msg = await sendText(text).catch(() => null);
+  let last = text;
+  return {
+    update: async (t) => {
+      if (!msg || t === last) return;
+      last = t;
+      await call('editMessageText', { chat_id: chatId(), message_id: msg.message_id, text: t, parse_mode: 'HTML' }).catch(() => {});
+      await call('sendChatAction', { chat_id: chatId(), action: 'typing' }).catch(() => {});
+    },
+  };
+}

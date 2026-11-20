@@ -1,8 +1,7 @@
 name: Draft carousel
-# 4 drafts a week (Mon, Wed, Fri, Sun ~08:37 Vilnius winter time). Each goes to Telegram for approval.
+# Manual drafts only. Scheduled drafts (Mon, Wed, Fri, Sun 08:37 Vilnius) are made by the always-on Tick job.
+# Easiest way to ask for a draft: message the bot /nauja [topic].
 on:
-  schedule:
-    - cron: "37 6 * * 1,3,5,0"
   workflow_dispatch:
     inputs:
       engine:

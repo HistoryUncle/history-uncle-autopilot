@@ -1,6 +1,6 @@
 import fs from 'node:fs';
 import path from 'node:path';
-import { brand, http, log } from './lib/util.js';
+import { brand, http, log, stage } from './lib/util.js';
 import { callTool } from './lib/claude.js';
 
 /**
@@ -245,7 +245,9 @@ export async function illustrate(post, dir, state) {
   post.slides.forEach((s, i) => { if (!s.art) targets.push({ slot: i, query: s.art_query, alts: s.art_alternatives ?? [], text: `${s.heading}. ${s.body}` }); });
   fs.mkdirSync(path.join(dir, 'art'), { recursive: true });
 
+  let n = 0;
   for (const t of targets) {
+    await stage(`🎨 Renku paveikslus… (${++n}/${targets.length})`);
     let pick = null;
     try { pick = await findArt({ title: post.title, text: t.text, query: t.query, fallbacks: [...(t.alts ?? []), ...fallbacks] }, style, used); } catch (e) { log('art search failed', e.message); }
     if (!pick) { log(`no art for "${t.query}", using plain background`); continue; }
