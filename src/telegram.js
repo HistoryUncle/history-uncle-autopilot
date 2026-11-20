@@ -3,8 +3,8 @@ import path from 'node:path';
 import { publishMode, env, http, escapeHtml as e } from './lib/util.js';
 
 /**
- * Telegram bot = your approval desk. No server needed: GitHub Actions polls getUpdates
- * every 15 minutes and acts on button presses and replies.
+ * Telegram bot = your approval desk. No server needed: a GitHub Actions job long-polls
+ * getUpdates (answers within seconds) and acts on button presses and replies.
  */
 const api = (method) => `https://api.telegram.org/bot${env('TELEGRAM_BOT_TOKEN')}/${method}`;
 const chatId = () => env('TELEGRAM_CHAT_ID');
@@ -84,11 +84,22 @@ export function reviewCard(id, post, review, links = []) {
   return lines.join('\n');
 }
 
-export async function getUpdates(offset) {
-  const res = await http(api('getUpdates'), { method: 'POST', json: { offset, timeout: 0, allowed_updates: ['message', 'callback_query'] } });
+export async function getUpdates(offset, waitSeconds = 0) {
+  const res = await http(api('getUpdates'), {
+    method: 'POST',
+    json: { offset, timeout: waitSeconds, allowed_updates: ['message', 'callback_query'] },
+    timeout: (waitSeconds + 20) * 1000,
+  });
   const data = await res.json();
   if (!data.ok) throw new Error(`Telegram getUpdates: ${data.description}`);
   return data.result;
+}
+
+/** getUpdates silently returns nothing while a webhook is set, so clear any stray one. */
+export async function ensurePolling() {
+  const info = await call('getWebhookInfo', {});
+  if (info.url) { await call('deleteWebhook', {}); return `removed webhook ${info.url}`; }
+  return `polling ok, ${info.pending_update_count ?? 0} pending`;
 }
 
 export const answer = (callbackId, text) => call('answerCallbackQuery', { callback_query_id: callbackId, text }).catch(() => {});

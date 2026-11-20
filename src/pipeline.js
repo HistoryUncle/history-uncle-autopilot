@@ -123,8 +123,9 @@ export async function publishDue(state, now = new Date()) {
 
 /* ---------- telegram inbox ---------- */
 
-export async function handleTelegram(state) {
-  const updates = await tg.getUpdates(state.telegramOffset);
+export async function handleTelegram(state, waitSeconds = 0) {
+  const updates = await tg.getUpdates(state.telegramOffset, waitSeconds);
+  if (updates.length) log(`telegram: ${updates.length} update(s)`);
   for (const u of updates) {
     state.telegramOffset = u.update_id + 1;
     try {
@@ -135,6 +136,7 @@ export async function handleTelegram(state) {
       await tg.sendText(`⚠️ Klaida: <code>${String(e.message).slice(0, 600)}</code>`).catch(() => {});
     }
   }
+  return updates.length;
 }
 
 async function onButton(state, q) {

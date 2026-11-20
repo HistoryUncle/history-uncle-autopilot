@@ -37,7 +37,15 @@ const commands = {
   /** Every 15 minutes: Telegram buttons and replies, due posts, comment-to-DM funnel. */
   async tick() {
     const state = S.load();
-    await step('Telegram', () => handleTelegram(state), state);
+    await step('Telegram', async () => log(await tg.ensurePolling()), state);
+    // Long-poll Telegram for up to TICK_MINUTES so buttons react within seconds.
+    // Stop early after handling something, so state is committed promptly; the next queued tick carries on.
+    const until = Date.now() + Number(process.env.TICK_MINUTES ?? 0) * 60000;
+    do {
+      let handled = 0;
+      await step('Telegram', async () => { handled = await handleTelegram(state, until > Date.now() ? 50 : 0); }, state);
+      if (handled) break;
+    } while (Date.now() < until);
     if (process.env.IG_ACCESS_TOKEN) {
       await step('Publikavimas', () => publishDue(state), state);
       await step('DM funnel', async () => { const n = await runDmFunnel(state); if (n) log(`sent ${n} DMs`); }, state);

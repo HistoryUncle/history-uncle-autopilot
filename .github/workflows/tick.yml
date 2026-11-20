@@ -1,6 +1,7 @@
 name: Tick
-# Every 15 minutes: read Telegram buttons/replies, publish approved posts that are due,
-# and DM the Substack link to everyone who commented the keyword.
+# Listens to Telegram (long polling, up to ~50 min per run) so buttons react within seconds.
+# GitHub starts scheduled runs irregularly, so a new run is queued every 15 minutes and picks up
+# as soon as the previous one ends. Also publishes due posts and runs the DM funnel (auto mode).
 on:
   schedule:
     - cron: "*/15 * * * *"
@@ -13,7 +14,7 @@ concurrency:
 jobs:
   tick:
     runs-on: ubuntu-latest
-    timeout-minutes: 25
+    timeout-minutes: 70
     steps:
       - uses: actions/checkout@v4
       - uses: ./.github/actions/setup
@@ -26,6 +27,7 @@ jobs:
           IG_ACCESS_TOKEN: ${{ secrets.IG_ACCESS_TOKEN }}
           IG_USER_ID: ${{ secrets.IG_USER_ID }}
           CHROME_PATH: /usr/bin/google-chrome
+          TICK_MINUTES: "50"
       - if: always()
         uses: ./.github/actions/commit-state
         with: { message: "tick: state" }
