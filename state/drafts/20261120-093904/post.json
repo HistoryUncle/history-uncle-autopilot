@@ -1,0 +1,266 @@
+{
+  "title": "Where to Start with Amsterdam's Golden Age",
+  "dek": "Eight books on how one city came to dominate trade",
+  "visual_style": "painting",
+  "cover_art_query": "Berckheyde Amsterdam Exchange interior",
+  "art_fallbacks": [
+    "Dutch Golden Age painting Amsterdam",
+    "Amsterdam harbour seventeenth century",
+    "Dutch merchant ships painting"
+  ],
+  "slides": [
+    {
+      "heading": "Start with the Culture of Wealth",
+      "body": "Simon Schama, *The Embarrassment of Riches* (1987). It shows how the Dutch lived with sudden prosperity: moral unease, cleanliness, display. Its interpretation is debated, but it is the most readable door into the period.",
+      "source": "Schama 1987",
+      "flag": "",
+      "art_query": "Pieter de Hooch Dutch interior",
+      "art_alternatives": [
+        "Vermeer woman holding balance",
+        "Dutch Golden Age domestic interior"
+      ],
+      "art": {
+        "file": "art/commons-21979992.jpg",
+        "key": "commons:21979992",
+        "kind": "painting",
+        "title": "Woman Holding a Balance",
+        "artist": "Johannes Vermeer",
+        "date": "c. 1664",
+        "museum": "Wikimedia Commons",
+        "license": "Public domain",
+        "fit": "fill",
+        "focus": [
+          0.68,
+          0.35
+        ]
+      }
+    },
+    {
+      "heading": "Then the Share Market",
+      "body": "Lodewijk Petram, *The World's First Stock Exchange* (2014, English edition). VOC shares traded from 1602, followed by forwards and short selling. The title's claim is contested: Antwerp had an exchange earlier, though not for company shares.",
+      "source": "Petram 2014",
+      "flag": "Contested",
+      "art_query": "Emanuel de Witte Amsterdam Exchange",
+      "art_alternatives": [
+        "Berckheyde Amsterdam Beurs courtyard",
+        "Amsterdam stock exchange painting"
+      ],
+      "art": {
+        "file": "art/aic-43211.jpg",
+        "key": "aic:43211",
+        "kind": "painting",
+        "title": "Interior of the Oude Kerk, Delft",
+        "artist": "Emanuel de Witte",
+        "date": "c. 1680",
+        "museum": "Art Institute of Chicago",
+        "fit": "fill",
+        "focus": [
+          0.5,
+          0.35
+        ]
+      }
+    },
+    {
+      "heading": "The Global Reach",
+      "body": "C. R. Boxer, *The Dutch Seaborne Empire, 1600 to 1800* (1965). It is an older classic, and still the clearest single account of how the VOC and WIC carried Amsterdam's capital across the Indian Ocean and Atlantic.",
+      "source": "Boxer 1965",
+      "flag": "",
+      "art_query": "Hendrick Cornelisz Vroom Return Amsterdam",
+      "art_alternatives": [
+        "Dutch East Indiaman ship painting",
+        "VOC ships harbour painting"
+      ],
+      "art": {
+        "file": "art/commons-22002270.jpg",
+        "key": "commons:22002270",
+        "kind": "painting",
+        "title": "A Dutch East-Indiaman off Hoorn",
+        "artist": "a Castro, Lorenzo",
+        "date": "1686",
+        "museum": "Wikimedia Commons",
+        "license": "Public domain",
+        "fit": "fill",
+        "focus": [
+          0.3,
+          0.4
+        ]
+      }
+    },
+    {
+      "heading": "The City as Money Market",
+      "body": "Violet Barbour, *Capitalism in Amsterdam in the Seventeenth Century* (1950). It is short and archival. Barbour traces the commodity trade, the Exchange Bank founded in 1609, and the lending that made Amsterdam Europe's capital market.",
+      "source": "Barbour 1950",
+      "flag": "",
+      "art_query": "Berckheyde Dam Square Town Hall",
+      "art_alternatives": [
+        "Amsterdam Town Hall painting",
+        "Dam Square Amsterdam seventeenth century"
+      ],
+      "art": {
+        "file": "art/commons-15395056.jpg",
+        "key": "commons:15395056",
+        "kind": "painting",
+        "title": "The Council Chamber in Amsterdam Town Hall",
+        "artist": "Pieter de Hooch",
+        "date": "1661",
+        "museum": "Wikimedia Commons",
+        "license": "Public domain",
+        "fit": "fill",
+        "focus": [
+          0.5,
+          0.4
+        ]
+      }
+    },
+    {
+      "heading": "Braudel's World-Economy",
+      "body": "Fernand Braudel, *The Perspective of the World* (1979), volume three of *Civilization and Capitalism*. Braudel treats Amsterdam as the last city to stand at the centre of a world-economy before London and national economies took over.",
+      "source": "Braudel 1979",
+      "flag": "",
+      "art_query": "Ludolf Bakhuizen Amsterdam harbour",
+      "art_alternatives": [
+        "Amsterdam IJ harbour painting",
+        "Dutch harbour ships seventeenth century"
+      ],
+      "art": {
+        "file": "art/commons-83505709.jpg",
+        "key": "commons:83505709",
+        "kind": "painting",
+        "title": "The Y at Amsterdam, with the Frigate 'De Ploeg",
+        "artist": "Ludolf Bakhuizen",
+        "date": "1680",
+        "museum": "Wikimedia Commons",
+        "license": "CC0",
+        "fit": "fill",
+        "focus": [
+          0.55,
+          0.55
+        ]
+      }
+    },
+    {
+      "heading": "The Primacy Thesis",
+      "body": "Jonathan Israel, *Dutch Primacy in World Trade, 1585 to 1740* (1989). Israel argues that dominance rested on high-value rich trades and the Amsterdam staple market, not only the Baltic bulk trade. That emphasis remains contested.",
+      "source": "Israel 1989",
+      "flag": "Contested",
+      "art_query": "Willem van de Velde Dutch merchant ships",
+      "art_alternatives": [
+        "Dutch fluyt ship painting",
+        "Dutch merchant fleet calm sea"
+      ],
+      "art": {
+        "file": "art/commons-63144712.jpg",
+        "key": "commons:63144712",
+        "kind": "painting",
+        "title": "A Dutch Flagship and a Fluyt Running into a Mediterranean Harbour",
+        "artist": "Abraham Beerstraaten",
+        "date": "1660",
+        "museum": "Wikimedia Commons",
+        "license": "Public domain",
+        "fit": "frame",
+        "focus": [
+          0.35,
+          0.6
+        ]
+      }
+    },
+    {
+      "heading": "The Long Economic Arc",
+      "body": "Jan de Vries and Ad van der Woude, *The First Modern Economy* (1997). This is the standard synthesis on growth, energy, agriculture and decline from 1500 to 1815. Its central claim, the Dutch economy as the first modern one, is debated.",
+      "source": "De Vries and Van der Woude 1997",
+      "flag": "Contested",
+      "art_query": "Ruisdael Windmill at Wijk bij Duurstede",
+      "art_alternatives": [
+        "Dutch windmill landscape painting",
+        "Dutch polder landscape seventeenth century"
+      ],
+      "art": {
+        "file": "art/commons-83490099.jpg",
+        "key": "commons:83490099",
+        "kind": "painting",
+        "title": "De molen bij Wijk bij Duurstede The Windmill at Wijk bij Duurstede",
+        "artist": "Jacob van Ruisdael",
+        "date": "1668",
+        "museum": "Wikimedia Commons",
+        "license": "Public domain",
+        "fit": "fill",
+        "focus": [
+          0.72,
+          0.4
+        ]
+      }
+    },
+    {
+      "heading": "Finish with the Institutions",
+      "body": "Oscar Gelderblom, *Cities of Commerce* (2013). Comparing Bruges, Antwerp and Amsterdam from 1250 to 1650, he argues that commercial institutions improved through competition between cities, not through any single superior design.",
+      "source": "Gelderblom 2013",
+      "flag": "",
+      "art_query": "Antwerp Bourse painting",
+      "art_alternatives": [
+        "Antwerp merchants sixteenth century",
+        "Flemish city market painting"
+      ],
+      "art": {
+        "file": "art/unsplash-T3EwaKZEtFA.jpg",
+        "key": "unsplash:T3EwaKZEtFA",
+        "kind": "photo",
+        "title": "Market scene with baskets and historic buildings",
+        "artist": "Photo by Art Institute of Chicago",
+        "date": "",
+        "museum": "Unsplash",
+        "fit": "fill",
+        "focus": [
+          0.4,
+          0.35
+        ]
+      }
+    }
+  ],
+  "caption": "Amsterdam's dominance had no single cause, and the eight books below disagree about which ones mattered most.\nIsrael puts the weight on rich trades and the staple market (Israel 1989). De Vries and Van der Woude call the Republic the first modern economy (De Vries and Van der Woude 1997). Gelderblom credits competition between cities (Gelderblom 2013). Read them in order and the argument comes into focus.\nComment READ and I will send you the Substack link.",
+  "risk_notes": [
+    "Petram's title 'first stock exchange': Antwerp had an exchange earlier, so the slide is flagged. Defend with 'the first sustained secondary market in company shares'.",
+    "Israel's rich-trades thesis is challenged by scholars who stress the Baltic bulk trade as the 'mother trade'. The slide is flagged as contested.",
+    "Whether the 'first modern economy' label holds is debated. The slide attributes it to De Vries and Van der Woude and flags it.",
+    "Schama's cultural reading has been criticised as impressionistic. The slide notes that his interpretation is debated.",
+    "Braudel dates: French original 1979, English translation 1984. If challenged, cite both.",
+    "Boxer and Israel subtitles use date ranges written with 'to' to avoid dashes. The original titles use a dash."
+  ],
+  "engine": "reading-path",
+  "kicker": "A Reading Path",
+  "coverArt": {
+    "file": "art/commons-65493538.jpg",
+    "key": "commons:65493538",
+    "kind": "painting",
+    "title": "View of the Westerkerk, Amsterdam",
+    "artist": "Jan van der Heyden",
+    "date": "1667",
+    "museum": "Wikimedia Commons",
+    "license": "Public domain",
+    "fit": "fill",
+    "focus": [
+      0.4,
+      0.35
+    ]
+  },
+  "credits": "Images: Jan van der Heyden, View of the Westerkerk, Amsterdam (1667); Johannes Vermeer, Woman Holding a Balance (c. 1664); Emanuel de Witte, Interior of the Oude Kerk, Delft (c. 1680); a Castro, Lorenzo, A Dutch East-Indiaman off Hoorn (1686); Pieter de Hooch, The Council Chamber in Amsterdam Town Hall (1661); Ludolf Bakhuizen, The Y at Amsterdam, with the Frigate 'De Ploeg (1680); Abraham Beerstraaten, A Dutch Flagship and a Fluyt Running into a Mediterranean Harbour (1660); Jacob van Ruisdael, De molen bij Wijk bij Duurstede The Windmill at Wijk bij Duurstede (1668). Via Wikimedia Commons, Art Institute of Chicago. Photos: Art Institute of Chicago on Unsplash.",
+  "renderDir": "r1",
+  "review": {
+    "issues": [
+      {
+        "where": "slide 5",
+        "problem": "\"The Perspective of the World* (1979)\" gives the English title with the date of the French original (*Le Temps du monde*, 1979). The English translation came out in 1984. The risk note mentions this, but the slide itself mixes the two editions.",
+        "severity": "low",
+        "fix": "Write \"Fernand Braudel, *The Perspective of the World* (1979; English 1984), volume three of *Civilization and Capitalism*.\" This keeps the body within 40 words. Alternatively, write \"(1984, English edition)\" to match the Petram slide."
+      },
+      {
+        "where": "caption",
+        "problem": "\"De Vries and Van der Woude call the Republic the first modern economy\" states the label without the caveat that slide 7 gives it. A reader who only sees the caption won't know it's debated.",
+        "severity": "low",
+        "fix": "Change it to \"De Vries and Van der Woude make the debated case that the Republic was the first modern economy (De Vries and Van der Woude 1997).\""
+      }
+    ],
+    "verdict": "publishable"
+  },
+  "links": [],
+  "rev": 1
+}
