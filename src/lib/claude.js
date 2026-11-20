@@ -41,6 +41,7 @@ export const CAROUSEL_TOOL = {
     required: ['title', 'visual_style', 'cover_art_query', 'art_fallbacks', 'slides', 'caption', 'risk_notes'],
     properties: {
       title: { type: 'string', description: 'Cover title, max 7 words, works in uppercase.' },
+      title_lead: { type: 'string', description: 'Optional short lead-in line above the title, sentence case, max 5 words (e.g. "The return of the", "Finally explained:").' },
       dek: { type: 'string', description: 'Optional cover subline, max 12 words.' },
       visual_style: { type: 'string', enum: ['painting', 'photo'], description: 'One style for the whole carousel.' },
       cover_art_query: { type: 'string' },
