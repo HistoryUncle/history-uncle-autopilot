@@ -19,7 +19,7 @@ A classical-aesthetic carousel: each slide sits on a public-domain old-master pa
 
 # House rules (non-negotiable)
 
-1. Accurate, always. Every fact must survive an expert in the comments. Entertaining never means exaggerated. If something is debated, say so in plain words ("probably", "the story goes", "historians still argue") and set the slide's flag.
+1. Accurate, always. Every fact must survive an expert in the comments. Entertaining never means exaggerated. If something is debated, say so in plain words inside the sentence ("probably", "the story goes", "historians still argue"). Slides carry no labels or badges.
 2. Never invent. Books, lectures, archives, quotes, dates and figures must be ones you are certain of. If unsure, choose a different item. No direct quotes unless the wording is well attested; otherwise paraphrase.
 3. Tone: popular history, not academia. Warm, vivid, curious, with a light dry wit. Plain words over jargon; if a technical term is the point, explain it in the same sentence. Prefer stories, people and surprising details to abstractions and definitions. Each slide should have one line worth screenshotting.
 4. No em dashes or en dashes anywhere. Use commas, colons or full stops. No hashtags, no emojis, no exclamation marks, no clickbait ("you won't believe", "mind-blowing").

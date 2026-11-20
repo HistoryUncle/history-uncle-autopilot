@@ -131,7 +131,6 @@ export function buildHtml(post, dir, brand) {
     ${artImg(dir, s.art)}<div class="grain"></div><div class="fade"></div><div class="vignette"></div>
     <div class="block">
       <div class="num">${roman(i + 1)}<span class="rule"></span></div>
-      ${s.flag ? `<div><span class="flag">${e(s.flag)}</span></div>` : ''}
       <h2 class="heading">${e(s.heading)}</h2>
       <p class="body fit" data-min="30">${md(s.body)}</p>
     </div>

@@ -55,7 +55,6 @@ export const CAROUSEL_TOOL = {
             body: { type: 'string' },
             art_query: { type: 'string', description: 'Most specific visual search for THIS slide.' },
             art_alternatives: { type: 'array', items: { type: 'string' }, description: '2 more searches for this same slide, from specific to slightly broader, all depicting its subject.' },
-            flag: { type: 'string', enum: ['', 'Contested', 'Simplified', 'Traditionally dated'], description: 'Accuracy label shown on the slide when a claim is debated or simplified.' },
             source: { type: 'string', description: 'Short source tag, e.g. "Braudel 1979".' },
           },
         },
