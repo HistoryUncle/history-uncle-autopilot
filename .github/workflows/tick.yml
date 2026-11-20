@@ -1,7 +1,6 @@
 name: Tick
-# Listens to Telegram (long polling, up to ~50 min per run) so buttons react within seconds.
-# GitHub starts scheduled runs irregularly, so a new run is queued every 15 minutes and picks up
-# as soon as the previous one ends. Also publishes due posts and runs the DM funnel (auto mode).
+# The always-on bot. Each run listens to Telegram for ~55 min (answers within seconds), makes the
+# scheduled drafts, then starts the next run itself. The hourly cron only restarts it if the chain breaks.
 on:
   schedule:
     - cron: "7 * * * *"
