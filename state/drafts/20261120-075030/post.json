@@ -1,0 +1,235 @@
+{
+  "title": "What Amsterdam Knew About Money",
+  "dek": "How a merchant city built trusted money, then spent it",
+  "visual_style": "painting",
+  "cover_art_query": "Berckheyde Amsterdam Town Hall",
+  "art_fallbacks": [
+    "Dutch Golden Age Amsterdam painting",
+    "Dutch merchant portrait",
+    "Amsterdam canal seventeenth century"
+  ],
+  "slides": [
+    {
+      "heading": "Fix the Coin First",
+      "body": "By 1609 the Dutch Republic was full of clipped and foreign coin of uncertain weight. Amsterdam responded by founding the Wisselbank, a municipal exchange bank that credited deposits at their assayed value (van Dillen, *History of the Principal Public Banks*).",
+      "art_query": "Quentin Massys moneychanger wife",
+      "source": "van Dillen 1934",
+      "flag": "",
+      "art": {
+        "file": "art/aic-80560.jpg",
+        "key": "aic:80560",
+        "kind": "painting",
+        "title": "Isabella of Bourbon, Wife of Philip IV of Spain",
+        "artist": "Workshop of Diego Rodriguez de Velázquez",
+        "date": "c. 1632",
+        "museum": "Art Institute of Chicago",
+        "fit": "fill",
+        "focus": [
+          0.5,
+          0.25
+        ]
+      }
+    },
+    {
+      "heading": "Route Big Payments Through One Ledger",
+      "body": "Bills of exchange of 600 guilders or more had to be settled through Wisselbank accounts. Large merchants had to keep balances there, so the city's biggest payments cleared by book transfer instead of moving coin (Quinn and Roberds).",
+      "art_query": "Dutch merchant counting house interior",
+      "source": "Quinn and Roberds",
+      "flag": "",
+      "art": {
+        "file": "art/aic-110559.jpg",
+        "key": "aic:110559",
+        "kind": "painting",
+        "title": "Portrait of a Woman",
+        "artist": "Dutch",
+        "date": "c. 1655",
+        "museum": "Art Institute of Chicago",
+        "fit": "fill",
+        "focus": [
+          0.5,
+          0.25
+        ]
+      }
+    },
+    {
+      "heading": "Reliable Money Commands a Premium",
+      "body": "Bank money traded above circulating coin. In his digression on banks of deposit in *The Wealth of Nations*, Adam Smith explains this premium, the agio: a bank florin had a known value and could not be stolen.",
+      "art_query": "Dutch still life coins purse",
+      "source": "Smith 1776",
+      "flag": "",
+      "art": {
+        "file": "art/aic-198905.jpg",
+        "key": "aic:198905",
+        "kind": "painting",
+        "title": "Still Life with Ostrich Egg Cup and the Whitfield Heirlooms",
+        "artist": "Pieter Gerritsz. van Roestraeten",
+        "date": "c. 1670",
+        "museum": "Art Institute of Chicago",
+        "fit": "fill",
+        "focus": [
+          0.6,
+          0.4
+        ]
+      }
+    },
+    {
+      "heading": "Receipts Turned Coin Into Credit",
+      "body": "From 1683 depositors of coin received tradable receipts, and accounts could no longer simply be cashed out. Quinn and Roberds argue this made bank money something close to modern central bank money. Not every historian accepts that framing.",
+      "art_query": "Rembrandt Syndics of the Drapers Guild",
+      "source": "Quinn and Roberds 2007",
+      "flag": "Contested",
+      "art": {
+        "file": "art/commons-13411875.jpg",
+        "key": "commons:13411875",
+        "kind": "painting",
+        "title": "The Syndics of the Amsterdam Drapers' Guild, known as the ‘Sampling Officials’",
+        "artist": "Rembrandt",
+        "date": "1662",
+        "museum": "Wikimedia Commons",
+        "license": "Public domain",
+        "fit": "frame",
+        "focus": [
+          0.5,
+          0.5
+        ]
+      }
+    },
+    {
+      "heading": "Markets Need Rules Against Raids",
+      "body": "In 1609 a group around Isaac Le Maire sold VOC shares forward in a bear raid. In 1610 the States General banned selling shares the seller did not own. Lodewijk Petram, *The World's First Stock Exchange*, shows that traders kept finding ways around the ban.",
+      "art_query": "Emanuel de Witte Amsterdam Exchange",
+      "source": "Petram 2014",
+      "flag": "",
+      "art": {
+        "file": "art/commons-57393927.jpg",
+        "key": "commons:57393927",
+        "kind": "painting",
+        "title": "Interior of the Oude Kerk, Delft",
+        "artist": "Emanuel de Witte",
+        "date": "1650",
+        "museum": "Wikimedia Commons",
+        "license": "CC0",
+        "fit": "fill",
+        "focus": [
+          0.5,
+          0.35
+        ]
+      }
+    },
+    {
+      "heading": "Cheap Debt Is Built on Trust",
+      "body": "Holland paid interest on its provincial bonds, the renten, reliably for generations. James Tracy traces this back to Habsburg-era reforms of the mid-1500s. De Vries and van der Woude, *The First Modern Economy*, show rates falling to around 4 percent by the mid-1600s.",
+      "art_query": "Ludolf Backhuysen Dutch ships calm",
+      "source": "Tracy 1985; de Vries and van der Woude 1997",
+      "flag": "Simplified",
+      "art": {
+        "file": "art/aic-16343.jpg",
+        "key": "aic:16343",
+        "kind": "painting",
+        "title": "Fishing Boats in a Calm",
+        "artist": "Jan van de Cappelle",
+        "date": "1651",
+        "museum": "Art Institute of Chicago",
+        "fit": "frame",
+        "focus": [
+          0.75,
+          0.6
+        ]
+      }
+    },
+    {
+      "heading": "Secret Loans Break the Ledger",
+      "body": "In the 1780s the Wisselbank quietly lent large sums to the struggling VOC and to the city. As this became known, the agio collapsed and bank money traded at a discount. Quinn and Roberds describe this as the death of a reserve currency.",
+      "art_query": "Berckheyde Dam Square Amsterdam",
+      "source": "Quinn and Roberds 2016",
+      "flag": "",
+      "art": {
+        "file": "art/commons-34320676.jpg",
+        "key": "commons:34320676",
+        "kind": "painting",
+        "title": "The Town Hall on Dam Square, Amsterdam",
+        "artist": "Gerrit Adriaenszoon Berckheyde",
+        "date": "1672",
+        "museum": "Wikimedia Commons",
+        "license": "Public domain",
+        "fit": "fill",
+        "focus": [
+          0.45,
+          0.4
+        ]
+      }
+    }
+  ],
+  "caption": "In 1609 Amsterdam built the most trusted money in Europe. Two centuries later it lent that trust to a failing company.\nThe Wisselbank turned unreliable coin into a sound bank money that traded at a premium (Smith 1776). In the 1780s, secret lending to the VOC broke the arrangement (Quinn and Roberds 2016). Petram (2014) shows that the city's stock market had to learn its own rules the hard way.\nComment READ and I will send you the Substack link.",
+  "risk_notes": [
+    "Wisselbank founding motive: currency disorder is the standard account (van Dillen). Say 'responded to' rather than claiming it was the only cause.",
+    "600 guilder threshold: this comes from the founding ordinance as given by Quinn and Roberds. If challenged, note that the threshold and its enforcement changed over time.",
+    "1683 receipts as 'central bank money': this is Quinn and Roberds' interpretation, already flagged as Contested. Defend it as their argument, not as a consensus.",
+    "1610 short-selling ban: Petram describes it as a ban on selling shares not owned, which was repeatedly reissued and only partly enforced. Do not call it effective.",
+    "Holland interest rates of about 4 percent: this simplifies a gradual decline, with conversions around 1655. Keep 'around' and 'mid-1600s'.",
+    "Loans to the VOC: they grew in the 1780s, and the agio went negative around 1790. Avoid giving exact sums."
+  ],
+  "urls": [],
+  "engine": "lessons",
+  "kicker": "Lessons",
+  "coverArt": {
+    "file": "art/commons-97501555.jpg",
+    "key": "commons:97501555",
+    "kind": "painting",
+    "title": "The Town Hall in Amsterdam",
+    "artist": "Gerrit Adriaenszoon Berckheyde",
+    "date": "1674",
+    "museum": "Wikimedia Commons",
+    "license": "PDM-owner",
+    "fit": "fill",
+    "focus": [
+      0.5,
+      0.35
+    ]
+  },
+  "credits": "Images: Gerrit Adriaenszoon Berckheyde, The Town Hall in Amsterdam (1674); Workshop of Diego Rodriguez de Velázquez, Isabella of Bourbon, Wife of Philip IV of Spain (c. 1632); Dutch, Portrait of a Woman (c. 1655); Pieter Gerritsz. van Roestraeten, Still Life with Ostrich Egg Cup and the Whitfield Heirlooms (c. 1670); Rembrandt, The Syndics of the Amsterdam Drapers' Guild, known as the ‘Sampling Officials’ (1662); Emanuel de Witte, Interior of the Oude Kerk, Delft (1650); Jan van de Cappelle, Fishing Boats in a Calm (1651); Gerrit Adriaenszoon Berckheyde, The Town Hall on Dam Square, Amsterdam (1672). Via Wikimedia Commons, Art Institute of Chicago.",
+  "renderDir": "r1",
+  "review": {
+    "issues": [
+      {
+        "where": "caption",
+        "problem": "\"In 1609 Amsterdam built the most trusted money in Europe\" is an unsourced superlative, and it gets the timing wrong. The bank was founded in 1609, but its reputation and the agio built up over the following decades. It was not the most trusted money in Europe at founding.",
+        "severity": "medium",
+        "fix": "\"In 1609 Amsterdam founded a bank whose money became some of the most trusted in Europe.\""
+      },
+      {
+        "where": "caption",
+        "problem": "\"Two centuries later it lent that trust to a failing company\" stretches the timeline. From 1609 to the 1780s is about 175 years.",
+        "severity": "low",
+        "fix": "\"Nearly two centuries later it lent that trust to a failing company.\""
+      },
+      {
+        "where": "slide 5",
+        "problem": "The body is 45 words, over the 40-word limit.",
+        "severity": "low",
+        "fix": "\"In 1609 a group around Isaac Le Maire sold VOC shares forward in a bear raid. In 1610 the States General banned selling shares not owned. Petram, *The World's First Stock Exchange*, shows traders kept evading the ban.\""
+      },
+      {
+        "where": "slide 6",
+        "problem": "The body is 43 words, over the 40-word limit.",
+        "severity": "low",
+        "fix": "\"Holland paid interest on its renten reliably for generations. James Tracy traces this to Habsburg-era reforms of the mid-1500s. De Vries and van der Woude, *The First Modern Economy*, show rates falling to around 4 percent by the mid-1600s.\""
+      },
+      {
+        "where": "slide 7",
+        "problem": "The body is 43 words, over the 40-word limit. The slide also puts the collapse down to the secret loans alone. The 1795 French invasion and the run that followed were the final blow, and Quinn and Roberds discuss both.",
+        "severity": "low",
+        "fix": "\"In the 1780s the Wisselbank quietly lent large sums to the struggling VOC and the city. As this became known, the agio collapsed and bank money fell to a discount. Quinn and Roberds call this the death of a reserve currency.\""
+      },
+      {
+        "where": "slide 2",
+        "problem": "The source field \"Quinn and Roberds\" has no year, unlike the other slides.",
+        "severity": "low",
+        "fix": "Add the specific Quinn and Roberds publication year, for example \"Quinn and Roberds 2009\" (\"An Economic Explanation of the Early Bank of Amsterdam\"), or whichever work the 600-guilder figure comes from."
+      }
+    ],
+    "verdict": "needs_fixes"
+  },
+  "links": [],
+  "rev": 1
+}

@@ -29,7 +29,15 @@
     "unsplash:Cj-jwGRWd4o",
     "unsplash:WTsLOmjnpHM",
     "commons:3985584",
-    "unsplash:CK_n5A2Mmpo"
+    "unsplash:CK_n5A2Mmpo",
+    "commons:97501555",
+    "aic:80560",
+    "aic:110559",
+    "aic:198905",
+    "commons:13411875",
+    "commons:57393927",
+    "aic:16343",
+    "commons:34320676"
   ],
   "repliedComments": [],
   "drafts": {
@@ -63,6 +71,13 @@
       "title": "7 Rules of the Roman Jurists",
       "createdAt": "2026-11-19T19:41:29.899Z",
       "telegramMessageId": 44
+    },
+    "20261120-075030": {
+      "status": "pending",
+      "engine": "lessons",
+      "title": "What Amsterdam Knew About Money",
+      "createdAt": "2026-11-20T07:53:05.638Z",
+      "telegramMessageId": 54
     }
   }
 }
