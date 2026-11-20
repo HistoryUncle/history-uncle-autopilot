@@ -158,10 +158,11 @@ const PICK_TOOL = {
 const DIRECTOR = `You are the art director of History Uncle, a history brand whose Instagram carousels must look like a calm, expensive editorial: classical paintings and refined photographs with white serif text set over the lower third.
 
 Choose ONE background for the slide. Criteria, in order:
-1. On topic: it should belong to the slide's subject, period or place. Close is good enough: a 16th-century northern European merchant portrait fits a Hanseatic slide, a Baltic harbour fits Baltic trade, a library fits a reading list. A beautiful image that is plainly unrelated loses to a good image that is on topic.
+1. On topic for THIS slide: it should show what the slide is actually about, the person it names, the place, the object, the text or the event. A portrait of the jurist the slide quotes beats a generic Roman ruin; the actual manuscript beats any old book. If nothing shows the exact subject, the closest thing from the same person, place and period is acceptable. A generic mood image is a last resort.
 2. Aesthetic: minimal and calm composition, strong mood, good light, negative space, high image quality. Avoid clutter, busy crowds, kitsch, text, watermarks, frames, low resolution, modern objects in a historical post.
 3. Works with white text in the lower third: the lower part should be quiet rather than full of detail.
-4. Format: the slide is a vertical 4:5 frame. Each candidate lists its size and shape. Prefer portrait or square works. A wide landscape loses most of its width when cropped to 4:5, so pick one only if it is clearly the best fit for the topic, and then choose fit "frame" so the whole painting shows uncropped. Use fit "fill" for portrait and square works and for wide images whose subject sits in a narrow central area. Set focus_x and focus_y on the face, figure, ship or building that must stay in view; text covers the bottom 40% of a "fill" slide, so a face in the lower half is a poor choice.
+4. Aesthetic bar: think of the best curated history and art accounts. Prefer one clear subject, strong light, rich but calm colour, high resolution, no visible frames, captions, colour charts, museum walls or watermarks.
+5. Format: the slide is a vertical 4:5 frame. Each candidate lists its size and shape. Prefer portrait or square works. A wide landscape loses most of its width when cropped to 4:5, so pick one only if it is clearly the best fit for the topic, and then choose fit "frame" so the whole painting shows uncropped. Use fit "fill" for portrait and square works and for wide images whose subject sits in a narrow central area. Set focus_x and focus_y on the face, figure, ship or building that must stay in view; text covers the bottom 40% of a "fill" slide, so a face in the lower half is a poor choice.
 Never pick anything violent, graphic or sexual.
 Return -1 only if every candidate is plainly unrelated or poor quality.`;
 
@@ -201,21 +202,27 @@ async function direct(cands, ctx, lenient = false) {
 export async function findArt(ctx, style, used) {
   const other = style === 'photo' ? 'painting' : (process.env.UNSPLASH_ACCESS_KEY ? 'photo' : 'painting');
   const queries = [...new Set([ctx.query, ...(ctx.fallbacks ?? [])].filter(Boolean))];
-  const plan = [
-    ...queries.slice(0, 2).map((q) => ({ q, style })),
-    ...(other !== style ? [{ q: ctx.query, style: other }] : []),
-    ...queries.slice(2).map((q) => ({ q, style })),
-  ];
+  const uniq = (list) => [...new Map(list.map((c) => [c.key, c])).values()];
   const seen = [];
-  for (const step of plan) {
-    const cands = await gather(step.q, step.style, used);
+  const attempt = async (searches, max, lenient = false) => {
+    const lists = await Promise.all(searches.map(({ q, st }) => gather(q, st, used).catch(() => [])));
+    // interleave so the director sees the best of every search
+    const pool = [];
+    for (let i = 0; pool.length < max && lists.some((l) => l[i]); i++) for (const l of lists) if (l[i]) pool.push(l[i]);
+    const cands = uniq(pool).slice(0, max);
     seen.push(...cands);
-    const pick = await direct(cands, { ...ctx, query: step.q }).catch((e) => { log('art director failed', e.message); return cands[0]; });
-    if (pick) return pick;
-  }
-  // last attempt: best of everything we saw, with a lenient brief
-  const pool = [...new Map(seen.map((c) => [c.key, c])).values()].slice(0, 12);
-  return direct(pool, ctx, true).catch(() => null);
+    return direct(cands, { ...ctx, query: searches.map((x) => x.q).join(' | ') }, lenient)
+      .catch((e) => { log('art director failed', e.message); return cands[0] ? { ...cands[0], fit: defaultFit(cands[0]) } : null; });
+  };
+  // 1. the slide's own specific searches, in the post's style and the other one, judged together
+  const own = [{ q: queries[0], st: style }, ...(queries[1] ? [{ q: queries[1], st: style }] : []), ...(other !== style ? [{ q: queries[0], st: other }] : [])];
+  let pick = await attempt(own, 16);
+  if (pick) return pick;
+  // 2. broader searches for the same subject
+  const broader = queries.slice(2, 5).map((q) => ({ q, st: style }));
+  if (broader.length) { pick = await attempt(broader, 16); if (pick) return pick; }
+  // 3. best of everything seen, with a lenient brief
+  return direct(uniq(seen).slice(0, 14), ctx, true).catch(() => null);
 }
 
 async function download(c, file) {
@@ -235,12 +242,12 @@ export async function illustrate(post, dir, state) {
   const fallbacks = post.art_fallbacks ?? [];
   const targets = [];
   if (!post.coverArt) targets.push({ slot: 'cover', query: post.cover_art_query, text: post.title });
-  post.slides.forEach((s, i) => { if (!s.art) targets.push({ slot: i, query: s.art_query, text: `${s.heading}. ${s.body}` }); });
+  post.slides.forEach((s, i) => { if (!s.art) targets.push({ slot: i, query: s.art_query, alts: s.art_alternatives ?? [], text: `${s.heading}. ${s.body}` }); });
   fs.mkdirSync(path.join(dir, 'art'), { recursive: true });
 
   for (const t of targets) {
     let pick = null;
-    try { pick = await findArt({ title: post.title, text: t.text, query: t.query, fallbacks }, style, used); } catch (e) { log('art search failed', e.message); }
+    try { pick = await findArt({ title: post.title, text: t.text, query: t.query, fallbacks: [...(t.alts ?? []), ...fallbacks] }, style, used); } catch (e) { log('art search failed', e.message); }
     if (!pick) { log(`no art for "${t.query}", using plain background`); continue; }
     const file = path.join(dir, 'art', `${pick.key.replace(':', '-')}.jpg`);
     try { if (!fs.existsSync(file)) await download(pick, file); } catch (e) { log('download failed', e.message); continue; }

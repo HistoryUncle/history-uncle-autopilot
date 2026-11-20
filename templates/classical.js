@@ -113,7 +113,7 @@ const asset = (rel, cls) => {
 };
 
 export function buildHtml(post, dir, brand) {
-  const foot = (swipe) => `<div class="foot"><span>${e(brand.footer)}</span>${swipe ? '<span class="swipe">Swipe<i></i></span>' : `<span>${e(brand.substack_display)}</span>`}</div>`;
+  const foot = () => `<div class="foot"><span>${e(brand.footer)}</span><span></span></div>`;
   const md = (s) => e(s).replace(/\*([^*]+)\*/g, '<em>$1</em>'); // *Book Title* -> italic
   const kind = post.visual_style === 'photo' ? 'photo' : 'painting';
 
@@ -129,13 +129,11 @@ export function buildHtml(post, dir, brand) {
   const slides = post.slides.map((s, i) => `
   <section class="slide ${kind}${s.art?.fit === 'frame' ? ' has-frame' : ''}">
     ${artImg(dir, s.art)}<div class="grain"></div><div class="fade"></div><div class="vignette"></div>
-    ${credit(s.art)}
     <div class="block">
       <div class="num">${roman(i + 1)}<span class="rule"></span></div>
       ${s.flag ? `<div><span class="flag">${e(s.flag)}</span></div>` : ''}
       <h2 class="heading">${e(s.heading)}</h2>
       <p class="body fit" data-min="30">${md(s.body)}</p>
-      ${s.source ? `<div class="source">${e(s.source)}</div>` : ''}
     </div>
     ${foot()}
   </section>`).join('');
