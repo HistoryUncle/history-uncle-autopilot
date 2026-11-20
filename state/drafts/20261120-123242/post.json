@@ -1,0 +1,289 @@
+{
+  "title": "Templar Treasury vs Italian Bank",
+  "dek": "Why the knights kept money safe but did not invent banking",
+  "visual_style": "painting",
+  "cover_art_query": "Knights Templar medieval painting",
+  "art_fallbacks": [
+    "medieval money changers painting",
+    "Knights Templar",
+    "Florentine merchants painting"
+  ],
+  "slides": [
+    {
+      "heading": "Two Kinds of Money Men",
+      "body": "The Templars are often called the inventors of international banking. Historians usually draw a finer line. Keeping money safe is custody. Putting other people's money to work is banking. That difference is the whole story.",
+      "art_query": "Quentin Matsys Moneylender and his Wife",
+      "art_alternatives": [
+        "Matsys moneychanger painting",
+        "Flemish money changer portrait"
+      ],
+      "source": "Barber, *The New Knighthood*",
+      "flag": "",
+      "art": {
+        "file": "art/commons-15497751.jpg",
+        "key": "commons:15497751",
+        "kind": "photo",
+        "title": "The Moneylender and his Wife",
+        "artist": "Quinten Metsys",
+        "date": "1514",
+        "museum": "Wikimedia Commons",
+        "license": "Public domain",
+        "fit": "fill",
+        "focus": [
+          0.5,
+          0.4
+        ]
+      }
+    },
+    {
+      "heading": "Templars: A Network of Strongrooms",
+      "body": "From London to Acre, Templar houses guarded cash, jewels and charters behind thick walls and sworn knights. For much of the 13th century, the Paris Temple acted as the French crown's treasury. Safe, trusted, international. Not yet a bank.",
+      "art_query": "Temple Church London",
+      "art_alternatives": [
+        "Paris Temple tower engraving",
+        "Templar commandery medieval"
+      ],
+      "source": "Barber 1994",
+      "flag": "Simplified",
+      "art": {
+        "file": "art/commons-159205205.jpg",
+        "key": "commons:159205205",
+        "kind": "photo",
+        "title": "Temple Church London EC4Y 7BB",
+        "artist": "Spudgun67",
+        "date": "2025-02",
+        "museum": "Wikimedia Commons",
+        "license": "CC0",
+        "fit": "fill",
+        "focus": [
+          0.5,
+          0.4
+        ]
+      }
+    },
+    {
+      "heading": "Italians: Money That Works",
+      "body": "In Florence, companies like the Bardi and Peruzzi took deposits and lent them on, to merchants, popes and the King of England. Your money left the vault and came back with profit. That was the real leap.",
+      "art_query": "Ghirlandaio Sassetti Chapel fresco",
+      "art_alternatives": [
+        "Florentine merchants fresco",
+        "Renaissance Florence painting"
+      ],
+      "source": "de Roover 1963",
+      "flag": "",
+      "art": {
+        "file": "art/aic-16151.jpg",
+        "key": "aic:16151",
+        "kind": "painting",
+        "title": "Portrait of a Gentleman",
+        "artist": "Ridolfo Ghirlandaio",
+        "date": "c. 1505",
+        "museum": "Art Institute of Chicago",
+        "fit": "fill",
+        "focus": [
+          0.4,
+          0.25
+        ]
+      }
+    },
+    {
+      "heading": "Templars: Joinville's Hatchet",
+      "body": "In 1250 Jean de Joinville needed money to finish ransoming Louis IX. The Templars refused at first: the deposits belonged to their clients. Joinville went for a strongbox with a hatchet, and they let him. Custody, not credit, in one scene.",
+      "art_query": "Saint Louis crusade painting",
+      "art_alternatives": [
+        "Louis IX Damietta painting",
+        "King Louis IX portrait"
+      ],
+      "source": "Joinville, *Life of Saint Louis*",
+      "flag": "",
+      "art": {
+        "file": "art/commons-18619980.jpg",
+        "key": "commons:18619980",
+        "kind": "painting",
+        "title": "Conquest of Tripoli",
+        "artist": "Charles-Alexandre Debacq",
+        "date": "1842",
+        "museum": "Wikimedia Commons",
+        "license": "Public domain",
+        "fit": "frame",
+        "focus": [
+          0.5,
+          0.35
+        ]
+      }
+    },
+    {
+      "heading": "Italians: The Bill of Exchange",
+      "body": "Italian merchants perfected the bill of exchange: pay florins in Florence, collect money in Bruges months later. It moved value without moving coins, and tucked interest into the exchange rate, neatly sidestepping the Church's ban on usury.",
+      "art_query": "Marinus van Reymerswaele money changers",
+      "art_alternatives": [
+        "merchant counting coins painting",
+        "medieval merchant letter painting"
+      ],
+      "source": "de Roover 1963",
+      "flag": "",
+      "art": {
+        "file": "art/commons-21996508.jpg",
+        "key": "commons:21996508",
+        "kind": "photo",
+        "title": "Los cambistas",
+        "artist": "Marinus van Reymerswaele",
+        "date": "1548",
+        "museum": "Wikimedia Commons",
+        "license": "Public domain",
+        "fit": "fill",
+        "focus": [
+          0.45,
+          0.4
+        ]
+      }
+    },
+    {
+      "heading": "Templars: The Pilgrim Cheque",
+      "body": "The famous tale: a pilgrim deposits coins in London and draws them in Jerusalem with a coded letter. Evidence for routine pilgrim cheques is thin. Large transfers and loans for kings, like Louis VII, are well documented.",
+      "art_query": "medieval pilgrims Jerusalem painting",
+      "art_alternatives": [
+        "pilgrims road painting",
+        "Jerusalem view old painting"
+      ],
+      "source": "Nicholson 2001",
+      "flag": "Contested",
+      "art": {
+        "file": "art/aic-15468.jpg",
+        "key": "aic:15468",
+        "kind": "painting",
+        "title": "Saint George and the Dragon",
+        "artist": "Bernat Martorell",
+        "date": "1434–35",
+        "museum": "Art Institute of Chicago",
+        "fit": "fill",
+        "focus": [
+          0.5,
+          0.35
+        ]
+      }
+    },
+    {
+      "heading": "Italians: Books That Balance",
+      "body": "Double-entry bookkeeping, every debit matched by a credit, appears in Italian records by the 1300s. Genoa's city accounts of 1340 are a famous example. Luca Pacioli printed the method in 1494. Credit needs trustworthy ledgers.",
+      "art_query": "Jacopo de Barbari Luca Pacioli",
+      "art_alternatives": [
+        "Portrait of Luca Pacioli",
+        "Renaissance scholar with book painting"
+      ],
+      "source": "Pacioli 1494",
+      "flag": "",
+      "art": {
+        "file": "art/commons-70342336.jpg",
+        "key": "commons:70342336",
+        "kind": "photo",
+        "title": "Portrait of Luca Pacioli",
+        "artist": "Jacopo de' Barbari",
+        "date": "1495",
+        "museum": "Wikimedia Commons",
+        "license": "Public domain",
+        "fit": "fill",
+        "focus": [
+          0.5,
+          0.25
+        ]
+      }
+    },
+    {
+      "heading": "Why the Line Matters",
+      "body": "On 13 October 1307, Philip IV had the French Templars arrested. A vault can simply be seized. Italian banks fell differently, through bad loans and royal defaults. Ask who uses the deposits, and you know what you are looking at.",
+      "art_query": "Philip IV of France portrait",
+      "art_alternatives": [
+        "Philip the Fair king painting",
+        "medieval French king portrait"
+      ],
+      "source": "Barber, *The Trial of the Templars*",
+      "flag": "",
+      "art": {
+        "file": "art/unsplash-MfoDMNW6-FI.jpg",
+        "key": "unsplash:MfoDMNW6-FI",
+        "kind": "photo",
+        "title": "A knight in polished steel armor riding a white horse with ornate patterned blankets",
+        "artist": "Photo by Nakita Kruger",
+        "date": "",
+        "museum": "Unsplash",
+        "fit": "fill",
+        "focus": [
+          0.3,
+          0.3
+        ]
+      }
+    }
+  ],
+  "caption": "In 1250 a knight took a hatchet to a Templar strongbox to finish paying a French king's ransom.\n\nThe Templars were superb at keeping money safe and moving it across the Mediterranean. They did lend to kings too. But the habit of putting depositors' money to work belongs to Italian merchants. Both sides were brilliant, just at different jobs.\n\nFurther reading: Malcolm Barber, *The New Knighthood*; Helen Nicholson, *The Knights Templar: A New History*; Raymond de Roover, *The Rise and Decline of the Medici Bank*\n\nComment READ and I will send you the Substack link.",
+  "risk_notes": [
+    "Templars as bankers: some will cite Templar loans to kings. Defence: we say they lent, notably to Louis VII, but their signature service was custody and transfer, not lending out client deposits.",
+    "Paris Temple as royal treasury: the arrangement changed over time (Philip IV moved funds to the Louvre in 1295). Keep the phrasing 'for much of the 13th century' and 'acted as'.",
+    "Joinville episode: rests on Joinville's own account. Phrase it as 'Joinville tells how'.",
+    "Pilgrim cheque story: flagged Contested. Defence: transfers for kings and the order are documented, routine pilgrim letters of credit much less so.",
+    "Bill of exchange and usury: de Roover's interpretation is widely accepted but debated in detail. Say 'tucked interest into' rather than 'invented to evade'.",
+    "Double-entry origins: not invented by Pacioli. We say he printed the method; earlier Italian examples such as Genoa 1340 exist."
+  ],
+  "urls": [],
+  "engine": "difference",
+  "kicker": "A Distinction",
+  "coverArt": {
+    "file": "art/unsplash-MfoDMNW6-FI.jpg",
+    "key": "unsplash:MfoDMNW6-FI",
+    "kind": "photo",
+    "title": "A knight in polished steel armor riding a white horse with ornate patterned blankets",
+    "artist": "Photo by Nakita Kruger",
+    "date": "",
+    "museum": "Unsplash",
+    "fit": "fill",
+    "focus": [
+      0.3,
+      0.3
+    ]
+  },
+  "credits": "Images: Quinten Metsys, The Moneylender and his Wife (1514); Spudgun67, Temple Church London EC4Y 7BB (2025-02); Ridolfo Ghirlandaio, Portrait of a Gentleman (c. 1505); Charles-Alexandre Debacq, Conquest of Tripoli (1842); Marinus van Reymerswaele, Los cambistas (1548); Bernat Martorell, Saint George and the Dragon (1434–35); Jacopo de' Barbari, Portrait of Luca Pacioli (1495). Via Wikimedia Commons, Art Institute of Chicago. Photos: Nakita Kruger on Unsplash.",
+  "renderDir": "r1",
+  "review": {
+    "issues": [
+      {
+        "where": "slide 8",
+        "problem": "\"Italian banks fell differently, through bad loans and royal defaults\" presents a debated point as settled. Edward III's default is the traditional explanation for the Bardi and Peruzzi crashes of the 1340s. Edwin Hunt and others argue it was secondary to wider trouble in the grain trade, war and credit markets. \"A vault can simply be seized\" also implies the suppression was a cash grab. Philip IV's motives are still debated: debt, piety and royal power all feature.",
+        "severity": "medium",
+        "fix": "\"On 13 October 1307, Philip IV had the French Templars arrested, for reasons historians still debate. Italian firms like the Bardi and Peruzzi fell differently, amid bad loans, war and royal defaults. Ask who uses the deposits, and you know what you are looking at.\" (Check the word count after editing.)"
+      },
+      {
+        "where": "slide 5",
+        "problem": "\"neatly sidestepping the Church's ban on usury\" states de Roover's reading as settled. The post's own risk notes say this is debated in detail, and theologians argued over whether exchange profits were usury at all.",
+        "severity": "medium",
+        "fix": "\"...and tucked interest into the exchange rate, which many scholars see as a way around the Church's ban on usury.\""
+      },
+      {
+        "where": "slide 2",
+        "problem": "\"Not yet a bank\" is too flat. The Paris Temple kept running accounts for the crown and for private clients, and it made loans. Slide 6 and the caption both admit the lending, so this slide contradicts the rest of the post.",
+        "severity": "medium",
+        "fix": "\"Safe, trusted, international. A financial powerhouse, but not quite a bank.\""
+      },
+      {
+        "where": "slide 4",
+        "problem": "The risk notes say to phrase the episode as \"Joinville tells how\", but the slide tells it as plain fact. The story rests only on Joinville's own memoir, written decades later. Also, in his telling the Templars handed over the keys once he raised the axe. That detail is better than \"they let him\".",
+        "severity": "medium",
+        "fix": "\"In 1250, Joinville tells us, he needed money to finish ransoming Louis IX. The Templars refused: the deposits belonged to their clients. He raised a hatchet over a strongbox, and they handed over the keys. Custody, not credit.\""
+      },
+      {
+        "where": "slide 4",
+        "problem": "The body is 41 words, over the 40-word limit.",
+        "severity": "low",
+        "fix": "Use the shorter wording suggested above, or cut \"in one scene\"."
+      },
+      {
+        "where": "slide 3",
+        "problem": "The source is \"de Roover 1963\", which is about the Medici Bank, a later firm. The Bardi and Peruzzi are better sourced to Edwin Hunt, The Medieval Super-Companies (1994), or Hunt and Murray, A History of Business in Medieval Europe (1999).",
+        "severity": "low",
+        "fix": "Change the source to \"Hunt 1994\", or name both: \"Hunt 1994; de Roover 1963\"."
+      }
+    ],
+    "verdict": "needs_fixes"
+  },
+  "links": [],
+  "rev": 1
+}
