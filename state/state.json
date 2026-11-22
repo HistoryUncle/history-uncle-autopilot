@@ -78,7 +78,15 @@
     "commons:606582",
     "aic:72193",
     "commons:38888116",
-    "commons:59618127"
+    "commons:59618127",
+    "unsplash:19vkG-Devqg",
+    "commons:155345",
+    "unsplash:oSh0TVUcJ4M",
+    "commons:130765131",
+    "unsplash:S5ClDiHuq_U",
+    "commons:710513",
+    "commons:180956970",
+    "unsplash:cc3kS8N6rOQ"
   ],
   "repliedComments": [],
   "drafts": {
@@ -135,7 +143,14 @@
       "createdAt": "2026-11-20T12:37:12.091Z",
       "telegramMessageId": 99,
       "approvedAt": "2026-11-20T12:39:42.688Z"
+    },
+    "20261122-092443": {
+      "status": "pending",
+      "engine": "free-resources",
+      "title": "7 Free Medieval Manuscript Libraries",
+      "createdAt": "2026-11-22T09:28:11.038Z",
+      "telegramMessageId": 123
     }
   },
-  "lastScheduledDraft": "2026-11-21"
+  "lastScheduledDraft": "2026-11-22"
 }

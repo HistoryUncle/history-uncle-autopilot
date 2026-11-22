@@ -1,0 +1,295 @@
+{
+  "title": "7 Free Medieval Manuscript Libraries",
+  "title_lead": "No gloves required:",
+  "dek": "Turn the pages of famous books without a plane ticket",
+  "visual_style": "photo",
+  "cover_art_query": "illuminated medieval manuscript page",
+  "art_fallbacks": [
+    "medieval manuscript library",
+    "illuminated codex close up",
+    "old library reading room"
+  ],
+  "slides": [
+    {
+      "heading": "DigiVatLib, the Vatican Library",
+      "body": "The Vatican Apostolic Library has put thousands of manuscripts online. Inside: the *Codex Vaticanus*, one of the oldest near-complete Greek Bibles, and the painted *Vergilius Vaticanus*. You can zoom closer than most visiting scholars ever could.",
+      "art_query": "Vatican Library Sistine Hall",
+      "art_alternatives": [
+        "Vergilius Vaticanus",
+        "Vatican Library interior"
+      ],
+      "source": "Biblioteca Apostolica Vaticana",
+      "art": {
+        "file": "art/commons-155345.jpg",
+        "key": "commons:155345",
+        "kind": "photo",
+        "title": "Die Äneide des Virgil, I. Buch, Szene: Erbauung einer Stadt",
+        "artist": "Meister des Vergilius Vaticanus",
+        "date": "c. 400",
+        "museum": "Wikimedia Commons",
+        "license": "Public domain",
+        "fit": "fill",
+        "focus": [
+          0.5,
+          0.35
+        ]
+      }
+    },
+    {
+      "heading": "e-codices, Switzerland's Virtual Library",
+      "body": "Run from the University of Fribourg, e-codices holds thousands of manuscripts from Swiss collections. Its star is the *Plan of St Gall*, a ninth-century drawing of an ideal monastery. Brewhouses and latrines included.",
+      "art_query": "Plan of Saint Gall",
+      "art_alternatives": [
+        "Abbey library St Gallen",
+        "St Gallen Stiftsbibliothek"
+      ],
+      "source": "University of Fribourg",
+      "art": {
+        "file": "art/unsplash-oSh0TVUcJ4M.jpg",
+        "key": "unsplash:oSh0TVUcJ4M",
+        "kind": "photo",
+        "title": "empty church bench",
+        "artist": "Photo by Heinz Hasler",
+        "date": "",
+        "museum": "Unsplash",
+        "fit": "fill",
+        "focus": [
+          0.5,
+          0.35
+        ]
+      }
+    },
+    {
+      "heading": "Gallica, the French National Library",
+      "body": "The Bibliothèque nationale de France runs Gallica: millions of documents, from medieval manuscripts to maps, prints and old newspapers. Searching in French finds more, but the pictures speak every language.",
+      "art_query": "Bibliotheque nationale Salle Labrouste",
+      "art_alternatives": [
+        "BnF Richelieu Salle Ovale",
+        "Paris library reading room"
+      ],
+      "source": "Bibliothèque nationale de France",
+      "art": {
+        "file": "art/commons-130765131.jpg",
+        "key": "commons:130765131",
+        "kind": "photo",
+        "title": "Bibliothèque nationale de France Salle Labrouste Detail livres",
+        "artist": "Stefan Drößler",
+        "date": "2022-04",
+        "museum": "Wikimedia Commons",
+        "license": "CC BY 4.0",
+        "fit": "fill",
+        "focus": [
+          0.5,
+          0.3
+        ]
+      }
+    },
+    {
+      "heading": "Parker on the Web",
+      "body": "Stanford and Corpus Christi College, Cambridge, opened Archbishop Matthew Parker's collection to everyone. It holds the oldest surviving copy of the *Anglo-Saxon Chronicle* and the St Augustine Gospels, a sixth-century book traditionally linked to Augustine's mission of 597.",
+      "art_query": "St Augustine Gospels",
+      "art_alternatives": [
+        "Corpus Christi College Cambridge",
+        "Anglo-Saxon Chronicle manuscript"
+      ],
+      "source": "Corpus Christi College / Stanford",
+      "art": {
+        "file": "art/unsplash-S5ClDiHuq_U.jpg",
+        "key": "unsplash:S5ClDiHuq_U",
+        "kind": "photo",
+        "title": "a clock on a tower",
+        "artist": "Photo by Tom Smeeton",
+        "date": "",
+        "museum": "Unsplash",
+        "fit": "fill",
+        "focus": [
+          0.5,
+          0.35
+        ]
+      }
+    },
+    {
+      "heading": "Digital Bodleian, Oxford",
+      "body": "Oxford's libraries share treasures far beyond Europe. Try the *Codex Mendoza*, made in Mexico around the 1540s to record Aztec tribute, or the Gough Map, one of the earliest maps showing Britain in a recognisable shape.",
+      "art_query": "Codex Mendoza",
+      "art_alternatives": [
+        "Gough Map Britain",
+        "Bodleian Library Duke Humfrey"
+      ],
+      "source": "Bodleian Libraries",
+      "art": {
+        "file": "art/commons-710513.jpg",
+        "key": "commons:710513",
+        "kind": "painting",
+        "title": "CodexMendoza01",
+        "artist": "Unknown author Unknown author",
+        "date": "1541",
+        "museum": "Wikimedia Commons",
+        "license": "Public domain",
+        "fit": "fill",
+        "focus": [
+          0.5,
+          0.35
+        ]
+      }
+    },
+    {
+      "heading": "Cambridge Digital Library",
+      "body": "Cambridge University Library's collection includes the *Codex Bezae*, a fifth-century Gospels manuscript with Greek and Latin on facing pages. Then jump a thousand years ahead to Isaac Newton's own notebooks.",
+      "art_query": "Codex Bezae",
+      "art_alternatives": [
+        "Cambridge University Library",
+        "Isaac Newton notebook"
+      ],
+      "source": "Cambridge University Library",
+      "art": {
+        "file": "art/commons-180956970.jpg",
+        "key": "commons:180956970",
+        "kind": "painting",
+        "title": "Dictionnaire de la Bible - F. Vigouroux - Tome I (page 956 crop)CODEX BEZÆ (GREC-LATIN), V",
+        "artist": "Fulcran Vigouroux",
+        "date": "1912-06",
+        "museum": "Wikimedia Commons",
+        "license": "Public domain",
+        "fit": "frame",
+        "focus": [
+          0.5,
+          0.35
+        ]
+      }
+    },
+    {
+      "heading": "Europeana, the Great Finding Aid",
+      "body": "Funded by the European Union, Europeana gathers tens of millions of items from thousands of museums, libraries and archives. Treat it as a map: one search, then follow the link to the library that owns the book.",
+      "art_query": "illuminated manuscript initial letter",
+      "art_alternatives": [
+        "medieval book of hours",
+        "medieval manuscript gold leaf"
+      ],
+      "source": "Europeana Foundation",
+      "art": {
+        "file": "art/unsplash-cc3kS8N6rOQ.jpg",
+        "key": "unsplash:cc3kS8N6rOQ",
+        "kind": "photo",
+        "title": "man in red robe painting",
+        "artist": "Photo by Europeana",
+        "date": "",
+        "museum": "Unsplash",
+        "fit": "fill",
+        "focus": [
+          0.35,
+          0.35
+        ]
+      }
+    }
+  ],
+  "caption": "A ninth-century monk drew an ideal monastery, latrines included. You can zoom into it tonight, free.\n\nMost of these libraries use IIIF, an open image standard. That means you can pull pages from Oxford, Rome and Fribourg into one viewer and compare them side by side. Medieval scholars would have given a kidney for that.\n\nFurther reading: Christopher de Hamel, *Meetings with Remarkable Manuscripts*; Raymond Clemens and Timothy Graham, *Introduction to Manuscript Studies*\n\nhttps://digi.vatlib.it\nhttps://www.e-codices.unifr.ch\nhttps://gallica.bnf.fr\nhttps://parker.stanford.edu\nhttps://digital.bodleian.ox.ac.uk\nhttps://cudl.lib.cam.ac.uk\nhttps://www.europeana.eu\n\nComment READ and I will send you the Substack link.",
+  "urls": [
+    "https://digi.vatlib.it",
+    "https://www.e-codices.unifr.ch",
+    "https://gallica.bnf.fr",
+    "https://parker.stanford.edu",
+    "https://digital.bodleian.ox.ac.uk",
+    "https://cudl.lib.cam.ac.uk",
+    "https://www.europeana.eu",
+    "https://historyuncle.substack.com"
+  ],
+  "risk_notes": [
+    "St Augustine Gospels: the link to Augustine's 597 mission is traditional, not proven. Keep 'traditionally linked'.",
+    "Gough Map dating is debated (c. 1360 to c. 1400 and later revisions). Keep it to 'one of the earliest' without a firm date.",
+    "Codex Mendoza is usually dated c. 1541 to 1542. 'Around the 1540s' is safe.",
+    "Codex Bezae is usually dated c. 400, sometimes placed in the early fifth century. 'Fifth-century' is the common shorthand. If challenged, say 'around 400'.",
+    "Collection sizes change all the time. Keep vague counts ('thousands', 'tens of millions') instead of exact numbers.",
+    "Free to view doesn't always mean free to reuse. Some libraries limit commercial reuse, so say 'free to view' if anyone asks about licensing."
+  ],
+  "engine": "free-resources",
+  "kicker": "Free to Read",
+  "coverArt": {
+    "file": "art/unsplash-19vkG-Devqg.jpg",
+    "key": "unsplash:19vkG-Devqg",
+    "kind": "photo",
+    "title": "three closed brown books on brown wooden surface",
+    "artist": "Photo by Ula Kuźma",
+    "date": "",
+    "museum": "Unsplash",
+    "fit": "fill",
+    "focus": [
+      0.5,
+      0.4
+    ]
+  },
+  "credits": "Images: Meister des Vergilius Vaticanus, Die Äneide des Virgil, I. Buch, Szene: Erbauung einer Stadt (c. 400); Stefan Drößler, Bibliothèque nationale de France Salle Labrouste Detail livres (2022-04) [CC BY 4.0]; Unknown author Unknown author, CodexMendoza01 (1541); Fulcran Vigouroux, Dictionnaire de la Bible - F. Vigouroux - Tome I (page 956 crop)CODEX BEZÆ (GREC-LATIN), V (1912-06). Via Wikimedia Commons. Photos: Ula Kuźma, Heinz Hasler, Tom Smeeton, Europeana on Unsplash.",
+  "renderDir": "r1",
+  "review": {
+    "issues": [
+      {
+        "where": "slide 6",
+        "problem": "\"Then jump a thousand years ahead to Isaac Newton's own notebooks\" undercounts the gap. Codex Bezae dates to about 400 and Newton's notebooks to the 1660s, so the real gap is about 1,250 years. Also, \"a fifth-century Gospels manuscript\" leaves out that Bezae contains Acts as well.",
+        "severity": "low",
+        "fix": "\"...the *Codex Bezae*, a manuscript of about 400 with the Gospels and Acts in Greek and Latin on facing pages. Then jump more than a thousand years ahead to Isaac Newton's own notebooks.\" (32 words)"
+      },
+      {
+        "where": "slide 5",
+        "problem": "Two small wording issues. \"Around the 1540s\" is vague and reads awkwardly, since the codex is usually dated c. 1541 to 1542. And \"treasures far beyond Europe\" is followed by the Gough Map, which is a map of Britain, so the setup and the example don't match.",
+        "severity": "low",
+        "fix": "\"Oxford's libraries range far and wide. Try the *Codex Mendoza*, made in Mexico around 1541 to record Aztec tribute and daily life, or the Gough Map, one of the earliest maps showing Britain in a recognisable shape.\""
+      },
+      {
+        "where": "caption",
+        "problem": "\"A ninth-century monk drew an ideal monastery\" credits the Plan of St Gall to one monk. The Plan was made at Reichenau, and scholars usually credit it to two scribes, so a single named-style author is too neat.",
+        "severity": "low",
+        "fix": "\"Ninth-century monks drew an ideal monastery, latrines included. You can zoom into it tonight, free.\""
+      },
+      {
+        "where": "cover / title",
+        "problem": "\"7 Free Medieval Manuscript Libraries\" slightly overstates. Europeana is an aggregator, not a library, and the slides also feature Newton's notebooks and the Codex Mendoza, which are not medieval. A commenter could pick at this, but it doesn't distort anything.",
+        "severity": "low",
+        "fix": "Keep the title but change the dek to: \"Turn the pages of medieval treasures and more, without a plane ticket.\""
+      }
+    ],
+    "verdict": "publishable"
+  },
+  "links": [
+    {
+      "url": "https://digi.vatlib.it",
+      "ok": true,
+      "status": 200
+    },
+    {
+      "url": "https://www.e-codices.unifr.ch",
+      "ok": true,
+      "status": 200
+    },
+    {
+      "url": "https://gallica.bnf.fr",
+      "ok": false,
+      "status": 403
+    },
+    {
+      "url": "https://parker.stanford.edu",
+      "ok": true,
+      "status": 200
+    },
+    {
+      "url": "https://digital.bodleian.ox.ac.uk",
+      "ok": true,
+      "status": 200
+    },
+    {
+      "url": "https://cudl.lib.cam.ac.uk",
+      "ok": false,
+      "status": 403
+    },
+    {
+      "url": "https://www.europeana.eu",
+      "ok": false,
+      "status": 403
+    },
+    {
+      "url": "https://historyuncle.substack.com",
+      "ok": true,
+      "status": 200
+    }
+  ],
+  "rev": 1
+}
