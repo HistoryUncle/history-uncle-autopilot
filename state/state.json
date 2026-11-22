@@ -1,5 +1,5 @@
 {
-  "telegramOffset": 187053188,
+  "telegramOffset": 187053189,
   "history": [
     {
       "id": "20261120-075030",
@@ -13,6 +13,13 @@
       "title": "Templar Treasury vs Italian Bank",
       "engine": "difference",
       "publishedAt": "2026-11-20T12:39:42.688Z",
+      "manual": true
+    },
+    {
+      "id": "20261122-092443",
+      "title": "7 Free Medieval Manuscript Libraries",
+      "engine": "free-resources",
+      "publishedAt": "2026-11-22T10:08:17.284Z",
       "manual": true
     }
   ],
@@ -145,11 +152,12 @@
       "approvedAt": "2026-11-20T12:39:42.688Z"
     },
     "20261122-092443": {
-      "status": "pending",
+      "status": "ready",
       "engine": "free-resources",
       "title": "7 Free Medieval Manuscript Libraries",
       "createdAt": "2026-11-22T09:28:11.038Z",
-      "telegramMessageId": 123
+      "telegramMessageId": 123,
+      "approvedAt": "2026-11-22T10:08:17.284Z"
     }
   },
   "lastScheduledDraft": "2026-11-22"
