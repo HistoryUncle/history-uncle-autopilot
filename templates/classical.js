@@ -180,7 +180,10 @@ export function buildHtml(post, dir, brand) {
       const d = x.getImageData(0, 0, 40, 50).data;
       const avg = (y0, y1) => { let s = [0, 0, 0], n = 0; for (let y = y0; y < y1; y++) for (let k = 0; k < 40; k++) { const i = (y * 40 + k) * 4; s[0] += d[i]; s[1] += d[i + 1]; s[2] += d[i + 2]; n++; } return s.map(v => v / n); };
       const lum = (c) => (0.2126 * c[0] + 0.7152 * c[1] + 0.0722 * c[2]) / 255;
-      const low = avg(25, 50), top = avg(0, 8);
+      const low = avg(25, 50), top = avg(0, 8), all = avg(0, 50);
+      // dark pictures already carry the mood: lift them instead of darkening further
+      const L = lum(all);
+      if (L < 0.3) img.style.filter = getComputedStyle(img).filter + ' brightness(' + Math.min(1.6, 0.3 / Math.max(L, 0.1)).toFixed(2) + ')';
       bright = lum(low); topBright = lum(top);
       const gray = (low[0] + low[1] + low[2]) / 3;
       const muted = low.map(v => v * 0.6 + gray * 0.4);           // keep the hue, drop saturation
