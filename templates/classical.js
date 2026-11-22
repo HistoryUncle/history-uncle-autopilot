@@ -71,7 +71,7 @@ body{background:#000;width:1080px}
 .cover[data-title="bottom"] .titles{bottom:200px}
 .cover .lead{font:italic 400 58px/1.1 Garamond;color:var(--w90);margin-bottom:6px;letter-spacing:.005em}
 .cover .title{font:500 128px/.96 Garamond;text-transform:uppercase;letter-spacing:.02em;text-wrap:balance;color:#F7F3EC}
-.cover.has-frame .framed{top:auto;bottom:250px}
+.cover.has-frame .framed{top:auto;bottom:220px;max-height:600px}
 
 /* text block */
 .block{position:absolute;left:84px;right:96px;bottom:150px}
@@ -129,7 +129,7 @@ export function buildHtml(post, dir, brand) {
   const kind = post.visual_style === 'photo' ? 'photo' : 'painting';
 
   // Title goes where the picture leaves room: above a subject in the lower half, below one in the upper half.
-  const titlePos = post.title_position || ((post.coverArt?.focus?.[1] ?? 0.5) < 0.28 ? 'bottom' : 'top');
+  const titlePos = post.coverArt?.fit === 'frame' ? 'top' : (post.title_position || ((post.coverArt?.focus?.[1] ?? 0.5) < 0.28 ? 'bottom' : 'top'));
   const cover = `
   <section class="slide cover ${kind}${post.coverArt?.fit === 'frame' ? ' has-frame' : ''}" data-title="${titlePos}">
     ${artImg(dir, post.coverArt)}<div class="canvas"></div><div class="grain"></div><div class="fade"></div><div class="vignette"></div>
@@ -202,7 +202,7 @@ export function buildHtml(post, dir, brand) {
     }
     slide.style.background = 'rgb(' + t + ')';
   }
-  Promise.all([document.fonts.ready, ...[...document.images].map(i => i.decode().catch(() => {}))]).then(() => {
+  Promise.all([document.fonts.ready, ...[...document.images].map(i => i.decode().catch(() => {}))]).then(() => { try {
     document.querySelectorAll('section.slide:not(.cta)').forEach(adapt);
     for (const el of document.querySelectorAll('.fit')) {
       const block = el.closest('.block'); const slide = el.closest('.slide');
@@ -215,11 +215,12 @@ export function buildHtml(post, dir, brand) {
       let size = 128; const lines = () => Math.round(el.getBoundingClientRect().height / (size * 0.96)); while (lines() > 3 && size > 80) { size -= 4; el.style.fontSize = size + 'px'; }
     }
     // framed works sit between the masthead and the text block
-    for (const slide of document.querySelectorAll('.has-frame')) {
+    for (const slide of document.querySelectorAll('.has-frame:not(.cover)')) {
       const img = slide.querySelector('.framed'); const block = slide.querySelector('.block');
       const room = block.getBoundingClientRect().top - slide.getBoundingClientRect().top - 132 - 56;
       img.style.maxHeight = Math.max(360, room) + 'px';
     }
+    } catch (err) { console.error('layout error: ' + err.message); }
     document.body.dataset.ready = '1';
   });
   </script>`;

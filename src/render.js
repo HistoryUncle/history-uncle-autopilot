@@ -35,8 +35,10 @@ export async function render(post, dir, outName = 'slides') {
   try {
     const page = await browser.newPage();
     await page.setViewport({ width: 1080, height: 1350, deviceScaleFactor: 1 });
+    page.on('console', (m) => { if (m.type() === 'error' && !/Failed to load resource/.test(m.text())) log('page:', m.text()); });
+    page.on('pageerror', (err) => log('page error:', err.message));
     await page.goto('file://' + htmlFile, { waitUntil: 'networkidle0' });
-    await page.waitForSelector('body[data-ready="1"]', { timeout: 30000 });
+    await page.waitForSelector('body[data-ready="1"]', { timeout: 90000 });
     const slides = await page.$$('section.slide');
     const files = [];
     for (let i = 0; i < slides.length; i++) {

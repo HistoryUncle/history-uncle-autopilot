@@ -75,3 +75,15 @@ test('scheduled draft is due on draft days after 08:37 Vilnius, once per day', a
   assert.equal(scheduledDraftDue(st, new Date('2026-11-23T10:00:00Z')), false); // already made
   assert.equal(scheduledDraftDue({}, new Date('2026-11-24T10:00:00Z')), false); // Tuesday
 });
+
+test('cover with a wide "frame" painting renders (regression)', { timeout: 120000 }, async () => {
+  const fs = await import('node:fs'); const os = await import('node:os'); const path = await import('node:path');
+  const { render } = await import('../src/render.js');
+  const dir = fs.mkdtempSync(path.join(os.tmpdir(), 'hu-frame-'));
+  fs.mkdirSync(path.join(dir, 'art'));
+  fs.copyFileSync(new URL('./fixtures/wide.jpg', import.meta.url), path.join(dir, 'art', 'w.jpg'));
+  const W = { file: 'art/w.jpg', key: 'w', artist: 'A', title: 'B', fit: 'frame' };
+  const post = { title: 'A Wide Cover Test', title_lead: 'Finally:', coverArt: W, slides: [{ heading: 'H', body: 'Body text here.', art: W }] };
+  const files = await render(post, dir);
+  assert.equal(files.length, 3);
+});
