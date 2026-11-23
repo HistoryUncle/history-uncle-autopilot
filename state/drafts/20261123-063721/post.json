@@ -1,0 +1,273 @@
+{
+  "title": "Where to Start with Venice",
+  "dek": "Eight books, from first glance to the Rialto ledgers",
+  "visual_style": "painting",
+  "cover_art_query": "Canaletto Grand Canal",
+  "art_fallbacks": [
+    "Venice painting",
+    "Guardi Venice lagoon",
+    "Venetian Renaissance painting"
+  ],
+  "slides": [
+    {
+      "heading": "Begin with the Mood",
+      "body": "James Morris, later Jan Morris, published *Venice* in 1960. Half travel book, half portrait, it makes no attempt to march through the dates. It is the book that makes you want the history.",
+      "art_query": "Guardi Venice lagoon",
+      "art_alternatives": [
+        "Francesco Guardi gondola lagoon",
+        "Venice lagoon painting"
+      ],
+      "source": "Morris 1960",
+      "art": {
+        "file": "art/commons-23980627.jpg",
+        "key": "commons:23980627",
+        "kind": "painting",
+        "title": "The Grey Lagoon (Gondolas on the Lagoon)",
+        "artist": "Francesco Guardi",
+        "date": "1765",
+        "museum": "Wikimedia Commons",
+        "license": "Public domain",
+        "fit": "fill",
+        "focus": [
+          0.6,
+          0.5
+        ]
+      }
+    },
+    {
+      "heading": "Then the Whole Story",
+      "body": "John Julius Norwich first wrote *A History of Venice* in two volumes, 1977 and 1981, then merged them in 1982. Doges, plots and wars, from lagoon settlers to Napoleon ending the Republic in 1797.",
+      "art_query": "Gentile Bellini Procession San Marco",
+      "art_alternatives": [
+        "Bellini Piazza San Marco",
+        "Piazza San Marco painting"
+      ],
+      "source": "Norwich 1982",
+      "art": {
+        "file": "art/commons-60483961.jpg",
+        "key": "commons:60483961",
+        "kind": "photo",
+        "title": "Procession in St. Mark's Square",
+        "artist": "Gentile Bellini",
+        "date": "1490",
+        "museum": "Wikimedia Commons",
+        "license": "Public domain",
+        "fit": "frame",
+        "focus": [
+          0.5,
+          0.35
+        ]
+      }
+    },
+    {
+      "heading": "A Merchant City Builds Empire",
+      "body": "Roger Crowley's *City of Fortune* (2011) follows the Stato da Mar, Venice's chain of ports and islands reaching to Crete and Cyprus. Includes 1204, when Venice helped sack Constantinople. Business, by other means.",
+      "art_query": "Venetian galleys harbour",
+      "art_alternatives": [
+        "Venetian galley painting",
+        "Renaissance ships Venice harbour"
+      ],
+      "source": "Crowley 2011",
+      "art": {
+        "file": "art/commons-14713038.jpg",
+        "key": "commons:14713038",
+        "kind": "painting",
+        "title": "Breydenbach Rodis 1486 (Drach, 1502)",
+        "artist": "Erhard Reuwich",
+        "date": "1486",
+        "museum": "Wikimedia Commons",
+        "license": "Public domain",
+        "fit": "frame",
+        "focus": [
+          0.3,
+          0.5
+        ]
+      }
+    },
+    {
+      "heading": "The Best Modern Overview",
+      "body": "Thomas F. Madden's *Venice: A New History* (2012) is the single volume to keep on the shelf. His thread: a republic that survived for centuries by being relentlessly practical. It runs right up to the cruise ships.",
+      "art_query": "Canaletto Doge's Palace",
+      "art_alternatives": [
+        "Canaletto Molo Venice",
+        "Doge's Palace painting"
+      ],
+      "source": "Madden 2012",
+      "art": {
+        "file": "art/commons-22572210.jpg",
+        "key": "commons:22572210",
+        "kind": "painting",
+        "title": "The Bucintore Returning to the Molo on Ascension Day",
+        "artist": "Giovanni Antonio Canal",
+        "date": "1727",
+        "museum": "Wikimedia Commons",
+        "license": "Public domain",
+        "fit": "fill",
+        "focus": [
+          0.5,
+          0.4
+        ]
+      }
+    },
+    {
+      "heading": "The Historian's Foundation",
+      "body": "Frederic C. Lane spent a career on Venetian ships, merchants and state finance. *Venice: A Maritime Republic* (1973) is still the book specialists hand their students. Read it to see how trade actually worked.",
+      "art_query": "Carpaccio Miracle Rialto",
+      "art_alternatives": [
+        "Carpaccio Rialto bridge",
+        "Rialto Venice old painting"
+      ],
+      "source": "Lane 1973",
+      "art": {
+        "file": "art/commons-148829.jpg",
+        "key": "commons:148829",
+        "kind": "painting",
+        "title": "The Miracle of the Relic of the Cross at the Ponte di Rialto",
+        "artist": "Vittore Carpaccio",
+        "date": "1494",
+        "museum": "Wikimedia Commons",
+        "license": "Public domain",
+        "fit": "fill",
+        "focus": [
+          0.6,
+          0.4
+        ]
+      }
+    },
+    {
+      "heading": "Down at the Shipyard",
+      "body": "The Arsenal was the state shipyard and one of preindustrial Europe's largest workplaces. Robert C. Davis's *Shipbuilders of the Venetian Arsenal* (1991) follows its workers, the arsenalotti: wages, privileges, pride. History from the slipway.",
+      "art_query": "Canaletto Arsenal entrance",
+      "art_alternatives": [
+        "Venice Arsenale painting",
+        "Venetian shipyard painting"
+      ],
+      "source": "Davis 1991",
+      "art": {
+        "file": "art/commons-141421790.jpg",
+        "key": "commons:141421790",
+        "kind": "painting",
+        "title": "(Venice) Insegna dell'arte dei Calafati d'Arsenale - Correr Museum",
+        "artist": "Didier Descouens",
+        "date": "2023",
+        "museum": "Wikimedia Commons",
+        "license": "Public domain",
+        "fit": "frame",
+        "focus": [
+          0.5,
+          0.45
+        ]
+      }
+    },
+    {
+      "heading": "How a Myth Was Staged",
+      "body": "Edward Muir's *Civic Ritual in Renaissance Venice* (1981) asks why Venice looked so stable to outsiders. His answer: ritual. Processions, feasts and the doge's Marriage of the Sea built the famous myth of Venice.",
+      "art_query": "Canaletto Bucintoro Ascension Day",
+      "art_alternatives": [
+        "Guardi Bucintoro",
+        "Bucentaur Venice painting"
+      ],
+      "source": "Muir 1981",
+      "art": {
+        "file": "art/commons-21957655.jpg",
+        "key": "commons:21957655",
+        "kind": "photo",
+        "title": "The Bucintoro",
+        "artist": "Giovanni Antonio Canal",
+        "date": "1745",
+        "museum": "Wikimedia Commons",
+        "license": "Public domain",
+        "fit": "frame",
+        "focus": [
+          0.5,
+          0.6
+        ]
+      }
+    },
+    {
+      "heading": "The Deep End",
+      "body": "Lane and Reinhold Mueller's *Money and Banking in Medieval and Renaissance Venice*, volume one (1985), unpicks coins and moneys of account. Come for the gold ducat, first minted in 1284. Stay for the bookkeeping.",
+      "art_query": "Venetian gold ducat",
+      "art_alternatives": [
+        "Bellini Doge Leonardo Loredan",
+        "Venetian merchant portrait"
+      ],
+      "source": "Lane and Mueller 1985",
+      "art": {
+        "file": "art/commons-63469868.jpg",
+        "key": "commons:63469868",
+        "kind": "painting",
+        "title": "Portrait of Doge Leonardo Loredan",
+        "artist": "Giovanni Bellini",
+        "date": "1501",
+        "museum": "Wikimedia Commons",
+        "license": "Public domain",
+        "fit": "fill",
+        "focus": [
+          0.45,
+          0.35
+        ]
+      }
+    }
+  ],
+  "caption": "Every Ascension Day, the doge of Venice sailed out, dropped a ring into the sea and declared it his bride.\n\nThat ceremony tells you a lot about Venice: a city that ran on trade and loved to put on a show. Its archives are huge, and Venetian ambassadors' reports, the relazioni, are still read by historians of courts across Europe. This list goes from easy reading to the hard stuff.\n\nFurther reading: Frederic C. Lane, *Venice: A Maritime Republic*; Roger Crowley, *City of Fortune*; Edward Muir, *Civic Ritual in Renaissance Venice*\n\nComment READ and I will send you the Substack link.",
+  "risk_notes": [
+    "Norwich publication history: originally *Venice: The Rise to Empire* (1977) and *Venice: The Greatness and the Fall* (1981), merged as *A History of Venice* in 1982. Defend by citing both original titles.",
+    "Ducat first minted 1284 is standard (under Doge Giovanni Dandolo). If challenged, note it is the conventional date in Lane and Mueller.",
+    "Arsenal as 'one of the largest workplaces' in preindustrial Europe: phrased as 'one of', which is widely accepted; avoid giving a worker headcount.",
+    "Stato da Mar 'reaching to Crete and Cyprus': Crete was held from the early 1200s, Cyprus only from 1489. If challenged, clarify the holdings changed over time.",
+    "Republic's span: tradition dates the first doge to 697, but the early doges are partly legendary, so the slide avoids an exact age.",
+    "Morris published as James Morris in 1960 and later wrote as Jan Morris. Handle respectfully: say 'published under the name James Morris'."
+  ],
+  "urls": [],
+  "engine": "reading-path",
+  "kicker": "A Reading Path",
+  "coverArt": {
+    "file": "art/commons-51018767.jpg",
+    "key": "commons:51018767",
+    "kind": "photo",
+    "title": "A Regatta on the Grand Canal",
+    "artist": "Giovanni Antonio Canal",
+    "date": "1735",
+    "museum": "Wikimedia Commons",
+    "license": "Public domain",
+    "fit": "frame",
+    "focus": [
+      0.5,
+      0.5
+    ]
+  },
+  "credits": "Images: Giovanni Antonio Canal, A Regatta on the Grand Canal (1735); Francesco Guardi, The Grey Lagoon (Gondolas on the Lagoon) (1765); Gentile Bellini, Procession in St. Mark's Square (1490); Erhard Reuwich, Breydenbach Rodis 1486 (Drach, 1502) (1486); Giovanni Antonio Canal, The Bucintore Returning to the Molo on Ascension Day (1727); Vittore Carpaccio, The Miracle of the Relic of the Cross at the Ponte di Rialto (1494); Didier Descouens, (Venice) Insegna dell'arte dei Calafati d'Arsenale - Correr Museum (2023); Giovanni Antonio Canal, The Bucintoro (1745); Giovanni Bellini, Portrait of Doge Leonardo Loredan (1501). Via Wikimedia Commons.",
+  "renderDir": "r1",
+  "review": {
+    "issues": [
+      {
+        "where": "slide 2",
+        "problem": "\"first wrote *A History of Venice* in two volumes, 1977 and 1981\" suggests the two volumes carried that title. They were published as *Venice: The Rise to Empire* (1977) and *Venice: The Greatness and the Fall* (1981). The combined *A History of Venice* came out in 1982. A pedant in the comments will catch this.",
+        "severity": "medium",
+        "fix": "\"John Julius Norwich wrote Venice's story in two volumes (1977 and 1981), then merged them as *A History of Venice* in 1982.\" Recount the body afterwards to keep it within 22 to 40 words."
+      },
+      {
+        "where": "slide 4",
+        "problem": "The heading \"The Best Modern Overview\" and the line \"is the single volume to keep on the shelf\" state a matter of taste as settled fact. Norwich and Lane are strong rivals for that spot.",
+        "severity": "medium",
+        "fix": "Heading: \"A Sharp Modern Overview\". Body: \"is a strong single volume to keep on the shelf.\""
+      },
+      {
+        "where": "slide 7",
+        "problem": "\"His answer: ritual... built the famous myth of Venice\" overstates Muir's argument. In his account, civic ritual expressed and reinforced a myth that also had literary and political roots, some of them older than many of the ceremonies. Ritual didn't create the myth on its own.",
+        "severity": "medium",
+        "fix": "\"His answer: ritual. Processions, feasts and the doge's Marriage of the Sea helped sustain the famous myth of Venice.\""
+      },
+      {
+        "where": "slide 5",
+        "problem": "\"is still the book specialists hand their students\" is a fair point but stated as a universal. It's minor, and softening it costs nothing.",
+        "severity": "low",
+        "fix": "\"is still a book specialists hand their students.\""
+      }
+    ],
+    "verdict": "needs_fixes"
+  },
+  "links": [],
+  "rev": 1
+}
