@@ -1,5 +1,5 @@
 {
-  "telegramOffset": 187053189,
+  "telegramOffset": 187053190,
   "history": [
     {
       "id": "20261120-075030",
@@ -20,6 +20,13 @@
       "title": "7 Free Medieval Manuscript Libraries",
       "engine": "free-resources",
       "publishedAt": "2026-11-22T10:08:17.284Z",
+      "manual": true
+    },
+    {
+      "id": "20261123-063721",
+      "title": "Where to Start with Venice",
+      "engine": "reading-path",
+      "publishedAt": "2026-11-23T07:16:54.454Z",
       "manual": true
     }
   ],
@@ -169,11 +176,12 @@
       "approvedAt": "2026-11-22T10:08:17.284Z"
     },
     "20261123-063721": {
-      "status": "pending",
+      "status": "ready",
       "engine": "reading-path",
       "title": "Where to Start with Venice",
       "createdAt": "2026-11-23T06:40:51.725Z",
-      "telegramMessageId": 145
+      "telegramMessageId": 145,
+      "approvedAt": "2026-11-23T07:16:54.454Z"
     }
   },
   "lastScheduledDraft": "2026-11-23"
