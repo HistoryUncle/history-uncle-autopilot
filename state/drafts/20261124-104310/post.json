@@ -1,0 +1,257 @@
+{
+  "title": "8 Rules That Built the VOC",
+  "title_lead": "Amsterdam, 1602:",
+  "dek": "How quarrelling Dutch merchants created a new kind of company",
+  "visual_style": "painting",
+  "cover_art_query": "Vroom return second expedition East Indies",
+  "art_fallbacks": [
+    "Dutch East India Company ships painting",
+    "Dutch Golden Age harbour painting",
+    "Amsterdam seventeenth century painting"
+  ],
+  "slides": [
+    {
+      "heading": "Merge Your Rivals",
+      "body": "By 1601, rival Dutch companies were racing each other to Asia. They pushed pepper prices up there and down at home. The statesman Johan van Oldenbarnevelt forced them into one firm, chartered on 20 March 1602.",
+      "art_query": "Mierevelt Johan van Oldenbarnevelt portrait",
+      "art_alternatives": [
+        "Johan van Oldenbarnevelt painting",
+        "Dutch statesman portrait 1600s"
+      ],
+      "source": "Gaastra 2003",
+      "art": {
+        "file": "art/commons-403918.jpg",
+        "key": "commons:403918",
+        "kind": "painting",
+        "title": "Portrait of Johan van Oldenbarnevelt",
+        "artist": "Workshop of Michiel Jansz. van Mierevelt",
+        "date": "1616",
+        "museum": "Wikimedia Commons",
+        "license": "Public domain",
+        "fit": "fill",
+        "focus": [
+          0.5,
+          0.35
+        ]
+      }
+    },
+    {
+      "heading": "Let Anyone Buy In",
+      "body": "Any resident of the Republic could subscribe, and more than a thousand people signed up in Amsterdam alone. Lodewijk Petram found Neeltgen Cornelis among them, a maid in the household of founder Dirck van Os. She put in 100 guilders.",
+      "art_query": "Vermeer The Milkmaid",
+      "art_alternatives": [
+        "Dutch maid servant painting",
+        "Dutch Golden Age domestic interior"
+      ],
+      "source": "Petram 2014",
+      "art": {
+        "file": "art/commons-13408941.jpg",
+        "key": "commons:13408941",
+        "kind": "photo",
+        "title": "ساقية الحليب The Milkmaid",
+        "artist": "Johannes Vermeer",
+        "date": "1660",
+        "museum": "Wikimedia Commons",
+        "license": "Public domain",
+        "fit": "fill",
+        "focus": [
+          0.5,
+          0.35
+        ]
+      }
+    },
+    {
+      "heading": "Lock the Money In",
+      "body": "Earlier ventures were wound up after each voyage, with the cash and profits handed back. The VOC was meant to settle accounts after ten years, and in practice it never did. Permanent capital paid for forts, fleets and warehouses.",
+      "art_query": "East India House Amsterdam Oost-Indisch Huis",
+      "art_alternatives": [
+        "VOC warehouse Amsterdam painting",
+        "Amsterdam canal warehouses 17th century"
+      ],
+      "source": "Gaastra 2003",
+      "art": {
+        "file": "art/commons-98067983.jpg",
+        "key": "commons:98067983",
+        "kind": "photo",
+        "title": "Binnenplaats van het Oost Indisch Huis te Amsterdam",
+        "artist": "anonymous",
+        "date": "1870",
+        "museum": "Wikimedia Commons",
+        "license": "CC0",
+        "fit": "fill",
+        "focus": [
+          0.5,
+          0.35
+        ]
+      }
+    },
+    {
+      "heading": "Let the Shares Move Instead",
+      "body": "You couldn't take your money out, but you could sell your stake. Traders met in the street by the New Bridge, then in Hendrick de Keyser's new Exchange from 1611. Every sale was written into the company's ledger.",
+      "art_query": "Emanuel de Witte Amsterdam Exchange courtyard",
+      "art_alternatives": [
+        "Berckheyde Amsterdam Exchange",
+        "Amsterdam Beurs painting"
+      ],
+      "source": "Petram 2014",
+      "art": {
+        "file": "art/commons-1901318.jpg",
+        "key": "commons:1901318",
+        "kind": "photo",
+        "title": "The Castle of Batavia",
+        "artist": "Andries Beeckman",
+        "date": "1662",
+        "museum": "Wikimedia Commons",
+        "license": "Public domain",
+        "fit": "frame",
+        "focus": [
+          0.5,
+          0.35
+        ]
+      }
+    },
+    {
+      "heading": "Get Powers Like a State",
+      "body": "The charter gave the VOC a 21-year monopoly east of the Cape of Good Hope. It could also sign treaties, build forts, raise soldiers and appoint governors. A trading company with an army was the plan from day one.",
+      "art_query": "Andries Beeckman Castle of Batavia",
+      "art_alternatives": [
+        "Batavia VOC painting",
+        "Dutch fort East Indies painting"
+      ],
+      "source": "VOC charter 1602",
+      "art": {
+        "file": "art/commons-1901318.jpg",
+        "key": "commons:1901318",
+        "kind": "photo",
+        "title": "The Castle of Batavia",
+        "artist": "Andries Beeckman",
+        "date": "1662",
+        "museum": "Wikimedia Commons",
+        "license": "Public domain",
+        "fit": "frame",
+        "focus": [
+          0.5,
+          0.35
+        ]
+      }
+    },
+    {
+      "heading": "Hire a Brilliant Lawyer",
+      "body": "In 1603 Jacob van Heemskerck seized the Portuguese carrack Santa Catarina and its cargo, worth millions of guilders. The company asked young Hugo Grotius to justify keeping it. One chapter became *Mare Liberum*, a classic of international law.",
+      "art_query": "Mierevelt Hugo Grotius portrait",
+      "art_alternatives": [
+        "Hugo Grotius painting",
+        "Dutch scholar portrait 17th century"
+      ],
+      "source": "van Ittersum 2006",
+      "art": {
+        "file": "art/commons-76254208.jpg",
+        "key": "commons:76254208",
+        "kind": "photo",
+        "title": "Château de Chantilly, Michiel van Mierevelt, portrait Hugo Grotius",
+        "artist": "Dguendel",
+        "date": "2017",
+        "museum": "Wikimedia Commons",
+        "license": "CC BY 4.0",
+        "fit": "fill",
+        "focus": [
+          0.5,
+          0.35
+        ]
+      }
+    },
+    {
+      "heading": "Pay Out, Even in Spices",
+      "body": "Investors waited eight years for a first dividend. When it finally came in 1610, much of it was paid in mace, the lacy red spice that wraps a nutmeg. Shareholders could keep the spice or sell it.",
+      "art_query": "nutmeg mace botanical illustration",
+      "art_alternatives": [
+        "Myristica fragrans botanical print",
+        "Dutch still life spices"
+      ],
+      "source": "Petram 2014",
+      "art": {
+        "file": "art/commons-34253164.jpg",
+        "key": "commons:34253164",
+        "kind": "painting",
+        "title": "De terugkomst in Amsterdam van de tweede expeditie naar Oost-Indië",
+        "artist": "Hendrick Cornelisz Vroom",
+        "date": "1599",
+        "museum": "Wikimedia Commons",
+        "license": "Public domain",
+        "fit": "frame",
+        "focus": [
+          0.5,
+          0.4
+        ]
+      }
+    },
+    {
+      "heading": "Expect Shareholders to Bite Back",
+      "body": "Isaac Le Maire, a former director, complained about how the company was run in 1609 and organised a bet on falling share prices. In 1610 the States General answered with one of the earliest bans on short selling.",
+      "art_query": "Job Berckheyde Amsterdam Exchange interior",
+      "art_alternatives": [
+        "Amsterdam stock exchange 17th century",
+        "Dutch merchants trading painting"
+      ],
+      "source": "Petram 2014",
+      "art": {
+        "file": "art/aic-9.jpg",
+        "key": "aic:9",
+        "kind": "painting",
+        "title": "Interior of St. Mark's, Venice",
+        "artist": "David Dalhoff Neal",
+        "date": "1869",
+        "museum": "Art Institute of Chicago",
+        "fit": "fill",
+        "focus": [
+          0.5,
+          0.35
+        ]
+      }
+    }
+  ],
+  "caption": "Seventeen gentlemen, six cities, one monopoly: the board that ran the Dutch East India Company.\n\nThe VOC had six chambers, and Amsterdam put up about half the money. That bought it eight of the seventeen board seats, while Zeeland had four. You will often read that it was the richest company ever, worth trillions in today's money. Treat that number as a modern guess. The boardroom fights were real.\n\nFurther reading: Lodewijk Petram, *The World's First Stock Exchange*; Femme Gaastra, *The Dutch East India Company*; Martine Julia van Ittersum, *Profit and Principle*\n\nComment READ and I will send you the Substack link.",
+  "risk_notes": [
+    "Richest company ever: the popular figure of about 7.9 trillion dollars is a modern estimate that historians don't stand behind. Keep it out of the slides. In comments, say it is often called the richest company in history, but that comparisons across centuries are rough guesses.",
+    "First joint-stock company or first stock exchange: the English East India Company (1600) and earlier Italian and Dutch partnerships came first. The slides avoid claiming 'first'. If pushed, say the VOC is the best-known early example of permanent, tradable share capital.",
+    "Neeltgen Cornelis: this comes from Petram's reading of the Amsterdam subscription register. If challenged, say 'according to the subscription register studied by Lodewijk Petram'.",
+    "Permanent capital: the charter planned a general settlement after ten years, but it was put off and the capital became permanent in practice. In 1612 the directors chose not to pay it out. Say 'in practice' when asked.",
+    "Short-selling ban: the February 1610 decree banned selling shares you did not own (windhandel). Call it 'one of the earliest' bans, not definitely the first.",
+    "Grotius: *Mare Liberum* (1609) was taken from his longer unpublished manuscript *De Jure Praedae*. Van Ittersum shows the VOC was closely involved in having it written. Valuations of the Santa Catarina cargo vary (roughly 3 to 3.5 million guilders), so 'millions of guilders' is the safe wording.",
+    "1610 dividend: it was paid largely, not entirely, in mace. Keep the phrase 'much of it'."
+  ],
+  "urls": [
+    "historyuncle.substack.com"
+  ],
+  "engine": "rules",
+  "kicker": "Principles",
+  "coverArt": {
+    "file": "art/commons-34253164.jpg",
+    "key": "commons:34253164",
+    "kind": "painting",
+    "title": "De terugkomst in Amsterdam van de tweede expeditie naar Oost-Indië",
+    "artist": "Hendrick Cornelisz Vroom",
+    "date": "1599",
+    "museum": "Wikimedia Commons",
+    "license": "Public domain",
+    "fit": "frame",
+    "focus": [
+      0.5,
+      0.4
+    ]
+  },
+  "credits": "Images: Hendrick Cornelisz Vroom, De terugkomst in Amsterdam van de tweede expeditie naar Oost-Indië (1599); Workshop of Michiel Jansz. van Mierevelt, Portrait of Johan van Oldenbarnevelt (1616); Johannes Vermeer, ساقية الحليب The Milkmaid (1660); anonymous, Binnenplaats van het Oost Indisch Huis te Amsterdam (1870); Andries Beeckman, The Castle of Batavia (1662); Dguendel, Château de Chantilly, Michiel van Mierevelt, portrait Hugo Grotius (2017) [CC BY 4.0]; David Dalhoff Neal, Interior of St. Mark's, Venice (1869). Via Wikimedia Commons, Art Institute of Chicago.",
+  "renderDir": "r1",
+  "review": {
+    "issues": [],
+    "verdict": "publishable"
+  },
+  "links": [
+    {
+      "url": "historyuncle.substack.com",
+      "ok": false,
+      "status": "Failed to parse URL from historyuncle.substack.com"
+    }
+  ],
+  "rev": 1
+}

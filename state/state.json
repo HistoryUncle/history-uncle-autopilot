@@ -1,5 +1,5 @@
 {
-  "telegramOffset": 187053190,
+  "telegramOffset": 187053191,
   "history": [
     {
       "id": "20261120-075030",
@@ -109,7 +109,14 @@
     "commons:148829",
     "commons:141421790",
     "commons:21957655",
-    "commons:63469868"
+    "commons:63469868",
+    "commons:34253164",
+    "commons:403918",
+    "commons:13408941",
+    "commons:98067983",
+    "commons:1901318",
+    "commons:76254208",
+    "aic:9"
   ],
   "repliedComments": [],
   "drafts": {
@@ -182,6 +189,13 @@
       "createdAt": "2026-11-23T06:40:51.725Z",
       "telegramMessageId": 145,
       "approvedAt": "2026-11-23T07:16:54.454Z"
+    },
+    "20261124-104310": {
+      "status": "pending",
+      "engine": "rules",
+      "title": "8 Rules That Built the VOC",
+      "createdAt": "2026-11-24T10:47:35.765Z",
+      "telegramMessageId": 171
     }
   },
   "lastScheduledDraft": "2026-11-23"
