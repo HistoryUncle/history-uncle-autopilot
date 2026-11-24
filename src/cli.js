@@ -27,8 +27,12 @@ function persist(state, message) {
 }
 const flag = (name) => { const i = rest.indexOf(`--${name}`); return i >= 0 ? rest[i + 1] : undefined; };
 
+/** Network blips (timeouts, dropped connections, Telegram/GitHub 5xx) retry silently on the next loop. */
+const transient = (e) => /abort|timed? ?out|ECONNRESET|ETIMEDOUT|EAI_AGAIN|fetch failed|socket hang up|-> 5\d\d|-> 429|Bad Gateway|Too Many Requests/i.test(`${e?.name} ${e?.message} ${e?.cause?.code ?? ''}`);
+
 async function step(name, fn, state) {
   try { await fn(); } catch (e) {
+    if (transient(e)) { log(`${name}: transient error, retrying later:`, e.message); await new Promise((r) => setTimeout(r, 5000)); return; }
     log(`${name} failed:`, e.stack || e.message);
     await tg.sendText(`⚠️ ${name}: <code>${String(e.message).slice(0, 500)}</code>`).catch(() => {});
     process.exitCode = 1;
