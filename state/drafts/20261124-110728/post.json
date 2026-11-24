@@ -1,0 +1,261 @@
+{
+  "title": "What the VOC's Founders Knew",
+  "title_lead": "Amsterdam, 1602:",
+  "dek": "How rival pepper fleets became one permanent company",
+  "visual_style": "painting",
+  "cover_art_query": "Dutch East India Company ship painting",
+  "art_fallbacks": [
+    "Dutch Golden Age harbour painting",
+    "Amsterdam 17th century painting",
+    "Dutch East Indiaman ship"
+  ],
+  "slides": [
+    {
+      "heading": "Too Many Ships, Too Little Profit",
+      "body": "Between 1595 and 1601, rival Dutch trading companies raced each other to Asia. They bid up pepper prices in Bantam, then flooded Amsterdam with it. Femme Gaastra shows competition was eating the profits.",
+      "source": "Gaastra 2003",
+      "art_query": "Vroom return second expedition Amsterdam",
+      "art_alternatives": [
+        "Hendrick Vroom Dutch ships harbour",
+        "Dutch ships returning Amsterdam painting"
+      ],
+      "art": {
+        "file": "art/commons-23296284.jpg",
+        "key": "commons:23296284",
+        "kind": "painting",
+        "title": "The Return to Amsterdam of the Second Expedition to the East Indies on 19th July 1599",
+        "artist": "Andries van Eertvelt",
+        "date": "1650-00",
+        "museum": "Wikimedia Commons",
+        "license": "Public domain",
+        "fit": "frame",
+        "focus": [
+          0.5,
+          0.5
+        ]
+      }
+    },
+    {
+      "heading": "Oldenbarnevelt Forces a Merger",
+      "body": "The fix was political. Statesman Johan van Oldenbarnevelt pushed the rivals into a single company, chartered on 20 March 1602. Six city chambers kept their own books. Seventeen directors, the Heeren XVII, steered the whole.",
+      "source": "Gaastra 2003",
+      "art_query": "Mierevelt Johan van Oldenbarnevelt portrait",
+      "art_alternatives": [
+        "Oldenbarnevelt portrait painting",
+        "Dutch statesman portrait 17th century"
+      ],
+      "art": {
+        "file": "art/commons-146948967.jpg",
+        "key": "commons:146948967",
+        "kind": "painting",
+        "title": "Portret van Johan van Oldenbarnevelt (1547-1619), SK-A-257",
+        "artist": "Rijksmuseum",
+        "date": "1616",
+        "museum": "Wikimedia Commons",
+        "license": "CC0",
+        "fit": "fill",
+        "focus": [
+          0.5,
+          0.3
+        ]
+      }
+    },
+    {
+      "heading": "Anyone Could Buy In",
+      "body": "The Amsterdam chamber opened its subscription to all comers, and more than a thousand people signed. Lodewijk Petram notes a maidservant, Neeltgen Cornelis, put in 100 guilders. Total capital: roughly 6.4 million guilders.",
+      "source": "Petram 2014",
+      "art_query": "Dutch maidservant painting 17th century",
+      "art_alternatives": [
+        "Pieter de Hooch interior maid",
+        "Dutch Golden Age domestic interior"
+      ],
+      "art": {
+        "file": "art/unsplash-Wv0CVJvUGNk.jpg",
+        "key": "unsplash:Wv0CVJvUGNk",
+        "kind": "photo",
+        "title": "Woman in traditional attire opening a window indoors",
+        "artist": "Photo by The Metropolitan Museum of Art",
+        "date": "",
+        "museum": "Unsplash",
+        "fit": "fill",
+        "focus": [
+          0.5,
+          0.35
+        ]
+      }
+    },
+    {
+      "heading": "A Share Was a Line in a Ledger",
+      "body": "No elegant certificates. To sell, buyer and seller went to the company office and a bookkeeper rewrote the capital book. Petram shows how this dull procedure made shares easy to trade, and a market grew around it.",
+      "source": "Petram 2014",
+      "art_query": "Dutch merchant ledger painting",
+      "art_alternatives": [
+        "Dutch counting house painting",
+        "Golden Age merchant writing desk"
+      ],
+      "art": {
+        "file": "art/commons-337672.jpg",
+        "key": "commons:337672",
+        "kind": "painting",
+        "title": "The Ratification of the Treaty of Münster",
+        "artist": "Gerard ter Borch",
+        "date": "1648",
+        "museum": "Wikimedia Commons",
+        "license": "Public domain",
+        "fit": "fill",
+        "focus": [
+          0.5,
+          0.35
+        ]
+      }
+    },
+    {
+      "heading": "The Door Locked in 1612",
+      "body": "The charter promised a settling of accounts after ten years, when investors might cash out. Instead, the money stayed in. Gelderblom, De Jong and Jonker argue this locked-in capital made the VOC a true corporation.",
+      "source": "Gelderblom, De Jong & Jonker 2013",
+      "art_query": "Oost-Indisch Huis Amsterdam",
+      "art_alternatives": [
+        "East India House Amsterdam engraving",
+        "Amsterdam canal house 17th century painting"
+      ],
+      "art": {
+        "file": "art/commons-83503688.jpg",
+        "key": "commons:83503688",
+        "kind": "photo",
+        "title": "Binnenplaats van het Oost Indisch Huis te Amsterdam",
+        "artist": "anonymous",
+        "date": "1870",
+        "museum": "Wikimedia Commons",
+        "license": "CC0",
+        "fit": "fill",
+        "focus": [
+          0.4,
+          0.4
+        ]
+      }
+    },
+    {
+      "heading": "The First Bear Raid",
+      "body": "Isaac Le Maire, a founding director who fell out with the board, organised a syndicate in 1609 to sell shares it did not yet own and push the price down. In 1610 the States General banned the trick.",
+      "source": "Petram 2014",
+      "art_query": "Emanuel de Witte Amsterdam Exchange",
+      "art_alternatives": [
+        "Job Berckheyde Amsterdam Beurs",
+        "Amsterdam stock exchange courtyard painting"
+      ],
+      "art": {
+        "file": "art/aic-863.jpg",
+        "key": "aic:863",
+        "kind": "painting",
+        "title": "Pastoral Landscape with Ruins",
+        "artist": "Adriaen van de Velde",
+        "date": "1664",
+        "museum": "Art Institute of Chicago",
+        "fit": "fill",
+        "focus": [
+          0.5,
+          0.35
+        ]
+      }
+    },
+    {
+      "heading": "A Company With an Army",
+      "body": "The 1602 charter let the VOC sign treaties, build forts and appoint governors in Asia. Gaastra stresses this blend of merchant and state. Investors bought into pepper profits. An empire came bundled in.",
+      "source": "Gaastra 2003",
+      "art_query": "Andries Beeckman Castle of Batavia",
+      "art_alternatives": [
+        "Batavia 17th century painting",
+        "VOC fort Asia painting"
+      ],
+      "art": {
+        "file": "art/commons-5040997.jpg",
+        "key": "commons:5040997",
+        "kind": "painting",
+        "title": "The Island of Onrust near Batavia (Jakarta)",
+        "artist": "Follower of Abraham Storck",
+        "date": "1699",
+        "museum": "Wikimedia Commons",
+        "license": "Public domain",
+        "fit": "frame",
+        "focus": [
+          0.5,
+          0.5
+        ]
+      }
+    }
+  ],
+  "caption": "In 1602 a maidservant named Neeltgen Cornelis bought a stake in the company that would rule the Spice Islands.\n\nTrading in VOC shares got busy enough that Amsterdam built a purpose-made exchange, the Beurs, which opened in 1611. Isaac Le Maire never really let go of his grudge. Later he backed the 1615 voyage that rounded Cape Horn, looking for a way into Asia that dodged the VOC monopoly.\n\nFurther reading: Lodewijk Petram, *The World's First Stock Exchange*; Femme Gaastra, *The Dutch East India Company: Expansion and Decline*\n\nComment READ and I will send you the Substack link.",
+  "risk_notes": [
+    "'Richest company in history' is deliberately absent. The widely shared figure of about 7.9 trillion dollars is a loose inflation estimate with no reliable source. If someone brings it up, call it popular but unreliable.",
+    "Subscriber numbers: Petram and the Amsterdam subscription register give about 1,143 subscribers for Amsterdam. 'More than a thousand' is the safe wording. Total VOC capital was about 6.42 million guilders.",
+    "Neeltgen Cornelis: the subscription register records her as a maidservant (of director Dirck van Os) who subscribed 100 guilders, and Petram mentions her. Stick to 'maidservant'.",
+    "Le Maire: he was a founding Amsterdam bewindhebber (director) who left around 1605. The 1609 to 1610 short-selling syndicate and the States General ban on such sales in February 1610 are both in Petram. Call it 'among the earliest known short-selling bans' if someone pushes on 'first'.",
+    "Permanent capital: the 1602 charter allowed a settlement after ten years. In 1612 investors could no longer withdraw and could only sell their shares. This is the argument of Gelderblom, De Jong and Jonker in the Journal of Economic History (2013).",
+    "Heeren XVII: Amsterdam had 8 seats, Zeeland 4, the four smaller chambers 1 each, and the 17th seat rotated among the non-Amsterdam chambers. This is relevant if someone asks why there were exactly seventeen."
+  ],
+  "urls": [
+    "historyuncle.substack.com"
+  ],
+  "engine": "lessons",
+  "kicker": "Lessons",
+  "coverArt": {
+    "file": "art/commons-6442621.jpg",
+    "key": "commons:6442621",
+    "kind": "photo",
+    "title": "De werf van de Verenigde Oost-Indische Compagnie met het Oost-Indisch Zeemagazijn op het e",
+    "artist": "Ludolf Bakhuizen",
+    "date": "1696",
+    "museum": "Wikimedia Commons",
+    "license": "Public domain",
+    "fit": "fill",
+    "focus": [
+      0.5,
+      0.5
+    ]
+  },
+  "credits": "Images: Ludolf Bakhuizen, De werf van de Verenigde Oost-Indische Compagnie met het Oost-Indisch Zeemagazijn op het e (1696); Andries van Eertvelt, The Return to Amsterdam of the Second Expedition to the East Indies on 19th July 1599 (1650-00); Rijksmuseum, Portret van Johan van Oldenbarnevelt (1547-1619), SK-A-257 (1616); Gerard ter Borch, The Ratification of the Treaty of Münster (1648); anonymous, Binnenplaats van het Oost Indisch Huis te Amsterdam (1870); Adriaen van de Velde, Pastoral Landscape with Ruins (1664); Follower of Abraham Storck, The Island of Onrust near Batavia (Jakarta) (1699). Via Wikimedia Commons, Art Institute of Chicago. Photos: The Metropolitan Museum of Art on Unsplash.",
+  "renderDir": "r1",
+  "review": {
+    "issues": [
+      {
+        "where": "slide 6",
+        "problem": "The heading \"The First Bear Raid\" states a contested superlative as settled. Your own risk notes recommend \"among the earliest known.\" Short selling and price manipulation in commodity and forward markets existed before 1609, so a commenter could easily challenge \"first.\"",
+        "severity": "medium",
+        "fix": "Change the heading to \"An Early Bear Raid\" or \"The Bear Raid of 1609\". If you want the superlative, put it in the body as \"one of the earliest known bear raids on a company's shares.\""
+      },
+      {
+        "where": "slide 5",
+        "problem": "\"argue this locked-in capital made the VOC a true corporation\" overstates the argument of Gelderblom, De Jong and Jonker (2013). They describe the corporate form developing step by step from 1602 to 1623. Locked-in capital was a key step, but they don't present it as the single move that created a corporation.",
+        "severity": "medium",
+        "fix": "Change it to: \"Gelderblom, De Jong and Jonker argue this locked-in capital was a key step toward the modern corporation.\""
+      },
+      {
+        "where": "caption",
+        "problem": "\"the 1615 voyage that rounded Cape Horn\": the Schouten and Le Maire expedition sailed in 1615, but it rounded and named Cape Horn in January 1616. As written, a reader could think the rounding happened in 1615.",
+        "severity": "low",
+        "fix": "Change it to: \"Later he backed the voyage that sailed in 1615 and rounded Cape Horn in early 1616, looking for a way into Asia that dodged the VOC monopoly.\""
+      },
+      {
+        "where": "slide 4",
+        "problem": "\"No elegant certificates\" is broadly right, because ownership was recorded in the capital book. But the VOC did issue payment receipts, and one from 1606 is often called the \"oldest share.\" A knowledgeable commenter may point to it.",
+        "severity": "low",
+        "fix": "Change it to: \"No share certificates, just receipts. To sell, buyer and seller went to the company office...\" Alternatively, add a risk note about the 1606 receipt."
+      },
+      {
+        "where": "slide 4",
+        "problem": "heading over 6 words",
+        "severity": "low",
+        "fix": "shorten"
+      }
+    ],
+    "verdict": "needs_fixes"
+  },
+  "links": [
+    {
+      "url": "historyuncle.substack.com",
+      "ok": false,
+      "status": "Failed to parse URL from historyuncle.substack.com"
+    }
+  ],
+  "rev": 1
+}
