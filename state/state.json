@@ -1,5 +1,5 @@
 {
-  "telegramOffset": 187053193,
+  "telegramOffset": 187053194,
   "history": [
     {
       "id": "20261120-075030",
@@ -191,7 +191,7 @@
       "approvedAt": "2026-11-23T07:16:54.454Z"
     },
     "20261124-104310": {
-      "status": "pending",
+      "status": "rejected",
       "engine": "rules",
       "title": "8 Rules That Built the VOC",
       "createdAt": "2026-11-24T10:47:35.765Z",
