@@ -87,3 +87,14 @@ test('cover with a wide "frame" painting renders (regression)', { timeout: 12000
   const files = await render(post, dir);
   assert.equal(files.length, 3);
 });
+
+test('variety filter drops other versions of a used painting and a third work by one artist', async () => {
+  const { _variety } = await import('../src/art.js');
+  const chosen = [{ artist: 'Giovanni Antonio Canal', title: 'The Bucintoro Returning to the Molo on Ascension Day' }, { artist: 'Giovanni Antonio Canal', title: 'A Regatta on the Grand Canal' }];
+  const cands = [
+    { key: 'a', artist: 'Giovanni Antonio Canal', title: 'The Bucintoro returning to the Molo on Ascension Day (version)' },
+    { key: 'b', artist: 'Giovanni Antonio Canal', title: 'Piazza San Marco' },
+    { key: 'c', artist: 'Francesco Guardi', title: 'The Grey Lagoon' },
+  ];
+  assert.deepEqual(_variety.varied(cands, chosen).map((c) => c.key), ['c']);
+});

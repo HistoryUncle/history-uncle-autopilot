@@ -40,9 +40,10 @@ globalThis.fetch = async (url, opts = {}) => {
   }
   if (url.includes('api.artic.edu')) {
     const n = calls.filter((c) => c.url.includes('api.artic.edu')).length;
-    return json({ data: [{ id: 1000 + n, title: `Painting ${n}`, artist_title: 'Carl Spitzweg', date_display: 'c. 1850', image_id: `img${n}`, artwork_type_title: 'Painting', thumbnail: { width: 800, height: 1000 } }] });
+    return json({ data: [{ id: 1000 + n, title: `Painting ${n}`, artist_title: `Painter ${n}`, date_display: 'c. 1850', image_id: `img${n}`, artwork_type_title: 'Painting', thumbnail: { width: 800, height: 1000 } }] });
   }
   if (url.includes('collectionapi.metmuseum.org')) return json({ objectIDs: [] });
+  if (url.includes('commons.wikimedia.org')) return json({ query: { pages: {} } });
   if (url.includes('artic.edu/iiif')) return new Response(painting, { headers: { 'content-type': 'image/jpeg' } });
   if (url.startsWith('https://example.org')) return new Response('', { status: 200 });
 
@@ -87,7 +88,9 @@ test('draft -> approve now -> publish -> DM funnel', { timeout: 120000 }, async 
   assert.ok(!/[—–]/.test(post.title), 'house style applied to model output');
   assert.equal(fs.readdirSync(path.join(tmp, 'drafts', id, 'r1')).filter((f) => f.endsWith('.jpg')).length, 9);
   assert.ok(post.coverArt && post.slides.every((s) => s.art), 'every slide has a painting');
-  assert.match(post.credits, /Carl Spitzweg/);
+  assert.match(post.credits, /Painter \d+/);
+  const keys = [post.coverArt, ...post.slides.map((x) => x.art)].map((a) => a.key);
+  assert.equal(new Set(keys).size, keys.length, 'every slide has a different image');
   assert.equal(pickCalls, 8, 'art director chose every background');
   assert.equal(post.links[0].ok, true);
   assert.equal(state.drafts[id].status, 'pending');

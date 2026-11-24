@@ -138,6 +138,25 @@ async function gather(query, style, used) {
   return out.slice(0, PER_QUERY);
 }
 
+/* ---------- variety ---------- */
+
+const norm = (t = '') => String(t).toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '')
+  .replace(/\b(the|a|an|of|la|le|il|del|de|di|van|von|on|in|at|to|from|returning|departing)\b/g, ' ').replace(/[^a-z0-9]+/g, ' ').trim();
+// same artist + same key title words = same work (another copy, source or version); generic titles by different artists stay distinct
+const workId = (c) => `${norm(c.artist).replace(/^photo by /, '')}:${norm(c.title).split(' ').filter((w) => w.length > 2 || /\d/.test(w)).slice(0, 4).sort().join(' ')}`;
+const artistId = (c) => norm(c.artist).replace(/^photo by /, '');
+
+/** Drop candidates that would repeat something already on another slide of this post. */
+function varied(cands, chosen) {
+  const works = new Set(chosen.map(workId).filter(Boolean));
+  const artists = chosen.map(artistId);
+  return cands.filter((c) => {
+    if (works.has(workId(c))) return false;                                    // same painting, other copy or version
+    const a = artistId(c);
+    return !a || a === 'unknown artist' || a === 'unknown author' || artists.filter((x) => x === a).length < 2; // max 2 per artist
+  });
+}
+
 /* ---------- art director ---------- */
 
 const PICK_TOOL = {
@@ -180,7 +199,9 @@ export const defaultFit = (c) => (c.w && c.h && c.w / c.h > 1.3 ? 'frame' : 'fil
 async function direct(cands, ctx, lenient = false) {
   if (!process.env.ANTHROPIC_API_KEY || cands.length === 0) return cands[0] ? { ...cands[0], fit: defaultFit(cands[0]) } : null;
   const note = lenient ? '\n\nThis is the last attempt: pick the best available candidate that is not off-putting, even if it is only loosely on topic. Return -1 only if all are unusable.' : '';
-  const content = [{ type: 'text', text: `Post: ${ctx.title}\nSlide: ${ctx.text}\nVisual search used: ${ctx.query}${note}\n\nCandidates:` }];
+  const usedList = (ctx.chosen ?? []).map((c) => `- ${c.artist}, ${c.title}`).join('\n');
+  const variety = usedList ? `\n\nAlready used on other slides of this post. Pick something that looks clearly different: not another version, copy or detail of these, and not the same kind of scene again:\n${usedList}` : '';
+  const content = [{ type: 'text', text: `Post: ${ctx.title}\nSlide: ${ctx.text}\nVisual search used: ${ctx.query}${note}${variety}\n\nCandidates:` }];
   const shown = [];
   for (const c of cands) {
     const b64 = await fetchB64(c.thumb).catch(() => null);
@@ -209,7 +230,7 @@ export async function findArt(ctx, style, used) {
     // interleave so the director sees the best of every search
     const pool = [];
     for (let i = 0; pool.length < max && lists.some((l) => l[i]); i++) for (const l of lists) if (l[i]) pool.push(l[i]);
-    const cands = uniq(pool).slice(0, max);
+    const cands = varied(uniq(pool), ctx.chosen ?? []).slice(0, max);
     seen.push(...cands);
     return direct(cands, { ...ctx, query: searches.map((x) => x.q).join(' | ') }, lenient)
       .catch((e) => { log('art director failed', e.message); return cands[0] ? { ...cands[0], fit: defaultFit(cands[0]) } : null; });
@@ -249,7 +270,8 @@ export async function illustrate(post, dir, state) {
   for (const t of targets) {
     await stage(`🎨 Renku paveikslus… (${++n}/${targets.length})`);
     let pick = null;
-    try { pick = await findArt({ title: post.title, text: t.text, query: t.query, fallbacks: [...(t.alts ?? []), ...fallbacks] }, style, used); } catch (e) { log('art search failed', e.message); }
+    const chosen = [post.coverArt, ...post.slides.map((x) => x.art)].filter(Boolean);
+    try { pick = await findArt({ title: post.title, text: t.text, query: t.query, fallbacks: [...(t.alts ?? []), ...fallbacks], chosen }, style, used); } catch (e) { log('art search failed', e.message); }
     if (!pick) { log(`no art for "${t.query}", using plain background`); continue; }
     const file = path.join(dir, 'art', `${pick.key.replace(':', '-')}.jpg`);
     try { if (!fs.existsSync(file)) await download(pick, file); } catch (e) { log('download failed', e.message); continue; }
@@ -259,13 +281,25 @@ export async function illustrate(post, dir, state) {
     if (t.slot === 'cover') post.coverArt = art; else post.slides[t.slot].art = art;
     log(`art ${t.slot}: ${pick.artist}, ${pick.title}`);
   }
-  // never leave a slide blank: reuse paintings already chosen for this post
-  const chosen = [post.coverArt, ...post.slides.map((s) => s.art)].filter(Boolean);
-  if (chosen.length) post.slides.forEach((s, i) => { if (!s.art) { s.art = chosen[(i + 1) % chosen.length]; log(`slide ${i + 1}: reusing an image from this post`); } });
-  if (!post.coverArt && chosen.length) post.coverArt = chosen[0];
+  // still missing? search wider (post-level searches, then period/place basics), never reusing an image
+  for (const [i, sl] of post.slides.entries()) {
+    if (sl.art) continue;
+    const chosen = [post.coverArt, ...post.slides.map((x) => x.art)].filter(Boolean);
+    const wide = [...fallbacks, post.cover_art_query, 'old master painting interior', 'historic library', 'classical sculpture detail'].filter(Boolean);
+    let pick = null;
+    try { pick = await findArt({ title: post.title, text: `${sl.heading}. ${sl.body}`, query: wide[0], fallbacks: wide.slice(1), chosen }, style, used); } catch (e) { log('wide search failed', e.message); }
+    if (!pick) { log(`slide ${i + 1}: no unique image found, using plain background`); continue; }
+    const file = path.join(dir, 'art', `${pick.key.replace(':', '-')}.jpg`);
+    try { if (!fs.existsSync(file)) await download(pick, file); } catch { continue; }
+    used.add(pick.key); state.usedArt.push(pick.key);
+    sl.art = { file: path.relative(dir, file), key: pick.key, kind: pick.kind, title: pick.title, artist: pick.artist, date: pick.date, museum: pick.source, license: pick.license, fit: pick.fit ?? defaultFit(pick), focus: pick.focus ?? [0.5, 0.35] };
+  }
+  if (!post.coverArt) { const first = post.slides.find((x) => x.art); if (first) log('cover: no image found'); }
   post.credits = creditsLine(post);
   return post;
 }
+
+export const _variety = { varied, workId };
 
 export function creditsLine(post) {
   const arts = [post.coverArt, ...post.slides.map((s) => s.art)].filter(Boolean);
