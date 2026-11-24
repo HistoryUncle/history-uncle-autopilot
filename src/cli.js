@@ -4,7 +4,7 @@ import path from 'node:path';
 import { log, readJSON, deepHouseStyle } from './lib/util.js';
 import * as S from './lib/state.js';
 import { execSync } from 'node:child_process';
-import { createDraft, handleTelegram, publishDue, scheduledDraftDue, markScheduledDraft } from './pipeline.js';
+import { createDraft, handleTelegram, publishDue, scheduledDraftDue, markScheduledDraft, recoverOrphans } from './pipeline.js';
 import { runDmFunnel, refreshToken } from './instagram.js';
 import { render } from './render.js';
 import { illustrate } from './art.js';
@@ -57,6 +57,7 @@ const commands = {
   async tick() {
     const state = S.load();
     await step('Telegram', async () => log(await tg.ensurePolling()), state);
+    await step('Telegram', async () => { const n = await recoverOrphans(state); if (n) { log(`recovered ${n} draft(s)`); persist(state, 'bot: recover drafts'); } }, state);
     // Always-on loop: long-poll Telegram (answers within seconds), make the scheduled draft when due,
     // and save after anything changes. The workflow starts the next run when this one ends.
     const until = Date.now() + Number(process.env.TICK_MINUTES ?? 0) * 60000;

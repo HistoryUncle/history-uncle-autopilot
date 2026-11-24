@@ -78,6 +78,22 @@ async function withStatus(first, job) {
   } finally { setReporter(null); }
 }
 
+/** A draft whose files exist but whose review card never reached Telegram (e.g. a send error): send it now. */
+export async function recoverOrphans(state) {
+  const root = path.dirname(S.draftDir('x'));
+  if (!fs.existsSync(root)) return 0;
+  let n = 0;
+  for (const id of fs.readdirSync(root)) {
+    if (state.drafts[id] || !S.draftExists(id)) continue;
+    const post = S.loadDraft(id);
+    if (!post.renderDir) continue;
+    const card = await tg.sendText(`♻️ Šio juodraščio kortelė anksčiau nepasiekė Telegram'o, siunčiu dabar.\n\n${tg.reviewCard(id, post, post.review ?? { issues: [] }, post.links ?? [])}`, tg.buttons(id));
+    state.drafts[id] = { status: 'pending', engine: post.engine, title: post.title, createdAt: new Date().toISOString(), telegramMessageId: card.message_id };
+    n++;
+  }
+  return n;
+}
+
 /* ---------- scheduling ---------- */
 
 function tzOffsetMinutes(date, timeZone) {

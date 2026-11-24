@@ -98,3 +98,11 @@ test('variety filter drops other versions of a used painting and a third work by
   ];
   assert.deepEqual(_variety.varied(cands, chosen).map((c) => c.key), ['c']);
 });
+
+test('review card stays under the Telegram limit with balanced markup', () => {
+  const long = 'word '.repeat(2000);
+  const issues = Array.from({ length: 20 }, () => ({ where: 'slide 1', problem: long, severity: 'medium', fix: long }));
+  const card = reviewCard('id', { title: 'T', engine: 'e', caption: long, credits: long, risk_notes: [long, long, long, long, long] }, { issues }, Array.from({ length: 20 }, () => ({ url: 'https://x.org/' + 'a'.repeat(200), ok: true, status: 200 })));
+  assert.ok(card.length < 4096, `card is ${card.length} chars`);
+  for (const tag of ['b', 'i', 'blockquote', 'code']) assert.equal((card.match(new RegExp(`<${tag}>`, 'g')) ?? []).length, (card.match(new RegExp(`</${tag}>`, 'g')) ?? []).length, tag);
+});
