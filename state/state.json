@@ -1,5 +1,5 @@
 {
-  "telegramOffset": 187053192,
+  "telegramOffset": 187053193,
   "history": [
     {
       "id": "20261120-075030",
@@ -195,7 +195,7 @@
       "engine": "rules",
       "title": "8 Rules That Built the VOC",
       "createdAt": "2026-11-24T10:47:35.765Z",
-      "telegramMessageId": 171
+      "telegramMessageId": 187
     }
   },
   "lastScheduledDraft": "2026-11-23"

@@ -138,10 +138,10 @@
     {
       "heading": "Hire a Brilliant Lawyer",
       "body": "In 1603 Jacob van Heemskerck seized the Portuguese carrack Santa Catarina and its cargo, worth millions of guilders. The company asked young Hugo Grotius to justify keeping it. One chapter became *Mare Liberum*, a classic of international law.",
-      "art_query": "Mierevelt Hugo Grotius portrait",
+      "art_query": "Jan van Ravesteyn Hugo de Groot",
       "art_alternatives": [
-        "Hugo Grotius painting",
-        "Dutch scholar portrait 17th century"
+        "Mare Liberum 1609 title page",
+        "Loevestein Castle painting"
       ],
       "source": "van Ittersum 2006",
       "art": {
@@ -241,10 +241,29 @@
     ]
   },
   "credits": "Images: Hendrick Cornelisz Vroom, De terugkomst in Amsterdam van de tweede expeditie naar Oost-Indië (1599); Workshop of Michiel Jansz. van Mierevelt, Portrait of Johan van Oldenbarnevelt (1616); Johannes Vermeer, ساقية الحليب The Milkmaid (1660); anonymous, Binnenplaats van het Oost Indisch Huis te Amsterdam (1870); Andries Beeckman, The Castle of Batavia (1662); Dguendel, Château de Chantilly, Michiel van Mierevelt, portrait Hugo Grotius (2017) [CC BY 4.0]; David Dalhoff Neal, Interior of St. Mark's, Venice (1869). Via Wikimedia Commons, Art Institute of Chicago.",
-  "renderDir": "r1",
+  "renderDir": "r2",
   "review": {
-    "issues": [],
-    "verdict": "publishable"
+    "issues": [
+      {
+        "where": "slide 5",
+        "problem": "\"A trading company with an army was the plan from day one\" claims more than the sources support. The charter did grant the powers to sign treaties, build forts and raise soldiers. But how aggressive the company would be, and its turn to open war on the Portuguese, took shape over 1603 to 1605 (Gaastra). Saying it was \"the plan\" from the start reads intent into a charter whose wording is vague.",
+        "severity": "medium",
+        "fix": "Replace with \"A trading company with its own army was written into the charter from day one.\" This stays within the 22 to 40 word limit and only claims what the document says."
+      },
+      {
+        "where": "slide 2 art_query",
+        "problem": "Vermeer's The Milkmaid dates from about 1658, more than fifty years after the 1602 subscription. Commenters may read it as a picture of Neeltgen Cornelis or of 1602.",
+        "severity": "low",
+        "fix": "Use an earlier domestic scene from around 1600 to 1620, or add a small credit line such as \"Vermeer, The Milkmaid, c. 1658 (illustrative)\"."
+      },
+      {
+        "where": "slide 8",
+        "problem": "\"complained about how the company was run in 1609\" is clumsy. It can read as if 1609 is the year the company was run badly.",
+        "severity": "low",
+        "fix": "\"In 1609 Isaac Le Maire, a former director, attacked how the company was run and organised a bet on falling share prices.\""
+      }
+    ],
+    "verdict": "needs_fixes"
   },
   "links": [
     {
@@ -253,5 +272,5 @@
       "status": "Failed to parse URL from historyuncle.substack.com"
     }
   ],
-  "rev": 1
+  "rev": 2
 }
