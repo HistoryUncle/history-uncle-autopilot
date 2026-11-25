@@ -1,5 +1,5 @@
 {
-  "telegramOffset": 187053195,
+  "telegramOffset": 187053196,
   "history": [
     {
       "id": "20261120-075030",
@@ -27,6 +27,13 @@
       "title": "Where to Start with Venice",
       "engine": "reading-path",
       "publishedAt": "2026-11-23T07:16:54.454Z",
+      "manual": true
+    },
+    {
+      "id": "20261124-110728",
+      "title": "What the VOC's Founders Knew",
+      "engine": "lessons",
+      "publishedAt": "2026-11-25T08:16:56.067Z",
       "manual": true
     }
   ],
@@ -206,11 +213,12 @@
       "telegramMessageId": 187
     },
     "20261124-110728": {
-      "status": "pending",
+      "status": "ready",
       "engine": "lessons",
       "title": "What the VOC's Founders Knew",
       "createdAt": "2026-11-24T11:18:48.984Z",
-      "telegramMessageId": 200
+      "telegramMessageId": 200,
+      "approvedAt": "2026-11-25T08:16:56.067Z"
     }
   },
   "lastScheduledDraft": "2026-11-25"
