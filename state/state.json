@@ -1,5 +1,5 @@
 {
-  "telegramOffset": 187053196,
+  "telegramOffset": 187053197,
   "history": [
     {
       "id": "20261120-075030",
@@ -34,6 +34,13 @@
       "title": "What the VOC's Founders Knew",
       "engine": "lessons",
       "publishedAt": "2026-11-25T08:16:56.067Z",
+      "manual": true
+    },
+    {
+      "id": "20261127-063728",
+      "title": "7 Rules of a Jesuit Classroom",
+      "engine": "rules",
+      "publishedAt": "2026-11-27T07:54:52.833Z",
       "manual": true
     }
   ],
@@ -229,11 +236,12 @@
       "approvedAt": "2026-11-25T08:16:56.067Z"
     },
     "20261127-063728": {
-      "status": "pending",
+      "status": "ready",
       "engine": "rules",
       "title": "7 Rules of a Jesuit Classroom",
       "createdAt": "2026-11-27T06:40:55.078Z",
-      "telegramMessageId": 222
+      "telegramMessageId": 222,
+      "approvedAt": "2026-11-27T07:54:52.833Z"
     }
   },
   "lastScheduledDraft": "2026-11-27"
