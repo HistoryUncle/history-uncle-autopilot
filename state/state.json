@@ -131,7 +131,15 @@
     "commons:337672",
     "commons:83503688",
     "aic:863",
-    "commons:5040997"
+    "commons:5040997",
+    "commons:12822178",
+    "aic:11",
+    "aic:17161",
+    "aic:160229",
+    "commons:5900722",
+    "commons:15610101",
+    "unsplash:oD4zvae0IDA",
+    "aic:24684"
   ],
   "repliedComments": [],
   "drafts": {
@@ -219,7 +227,14 @@
       "createdAt": "2026-11-24T11:18:48.984Z",
       "telegramMessageId": 200,
       "approvedAt": "2026-11-25T08:16:56.067Z"
+    },
+    "20261127-063728": {
+      "status": "pending",
+      "engine": "rules",
+      "title": "7 Rules of a Jesuit Classroom",
+      "createdAt": "2026-11-27T06:40:55.078Z",
+      "telegramMessageId": 222
     }
   },
-  "lastScheduledDraft": "2026-11-25"
+  "lastScheduledDraft": "2026-11-27"
 }

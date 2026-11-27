@@ -1,0 +1,230 @@
+{
+  "title": "7 Rules of a Jesuit Classroom",
+  "title_lead": "The 1599 playbook:",
+  "dek": "The rulebook behind the schooling of Descartes, Molière and Voltaire",
+  "visual_style": "painting",
+  "cover_art_query": "Rubens Saint Ignatius of Loyola",
+  "art_fallbacks": [
+    "seventeenth century schoolroom painting",
+    "Jesuit college baroque painting",
+    "Ignatius of Loyola portrait"
+  ],
+  "slides": [
+    {
+      "heading": "One Rulebook, Every Classroom",
+      "body": "In 1599 the Jesuits published the *Ratio Studiorum*, their plan of studies. Drafts from 1586 and 1591 were tested and criticised in schools first. The result: a boy in Coimbra and a boy in Prague followed the same playbook.",
+      "source": "Ratio Studiorum 1599",
+      "art_query": "Clementinum Prague library painting",
+      "art_alternatives": [
+        "Coimbra university old painting",
+        "baroque library interior painting"
+      ],
+      "art": {
+        "file": "art/aic-11.jpg",
+        "key": "aic:11",
+        "kind": "painting",
+        "title": "Self-Portrait",
+        "artist": "Walter Shirlaw",
+        "date": "1878",
+        "museum": "Art Institute of Chicago",
+        "fit": "fill",
+        "focus": [
+          0.5,
+          0.35
+        ]
+      }
+    },
+    {
+      "heading": "Never Charge a Fee",
+      "body": "Ignatius of Loyola's *Constitutions* forbade charging tuition. Towns and patrons paid for buildings and teachers instead. The first college for lay pupils opened at Messina in 1548. Free, good schooling proved to be excellent publicity.",
+      "source": "O'Malley, The First Jesuits 1993",
+      "art_query": "Messina harbour old painting",
+      "art_alternatives": [
+        "Sicily coast view painting",
+        "Ignatius of Loyola portrait"
+      ],
+      "art": {
+        "file": "art/aic-24684.jpg",
+        "key": "aic:24684",
+        "kind": "painting",
+        "title": "Francesco de' Medici",
+        "artist": "Alessandro Allori",
+        "date": "c. 1560",
+        "museum": "Art Institute of Chicago",
+        "fit": "fill",
+        "focus": [
+          0.48,
+          0.25
+        ]
+      }
+    },
+    {
+      "heading": "Explain It Before They Try It",
+      "body": "The core lesson was the prelection. The teacher read a passage aloud, then unpacked its meaning, grammar and background before pupils worked on it alone. Nobody was left alone with Cicero on day one.",
+      "source": "Ratio Studiorum 1599",
+      "art_query": "schoolmaster reading to pupils painting",
+      "art_alternatives": [
+        "Jan Steen village school",
+        "Dutch schoolroom seventeenth century"
+      ],
+      "art": {
+        "file": "art/aic-17161.jpg",
+        "key": "aic:17161",
+        "kind": "painting",
+        "title": "Virgil Reading the \"Aeneid\" to Augustus, Octavia, and Livia",
+        "artist": "Jean Baptiste Joseph Wicar",
+        "date": "1790–93",
+        "museum": "Art Institute of Chicago",
+        "fit": "fill",
+        "focus": [
+          0.5,
+          0.35
+        ]
+      }
+    },
+    {
+      "heading": "Saturday Is for Review",
+      "body": "Lessons were recited back the same day and recapped the next morning. On Saturdays the whole week went round again. The *Ratio* trusted repetition more than talent, and it was right to.",
+      "source": "Ratio Studiorum 1599",
+      "art_query": "boy reciting lesson painting",
+      "art_alternatives": [
+        "boy studying book old master",
+        "child reading candlelight painting"
+      ],
+      "art": {
+        "file": "art/aic-160229.jpg",
+        "key": "aic:160229",
+        "kind": "painting",
+        "title": "Pergola with Oranges",
+        "artist": "Thomas Fearnley",
+        "date": "c. 1834",
+        "museum": "Art Institute of Chicago",
+        "fit": "fill",
+        "focus": [
+          0.5,
+          0.35
+        ]
+      }
+    },
+    {
+      "heading": "Turn Rivalry Into Homework",
+      "body": "Classes were split into two camps, often called Romans and Carthaginians. Each pupil had an aemulus, a personal rival who pounced on his mistakes. Top boys held classroom offices with Roman titles. Ambition did the teacher's work.",
+      "source": "Farrell, The Jesuit Ratio Studiorum 1970",
+      "art_query": "Tiepolo Roman consul painting",
+      "art_alternatives": [
+        "Carthage Turner painting",
+        "classical Roman scene painting"
+      ],
+      "art": {
+        "file": "art/commons-5900722.jpg",
+        "key": "commons:5900722",
+        "kind": "painting",
+        "title": "Dido building Carthage",
+        "artist": "J. M. W. Turner",
+        "date": "1815",
+        "museum": "Wikimedia Commons",
+        "license": "Public domain",
+        "fit": "frame",
+        "focus": [
+          0.5,
+          0.35
+        ]
+      }
+    },
+    {
+      "heading": "Let Pupils Check Pupils",
+      "body": "Trusted students called decurions each heard about ten classmates recite their memorised lessons, noted the slips, and reported to the teacher. The title came from a Roman officer over ten men. One teacher, many lieutenants.",
+      "source": "Ratio Studiorum 1599",
+      "art_query": "Chardin young schoolmistress",
+      "art_alternatives": [
+        "children reading together painting",
+        "eighteenth century pupils painting"
+      ],
+      "art": {
+        "file": "art/commons-15610101.jpg",
+        "key": "commons:15610101",
+        "kind": "photo",
+        "title": "The Young Schoolmistress",
+        "artist": "Jean-Baptiste-Siméon Chardin",
+        "date": "1736",
+        "museum": "Wikimedia Commons",
+        "license": "Public domain",
+        "fit": "fill",
+        "focus": [
+          0.5,
+          0.35
+        ]
+      }
+    },
+    {
+      "heading": "Put Latin on Stage",
+      "body": "Colleges staged plays, public debates and prize days. The *Ratio* set the limits: Latin only, performed rarely, and no female roles or women's costume. Parents came to watch, applauded, and still paid nothing.",
+      "source": "Ratio Studiorum 1599",
+      "art_query": "baroque theatre stage painting",
+      "art_alternatives": [
+        "prize giving ceremony painting",
+        "seventeenth century audience painting"
+      ],
+      "art": {
+        "file": "art/unsplash-oD4zvae0IDA.jpg",
+        "key": "unsplash:oD4zvae0IDA",
+        "kind": "photo",
+        "title": "brown wooden framed glass windows",
+        "artist": "Photo by Kéoma Oran",
+        "date": "",
+        "museum": "Unsplash",
+        "fit": "fill",
+        "focus": [
+          0.5,
+          0.35
+        ]
+      }
+    }
+  ],
+  "caption": "In 1599 one rulebook told teachers from Coimbra to Prague exactly how to run a class.\n\nDescartes studied at the Jesuit college of La Flèche and later called it one of the most celebrated schools in Europe, even as he doubted much of what it taught him. Molière and Voltaire went through Jesuit colleges in Paris too. The method outlived the order's suppression in 1773.\n\nFurther reading: John W. O'Malley, *The First Jesuits*; Allan P. Farrell, *The Jesuit Ratio Studiorum of 1599*\n\nComment READ and I will send you the Substack link.",
+  "risk_notes": [
+    "Romans versus Carthaginians: the Ratio prescribes rival camps and aemuli, but the specific names were a widespread custom, not mandated text. Keep 'often called'.",
+    "Decurions and ten classmates: the Ratio uses decurions to hear recitations; group size varied in practice. Keep 'about ten'.",
+    "Free tuition: the Constitutions forbade fees for teaching, but boarding and other costs sometimes existed. Defend as 'no tuition', not 'no costs at all'.",
+    "Messina 1548 is usually cited as the first college founded mainly for lay pupils; Gandía had admitted lay students earlier. Phrase as 'first college for lay pupils' with that nuance ready.",
+    "Theatre rules: the 1599 Ratio limits plays to Latin, rare performances, and bans female roles and dress; local practice often bent these rules, which is fair to concede."
+  ],
+  "engine": "rules",
+  "kicker": "Principles",
+  "coverArt": {
+    "file": "art/commons-12822178.jpg",
+    "key": "commons:12822178",
+    "kind": "photo",
+    "title": "Saint Ignatius of Loyola",
+    "artist": "Peter Paul Rubens",
+    "date": "1610",
+    "museum": "Wikimedia Commons",
+    "license": "Public domain",
+    "fit": "fill",
+    "focus": [
+      0.45,
+      0.2
+    ]
+  },
+  "credits": "Images: Peter Paul Rubens, Saint Ignatius of Loyola (1610); Walter Shirlaw, Self-Portrait (1878); Alessandro Allori, Francesco de' Medici (c. 1560); Jean Baptiste Joseph Wicar, Virgil Reading the \"Aeneid\" to Augustus, Octavia, and Livia (1790–93); Thomas Fearnley, Pergola with Oranges (c. 1834); J. M. W. Turner, Dido building Carthage (1815); Jean-Baptiste-Siméon Chardin, The Young Schoolmistress (1736). Via Wikimedia Commons, Art Institute of Chicago. Photos: Kéoma Oran on Unsplash.",
+  "renderDir": "r1",
+  "review": {
+    "issues": [
+      {
+        "where": "slide 4",
+        "problem": "\"The *Ratio* trusted repetition more than talent, and it was right to.\" The last clause is the post's own verdict on modern learning science, stated as fact with no source. It is the only line in the carousel that makes a judgement nobody can check.",
+        "severity": "medium",
+        "fix": "Change to: \"The *Ratio* trusted repetition more than talent, a bet modern memory research tends to back.\" Or end at \"more than talent.\""
+      },
+      {
+        "where": "slide 2",
+        "problem": "\"The first college for lay pupils opened at Messina in 1548\" is stated as settled. Gandía had already admitted lay students by 1546, so commenters can easily push back. The risk notes are aware of this, but the slide text doesn't show it.",
+        "severity": "low",
+        "fix": "Change to: \"Messina, opened in 1548, is usually called the first college built for lay pupils.\" This keeps the slide within 40 words."
+      }
+    ],
+    "verdict": "needs_fixes"
+  },
+  "links": [],
+  "rev": 1
+}
